@@ -4,7 +4,7 @@
       <hr>
       <button
         class="btn btn-outline-success"
-        routerLink="/doubleRoom"
+        routerLink="/doubleRooms"
         routerLinkActive="active">Back
       </button>
       <hr>
@@ -14,7 +14,10 @@
         <h4 class="card-header">Customer Details</h4>
         <div class="card-body row">
           <div class="col-md-4">
-            <img class="img1" *ngIf="doubleRoomToDelete.id == '1' " src="https://i.imgur.com/oFdThdF.jpg">
+            <div class="list-group">
+            <div *ngFor="let doubleRoom of doubleRoom" class="list-group-item list-group-item-action">
+              <h5>{{doubleRoom.price}} {{doubleRoom.id}} {{doubleRoom.available}} </h5>
+              <img class="img1" *ngIf="doubleRoom.price == 12.5 " src="https://i.imgur.com/oFdThdF.jpg">
           </div>
           <div class="col-md-8">
             <dl class="row">
@@ -45,4 +48,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

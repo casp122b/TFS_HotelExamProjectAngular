@@ -19,7 +19,24 @@ import { DoubleRoomDetailComponent } from './rooms/double-room/double-room-detai
 import { DoubleRoomCreateComponent } from './rooms/double-room/double-room-create/double-room-create.component';
 import { DoubleRoomListComponent } from './rooms/double-room/double-room-list/double-room-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import {DoubleRoomService} from './rooms/double-room/shared/double-room.service';
+import {HttpClientModule} from '@angular/common/http';
 
+const appRoutes: Routes = [
+  { path: 'doubleRooms/:id',
+    component: DoubleRoomDetailComponent },
+  { path: 'doubleRoom/create',
+    component: DoubleRoomCreateComponent },
+  {
+    path: 'doubleRooms',
+    component: DoubleRoomListComponent,
+    data: { title: 'Room List' }
+  },
+  { path: '',
+    redirectTo: '/doubleRooms',
+    pathMatch: 'full'
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,9 +58,11 @@ import { RouterModule, Routes } from '@angular/router';
     DoubleRoomListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DoubleRoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

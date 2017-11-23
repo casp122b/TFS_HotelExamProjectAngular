@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
 
-const url = environment.apiEndpoint + '/doubleRoom';
+const url = environment.apiEndpoint + '/doubleRooms';
 
 @Injectable()
 export class DoubleRoomService {
@@ -29,8 +29,8 @@ export class DoubleRoomService {
       .delete<DoubleRoom>(url + '/' + id);
   }
 
-  create(room: DoubleRoom): Observable<DoubleRoom> {
+  create(doubleRoom: DoubleRoom): Observable<DoubleRoom> {
     return this.http
-      .post<DoubleRoom>(url, DoubleRoom);
+      .post<DoubleRoom>(url, doubleRoom);
   }
 }
