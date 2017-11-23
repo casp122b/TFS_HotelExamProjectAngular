@@ -1,6 +1,6 @@
-export class guest{
+export class Guest {
   id?: number;
   firstName: string;
    lastName: string;
-   address:string;
+   address: string;
 }

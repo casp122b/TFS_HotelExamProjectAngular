@@ -1,19 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{title}}!
   </h1>
-  <img width="300" alt="Angular Logo" src="https://www.alinea.dk/sites/default/files/Produkter/9788711561911___0___9788711561911.jpg___bb735daf-5b5c-49e8-adb7-9cf4265d5921_31.jpg">
+  <h3>
+    <script src='angular.js'></script>
+    <script src='main.js'></script>
+  </h3>
+  <div ng-controller="HeaderCtrl">
+    <div ng-include src="header.url"></div>
+    <script type="text/ng-template" id="header.html"></script>
+  </div>
+  <button class ="btn btn-outline-succes">  <i class="fa fa-plus" aria-hidden="true">login</i>
+  </button>
+  <button class ="btn btn-outline-success">  <i class="fa fa-plus" aria-hidden="true">sign up</i>
+  </button>
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">Login</a></h2>
   </li>
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+    <h2>< a target="_blank" rel="noopener" href="https://blog.angular.io/" >Signup</a></h2>
   </li>
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
 
