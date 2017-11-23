@@ -1,1 +1,65 @@
+.btnLogin{
+  position:absolute;
+   transition: .5s ease;
+  top: 0%;
+  right: 3%;
+  font-size: 15px;
+color: blue;
+}
 
+.btnSignup{
+  position:absolute;
+  transition: .5s ease;
+  top: 0%;
+  right: 7%;
+  font-size: 15px;
+  color: blue;
+}
+.img1{
+  position:absolute;
+  top: 0%;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+max-height: 10%;
+
+}
+.single{
+  position:absolute;
+  transition: .5s ease;
+  top: 20%;
+  right: 0%;
+  left: 10%;
+  width: 20%;
+  font-size: 12px;
+  max-height: 50%;
+}
+.double{
+  position:absolute;
+  transition: .5s ease;
+  top: 20%;
+  right: 0%;
+  left: 40%;
+  width: 20%;
+  font-size: 12px;
+  max-height: 50%;
+}
+.suite{
+  position:absolute;
+  transition: .5s ease;
+  top: 20%;
+  right: 0%;
+  left: 60%;
+  width: 20%;
+  font-size: 12px;
+  max-height: 50%;
+}
+
+.logo {
+  position: absolute;
+  transition: .5s ease;
+  top: 0%;
+  left: 3%;
+  font-size: 50px;
+  color: whitesmoke;
+}
