@@ -18,7 +18,7 @@ import { SingleRoomListComponent } from './rooms/single-room/single-room-list/si
 import { DoubleRoomDetailComponent } from './rooms/double-room/double-room-detail/double-room-detail.component';
 import { DoubleRoomCreateComponent } from './rooms/double-room/double-room-create/double-room-create.component';
 import { DoubleRoomListComponent } from './rooms/double-room/double-room-list/double-room-list.component';
-
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
