@@ -1,3 +1,52 @@
-<p>
-  guest-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <button
+        class="btn btn-outline-success"
+        routerLink="/front"
+        routerLinkActive="active">Back
+      </button>
+      <hr>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <h4 class="card-header">Customer Details</h4>
+        <div class="card-body row">
+          <div class="col-md-4">
+            <div class="list-group">
+              <div *ngFor="let doubleRoom of doubleRoom" class="list-group-item list-group-item-action">
+                <h5>{{guest.firstName}} {{guest.lastName}} {{guest.address}} </h5>
+              </div>
+              <div class="col-md-8">
+                <dl class="row">
+                </dl>
+                <dl class="row">
+                </dl>
+                <dl class="row">
+                  <dd class="col-md-10">
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent">
+              <div class="pull-right" *ngIf="!confirmDelete">
+                <button class="btn btn-outline-danger" (click)="delete()">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                </button>
+                <button class="btn btn-outline-warning">
+                  <i class="fa fa-pencil" aria-hidden="true"></i> Update
+                </button>
+              </div>
+              <div class="pull-right" *ngIf="confirmDelete">
+                <button class="btn btn-outline-danger" (click)="deleteConfirmed()">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

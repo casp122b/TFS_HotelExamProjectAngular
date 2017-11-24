@@ -22,10 +22,20 @@ import { RouterModule, Routes } from '@angular/router';
 import {DoubleRoomService} from './rooms/double-room/shared/double-room.service';
 import {SingleRoomService} from './rooms/single-room/shared/single-room.service';
 import {SuiteService} from './rooms/suites/shared/suite.service';
+import {GuestService} from './guests/shared/guest.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 
 const appRoutes: Routes = [
+  { path: 'guest/:id',
+    component: GuestDetailComponent },
+  { path: 'guest/create',
+    component: GuestCreateComponent },
+  {
+    path: 'guests',
+    component: GuestListComponent,
+    data: { title: 'Room List' }
+  },
   { path: 'doubleRooms/:id',
     component: DoubleRoomDetailComponent },
   { path: 'doubleRoom/create',
@@ -89,7 +99,8 @@ const appRoutes: Routes = [
   providers: [
     DoubleRoomService,
     SingleRoomService,
-    SuiteService
+    SuiteService,
+    GuestService
   ],
   bootstrap: [AppComponent]
 })
