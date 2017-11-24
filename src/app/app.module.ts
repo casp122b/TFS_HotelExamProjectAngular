@@ -53,8 +53,10 @@ const appRoutes: Routes = [
     component: SuiteListComponent,
     data: { title: 'Room List' }
   },
+  { path: 'front',
+    component: FrontPageDetailComponent },
   { path: '',
-    redirectTo: '/doubleRooms',
+    redirectTo: '/front',
     pathMatch: 'full'
   }
 ];
