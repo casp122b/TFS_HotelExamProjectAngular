@@ -23,6 +23,7 @@ import {DoubleRoomService} from './rooms/double-room/shared/double-room.service'
 import {SingleRoomService} from './rooms/single-room/shared/single-room.service';
 import {SuiteService} from './rooms/suites/shared/suite.service';
 import {HttpClientModule} from '@angular/common/http';
+import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 
 const appRoutes: Routes = [
   { path: 'doubleRooms/:id',
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     SingleRoomListComponent,
     DoubleRoomDetailComponent,
     DoubleRoomCreateComponent,
-    DoubleRoomListComponent
+    DoubleRoomListComponent,
+    FrontPageDetailComponent
   ],
   imports: [
     BrowserModule,
