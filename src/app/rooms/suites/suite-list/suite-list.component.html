@@ -1,13 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+
       <hr>
       <button
         class="btn btn-outline-success"
         routerLink="/front"
         routerLinkActive="active">Back
       </button>
+
       <hr>
+      Dette er den fineste suite i danmark, med en masse gode ting, heriblandt en god udsigt og en altan med havudsigt hvor at man kan tage elevatoren direkte ned til havet
+
     </div>
     <div class="col-md-12">
       <div class="card">
@@ -15,9 +19,12 @@
         <div class="card-body row">
           <div class="col-md-4">
             <div class="list-group">
+              <img class="suite1"  src="https://image.slidesharecdn.com/accommodationpresentationontypesofroom1-140222114118-phpapp01/95/typesofrooms-in-hotelashish-jumadeihm-ahmedabad-3-638.jpg?cb=1393069370" routerLink="/singleRooms/">
+              <img class="suite2" src="http://pictures.holiday-direct.dk/prod/Summer/hotel-dolfin-havudsigt-fra-altanen.jpg">
               <div *ngFor="let suite of suite" class="list-group-item list-group-item-action">
-                <h5>{{suite.price}} {{suite.id}} {{suite.available}} </h5>
-                <img class="img1" *ngIf="suite.price == 12.5 " src="https://i.imgur.com/oFdThdF.jpg">
+                <h5> pris på den eksklusive suite {{suite.price}} kr.<h5>
+                  værelsets id  {{suite.id}}</h5>
+                  <h5> rum tilgænglig {{suite.available}} </h5> </h5>
               </div>
               <div class="col-md-8">
                 <dl class="row">
