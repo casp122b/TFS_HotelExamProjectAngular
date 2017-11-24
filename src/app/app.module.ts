@@ -21,6 +21,7 @@ import { DoubleRoomListComponent } from './rooms/double-room/double-room-list/do
 import { RouterModule, Routes } from '@angular/router';
 import {DoubleRoomService} from './rooms/double-room/shared/double-room.service';
 import {SingleRoomService} from './rooms/single-room/shared/single-room.service';
+import {SuiteService} from './rooms/suites/shared/suite.service';
 import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
@@ -40,6 +41,15 @@ const appRoutes: Routes = [
   {
     path: 'singleRooms',
     component: SingleRoomListComponent,
+    data: { title: 'Room List' }
+  },
+  { path: 'suite/:id',
+    component: SuiteDetailComponent },
+  { path: 'suite/create',
+    component: SuiteCreateComponent },
+  {
+    path: 'suites',
+    component: SuiteListComponent,
     data: { title: 'Room List' }
   },
   { path: '',
@@ -74,7 +84,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     DoubleRoomService,
-    SingleRoomService
+    SingleRoomService,
+    SuiteService
   ],
   bootstrap: [AppComponent]
 })
