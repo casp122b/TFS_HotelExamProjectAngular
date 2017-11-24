@@ -1,3 +1,53 @@
-<p>
-  single-room-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <button
+        class="btn btn-outline-success"
+        routerLink="/singleRooms"
+        routerLinkActive="active">Back
+      </button>
+      <hr>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <h4 class="card-header">Customer Details</h4>
+        <div class="card-body row">
+          <div class="col-md-4">
+            <div class="list-group">
+              <div *ngFor="let singleRoom of singleRoom" class="list-group-item list-group-item-action">
+                <h5>{{singleRoom.price}} {{singleRoom.id}} {{singleRoom.available}} </h5>
+                <img class="img1" *ngIf="singleRoom.price == 12.5 " src="https://i.imgur.com/oFdThdF.jpg">
+              </div>
+              <div class="col-md-8">
+                <dl class="row">
+                </dl>
+                <dl class="row">
+                </dl>
+                <dl class="row">
+                  <dd class="col-md-10">
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent">
+              <div class="pull-right" *ngIf="!confirmDelete">
+                <button class="btn btn-outline-danger" (click)="delete()">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                </button>
+                <button class="btn btn-outline-warning">
+                  <i class="fa fa-pencil" aria-hidden="true"></i> Update
+                </button>
+              </div>
+              <div class="pull-right" *ngIf="confirmDelete">
+                <button class="btn btn-outline-danger" (click)="deleteConfirmed()">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
