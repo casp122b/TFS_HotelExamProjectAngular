@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class GuestListComponent implements OnInit {
-  guest: Guest[];
+  guests: Guest[];
   guestToDelete: Guest;
   constructor(private guestService: GuestService,
               private router: Router) {
@@ -21,8 +21,8 @@ export class GuestListComponent implements OnInit {
     this.guestService.get()
     // Executing and explaning when done let me know
       .subscribe(
-        guest => {
-          this.guest = guest;
+        guests => {
+          this.guests = guests;
         }
       );
   }
@@ -47,8 +47,8 @@ export class GuestListComponent implements OnInit {
     this.guestService.delete(this.guestToDelete.id)
       .switchMap(guest => this.guestService.get())
       .subscribe(
-        guest => {
-          this.guest = guest;
+        guests => {
+          this.guests = guests;
         }
       );
     $event.stopPropagation();
@@ -56,7 +56,18 @@ export class GuestListComponent implements OnInit {
 
   createCustomer() {
     this.router
-      .navigateByUrl('/guest/create');
+      .navigateByUrl('/guests/create');
+  }
+
+  updateGuest(id: number, guest: Guest) {
+    this.guestToDelete = guest;
+    this.guestService.update(this.guestToDelete.id, this.guestToDelete)
+    .switchMap(guest => this.guestService.get())
+    .subscribe(
+      guests => {
+        this.guests = guests;
+      }
+    );
   }
 
 
