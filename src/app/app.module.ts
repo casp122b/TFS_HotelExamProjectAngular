@@ -27,7 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 
 const appRoutes: Routes = [
-  { path: 'guest/:id',
+  { path: 'guests/:id',
     component: GuestDetailComponent },
   { path: 'guest/create',
     component: GuestCreateComponent },
@@ -54,7 +54,7 @@ const appRoutes: Routes = [
     component: SingleRoomListComponent,
     data: { title: 'Room List' }
   },
-  { path: 'suite/:id',
+  { path: 'suites/:id',
     component: SuiteDetailComponent },
   { path: 'suite/create',
     component: SuiteCreateComponent },
