@@ -4,10 +4,11 @@
       <hr>
       <button
         class="btn btn-outline-success"
-        routerLink="/doubleRooms"
+        routerLink="/front"
         routerLinkActive="active">Back
       </button>
       <hr>
+      Dette er et fint dobbelt værelse med en masse gode ting, heriblandt en god udsigt og en altan med havudsigt
     </div>
     <div class="col-md-12">
       <div class="card">
@@ -16,8 +17,14 @@
           <div class="col-md-4">
             <div class="list-group">
             <div *ngFor="let doubleRoom of doubleRoom" class="list-group-item list-group-item-action">
-              <h5>{{doubleRoom.price}} {{doubleRoom.id}} {{doubleRoom.available}} </h5>
-              <img class="img1" *ngIf="doubleRoom.price == 12.5 " src="https://i.imgur.com/oFdThdF.jpg">
+              <img class="doubleroom1"  src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/images/amexpub/0043/3510/201406-w-top-rated-hotel-beds-in-america-distrikt-hotel.jpg?itok=6J8ig1RL" routerLink="/doubleRooms/">
+              <img class="doubleroom2" src="http://pictures.holiday-direct.dk/prod/Summer/hotel-dolfin-havudsigt-fra-altanen.jpg">
+              <h5> pris på dobbelt værelse {{doubleRoom.price}} kr.<h5>
+                værelsets id  {{doubleRoom.id}}</h5>
+                <h5> rum tilgænglig {{doubleRoom.available}} </h5> </h5>
+             <br/>
+
+
           </div>
           <div class="col-md-8">
             <dl class="row">
