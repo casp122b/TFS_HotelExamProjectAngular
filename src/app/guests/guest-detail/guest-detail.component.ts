@@ -12,12 +12,12 @@ import { Guest } from '../shared/guest.model';
 export class GuestDetailComponent implements OnInit {
 
   guestId: number;
-  guestGroup: FormGroup;
+  newGuestGroup: FormGroup;
   constructor(private guestService: GuestService,
               private fb: FormBuilder,
               private router: Router,
               private route: ActivatedRoute) {
-      this.guestGroup = this.fb.group({
+      this.newGuestGroup = this.fb.group({
         firstName: '',
         lastName: '',
         address: ''
@@ -34,16 +34,16 @@ export class GuestDetailComponent implements OnInit {
   editGuest() {
     const currentGuest = this.guestId;
     console.log(currentGuest);
-    const values = this.guestGroup.value;
-    const guest: Guest = {
+    const newValues = this.newGuestGroup.value;
+    const updatedGuest: Guest = {
       id: currentGuest,
-      firstName: values.firstName,
-      lastName: values.lastName,
-      address: values.address
+      firstName: newValues.firstName,
+      lastName: newValues.lastName,
+      address: newValues.address
     };
-    this.guestService.update(currentGuest, guest)
+    this.guestService.update(currentGuest, updatedGuest)
     .subscribe(guest => {
-      this.guestGroup.reset();
+      this.newGuestGroup.reset();
       this.router.navigateByUrl("/front")
     });
 

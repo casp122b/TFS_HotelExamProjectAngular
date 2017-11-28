@@ -53,9 +53,4 @@ export class GuestListComponent implements OnInit {
       );
     $event.stopPropagation();
   }
-
-  createCustomer() {
-    this.router
-      .navigateByUrl('/guests/create');
-  }
 }

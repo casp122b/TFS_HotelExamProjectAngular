@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-
 import { AppComponent } from './app.component';
 import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.component';
 import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
@@ -29,10 +27,15 @@ import { FrontPageDetailComponent } from './front-page/front-page-detail/front-p
 import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
-  { path: 'guest/:id',
-    component: GuestDetailComponent },
-  { path: 'guest/create',
-    component: GuestCreateComponent },
+  { 
+    path: 'guest/:id',
+    component: GuestDetailComponent 
+  },
+  
+  { 
+    path: 'guests/create',
+    component: GuestCreateComponent 
+  },
   {
     path: 'guests',
     component: GuestListComponent,
@@ -75,7 +78,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-
     SuiteCreateComponent,
     SuiteDetailComponent,
     SuiteListComponent,
