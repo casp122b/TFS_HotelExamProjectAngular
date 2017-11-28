@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -28,7 +29,7 @@ import { FrontPageDetailComponent } from './front-page/front-page-detail/front-p
 import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
-  { path: 'guests/:id',
+  { path: 'guest/:id',
     component: GuestDetailComponent },
   { path: 'guest/create',
     component: GuestCreateComponent },
@@ -96,7 +97,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
   providers: [
     DoubleRoomService,

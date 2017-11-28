@@ -1,3 +1,19 @@
-<p>
-  guest-detail works!
-</p>
+<div class="container">
+    <h1>Edit</h1>
+    <form (ngSubmit)="editGuest()" [formGroup]="guestGroup" novalidate>
+      <div class="form-group">
+        <label class="center-block">FirstName:
+          <input class="form-control" formControlName="firstName">
+        </label>
+        <label class="center-block">LastName:
+            <input class="form-control" formControlName="lastName">
+          </label>
+          <label class="center-block">Address:
+              <input class="form-control" formControlName="address">
+            </label>
+            <button type="submit" class="btn btn-outline-info">
+              <i class="fa fa-floppy-o" aria-hidden="true"></i>Submit
+            </button>
+      </div>
+    </form>
+</div>

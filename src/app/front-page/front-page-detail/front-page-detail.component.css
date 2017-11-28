@@ -9,7 +9,6 @@
 .room-img {
   position: absolute;
   width: 100%;
-  clip: rect(0,600px,400px,0px);
 }
 
  nav {
