@@ -12,10 +12,10 @@ export class FrontPageDetailComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.rooms = [{src:"../../../assets/images/typesofrooms-in-hotelashish-jumadeihm-ahmedabad-3-638.jpg",
+    this.rooms = [{src:"../../../assets/images/singleRoom.jpg",
     routerLink:"/singleRooms/"}, 
-    {src:"../../../assets/images/201406-w-top-rated-hotel-beds-in-america-distrikt-hotel.jpg",
-    routerLink:"/doubleRooms/"}, {src:"../../../assets/images/The Ritz-Carlton-DC-1BDR-Suite-Bedroom.jpg",
+    {src:"../../../assets/images/doubleRoom.jpg",
+    routerLink:"/doubleRooms/"}, {src:"../../../assets/images/suite.jpg",
     routerLink:"/suites/"
     }]
   }
