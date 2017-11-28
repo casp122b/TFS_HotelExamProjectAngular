@@ -31,7 +31,7 @@ export class GuestService {
 
   update(id: number, guest: Guest): Observable<Guest> {
     return this.http
-    .put<Guest>(url + id, guest);
+    .put<Guest>(url + '/' + id, guest);
   }
 
   create(guest: Guest): Observable<Guest> {

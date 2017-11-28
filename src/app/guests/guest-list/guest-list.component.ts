@@ -58,17 +58,4 @@ export class GuestListComponent implements OnInit {
     this.router
       .navigateByUrl('/guests/create');
   }
-
-  updateGuest(id: number, guest: Guest) {
-    this.guestToDelete = guest;
-    this.guestService.update(this.guestToDelete.id, this.guestToDelete)
-    .switchMap(guest => this.guestService.get())
-    .subscribe(
-      guests => {
-        this.guests = guests;
-      }
-    );
-  }
-
-
 }

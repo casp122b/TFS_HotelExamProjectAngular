@@ -28,7 +28,7 @@ import { FrontPageDetailComponent } from './front-page/front-page-detail/front-p
 import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
-  { path: 'guests/:id',
+  { path: 'guest/:id',
     component: GuestDetailComponent },
   { path: 'guest/create',
     component: GuestCreateComponent },
