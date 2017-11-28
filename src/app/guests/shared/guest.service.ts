@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 
-const url = environment.apiEndpoint + '/guest';
+const url = environment.apiEndpoint + '/guests';
 
 @Injectable()
 export class GuestService {
@@ -27,6 +27,11 @@ export class GuestService {
   delete(id: number): Observable<Guest> {
     return this.http
       .delete<Guest>(url + '/' + id);
+  }
+
+  update(id: number, guest: Guest): Observable<Guest> {
+    return this.http
+    .put<Guest>(url + id, guest);
   }
 
   create(guest: Guest): Observable<Guest> {

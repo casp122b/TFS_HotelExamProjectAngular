@@ -25,6 +25,7 @@ import {SuiteService} from './rooms/suites/shared/suite.service';
 import {GuestService} from './guests/shared/guest.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'guests/:id',
@@ -94,6 +95,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
