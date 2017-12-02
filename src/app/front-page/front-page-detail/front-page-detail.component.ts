@@ -22,7 +22,7 @@ export class FrontPageDetailComponent implements OnInit {
 
   registerGuests() {
     this.router
-    .navigateByUrl('/guest/create');
+    .navigateByUrl('/guests/create');
   }
 
 
