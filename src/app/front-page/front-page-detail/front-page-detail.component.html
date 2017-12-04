@@ -1,15 +1,9 @@
-<nav>
-  <div class="logo">Hotels</div>
-  <div class="links">
-    <button (click)="registerGuests()">Signup</button>
-    <button>Login</button>
-  </div>
-</nav>
 
-<div class="room-display" *ngFor="let room of rooms">
-<img class="room-img" [src]="room['src']" [routerLink]="room['routerLink']"
-     routerLinkActive="active">
+
+<div class="room-display" *ngFor="let room of rooms" >
+<img class="room-img" [src]="room['src']"  [routerLink]="room['routerLink']"
+     routerLinkActive="active"  >
     </div>
 
- 
+
 

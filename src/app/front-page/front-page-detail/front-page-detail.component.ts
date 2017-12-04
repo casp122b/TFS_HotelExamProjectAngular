@@ -13,17 +13,11 @@ export class FrontPageDetailComponent implements OnInit {
 
   ngOnInit() {
     this.rooms = [{src:"../../../assets/images/singleRoom.jpg",
-    routerLink:"/singleRooms/"}, 
+    routerLink:"/singleRooms/"},
     {src:"../../../assets/images/doubleRoom.jpg",
     routerLink:"/doubleRooms/"}, {src:"../../../assets/images/suite.jpg",
     routerLink:"/suites/"
     }]
   }
-
-  registerGuests() {
-    this.router
-    .navigateByUrl('/guests/create');
-  }
-
 
 }
