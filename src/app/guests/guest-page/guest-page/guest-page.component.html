@@ -1,0 +1,5 @@
+
+<div class="room-display" *ngFor="let room of rooms" >
+  <img class="room-img" [src]="room['src']"  [routerLink]="room['routerLink']"
+       routerLinkActive="active"  >
+</div>

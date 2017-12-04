@@ -6,10 +6,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-constructor(private router:Router ) {
-}
+  guests: string;
+  constructor(private router:Router ) {
+
+  }
   public registerGuests() {
     this.router
       .navigateByUrl('/guests/create');
+  }
+  public clicke(){
+    this.guests = "poul";
   }
 }

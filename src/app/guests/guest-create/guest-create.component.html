@@ -2,17 +2,33 @@
     <h1>Register</h1>
     <form (ngSubmit)="createGuest()" [formGroup]="guestGroup" novalidate>
       <div class="form-group">
-        <label class="center-block">FirstName:
+        <label>FirstName:
           <input class="form-control" formControlName="firstName">
-        </label>
+        </label><br>
         <label class="center-block">LastName:
             <input class="form-control" formControlName="lastName">
-          </label>
+          </label><br>
           <label class="center-block">Address:
               <input class="form-control" formControlName="address">
-            </label>
+            </label><br>
+        <label class="center-block">Email:
+          <input class="form-control" formControlName="email">
+        </label><br>
+        <label class="center-block">Username:
+          <input class="form-control" formControlName="userName">
+        </label><br>
+        <label class="center-block">Password:
+          <input class="form-control" formControlName="password">
+        </label><br>
+        <label class="center-block">Repeat Password:
+          <input class="form-control" formControlName="password">
+        </label><br>
+        <button
+          class="btn btn-outline-success"
+          routerLink="/front">Back
+        </button>
             <button type="submit" class="btn btn-outline-info">
-              <i class="fa fa-floppy-o" aria-hidden="true"></i>Submit
+              <i class="fa fa-floppy-o" aria-hidden="true"></i>Register
             </button>
       </div>
     </form>

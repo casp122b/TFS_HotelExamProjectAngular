@@ -18,7 +18,11 @@ export class GuestCreateComponent implements OnInit {
       this.guestGroup = this.fb.group({
         firstName: '',
         lastName: '',
-        address: ''
+        address: '',
+        phoneNumber: '',
+        email: '',
+        username: '',
+        password: ''
       })
    }
 
