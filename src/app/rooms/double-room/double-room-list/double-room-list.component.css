@@ -1,0 +1,17 @@
+.card-header{
+  position: fixed;
+  right: 10px;
+  z-index: 1;
+  background-image: linear-gradient(to top, #F4F4F4 0%, #DFDEDC 100%);
+  top: 55px;
+
+
+}
+.infotext{
+  width: 650px;
+  top: 75px;
+  position: fixed;
+  left: 5px;
+  font-size: 19px;
+
+}
