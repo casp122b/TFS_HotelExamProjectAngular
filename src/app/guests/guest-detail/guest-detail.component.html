@@ -1,15 +1,32 @@
+
 <div class="container">
+  <h4 class="card-information">My bookings
+  <h3>
+
+
+
+    <button type="submit"  class="btnCancel2 btn-outline-warning" routerLink="/guests/page">
+      <i class="fa fa-floppy-o" aria-hidden="true" ></i>cancel
+    </button>
+    <button type="submit" class="btnEdit2 btn-outline-danger">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>Edit
+    </button>
+  </h3></h4>
+
+
+
+
+
   <button type="submit"  class="btnCancel btn-outline-warning" routerLink="/guests/page">
     <i class="fa fa-floppy-o" aria-hidden="true" ></i>cancel
   </button>
   <button type="submit" class="btnEdit btn-outline-danger">
     <i class="fa fa-floppy-o" aria-hidden="true"></i>Edit
   </button>
-    <h1>Edit</h1>
     <form (ngSubmit)="editGuest()" [formGroup]="newGuestGroup" novalidate>
       <div class="form-group">
         <label>FirstName:
-          <input class="form-control" formControlName="firstName">
+          <input class="form-control"  formControlName="firstName">
         </label><br>
         <label class="center-block">LastName:
           <input class="form-control" formControlName="lastName">
@@ -33,5 +50,6 @@
           <input class="form-control" formControlName="password">
         </label><br>
       </div>
+
     </form>
 </div>
