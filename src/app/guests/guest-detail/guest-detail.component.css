@@ -19,4 +19,13 @@
   bottom: 55px;
 
 }
+.card-information{
+  top: 7%;
+  left: 2ch;
+  position: fixed;
+}
 
+.fisk {
+  position: fixed;
+  bottom: 5%;
+}
