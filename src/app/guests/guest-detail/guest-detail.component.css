@@ -1,0 +1,22 @@
+.form-group{
+  position: fixed;
+  right: 75px;
+  top: 55px;
+}
+.btn-outline-info{
+  position: fixed;
+  right: 75px;
+  bottom: 55px;
+}
+.btnEdit{
+  position: fixed;
+  right: 95px;
+  bottom: 55px;
+}
+.btnCancel{
+  position: fixed;
+  right: 165px;
+  bottom: 55px;
+
+}
+

@@ -1,15 +1,14 @@
-<nav>
-  <div class="logo">Hotels</div>
-  <div class="links">
-    <button (click)="registerGuests()">Signup</button>
-    <button>Login</button>
-  </div>
-</nav>
 
-<div class="room-display" *ngFor="let room of rooms">
-<img class="room-img" [src]="room['src']" [routerLink]="room['routerLink']"
-     routerLinkActive="active">
-    </div>
 
- 
+  <h1 class="textSingleroom">
+  </h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="room-display">
+    <img class="single"  src="../../../assets/images/singleRoom.jpg"  routerLink="/singleRooms/">
+
+    <img class="double"  src="../../../assets/images/doubleRoom.jpg"routerLink="/doubleRooms/" >
+    <img class="suite"  src="../../../assets/images/suite.jpg" routerLink="/suites/" ></div>
 

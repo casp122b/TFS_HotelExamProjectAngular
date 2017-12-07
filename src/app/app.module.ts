@@ -25,16 +25,20 @@ import {GuestService} from './guests/shared/guest.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GuestPageComponent } from './guests/guest-page/guest-page/guest-page.component';
 
 const appRoutes: Routes = [
-  { 
-    path: 'guest/:id',
-    component: GuestDetailComponent 
+  {
+    path: 'signin',
+    component: GuestPageComponent
   },
-  
-  { 
+  {
+    path: 'guest/:id',
+    component: GuestDetailComponent
+  },
+  {
     path: 'guests/create',
-    component: GuestCreateComponent 
+    component: GuestCreateComponent
   },
   {
     path: 'guests',
@@ -68,6 +72,16 @@ const appRoutes: Routes = [
     component: SuiteListComponent,
     data: { title: 'Room List' }
   },
+  {
+    path: 'guests/page',
+    component: GuestPageComponent,
+    data: { title: 'Guest page' }
+  },
+  {
+  path: 'guest/detail',
+  component: GuestDetailComponent,
+  data: { title: 'Guest Details' }
+},
   { path: 'front',
     component: FrontPageDetailComponent },
   { path: '',
@@ -93,7 +107,8 @@ const appRoutes: Routes = [
     DoubleRoomDetailComponent,
     DoubleRoomCreateComponent,
     DoubleRoomListComponent,
-    FrontPageDetailComponent
+    FrontPageDetailComponent,
+    GuestPageComponent
   ],
   imports: [
     BrowserModule,

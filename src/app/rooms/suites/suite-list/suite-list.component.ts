@@ -10,6 +10,7 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class SuiteListComponent implements OnInit {
+  nghide = false;
   suite: Suite[];
   suiteToDelete: Suite;
   constructor(private suiteService: SuiteService,

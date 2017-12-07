@@ -1,19 +1,37 @@
 <div class="container">
+  <button type="submit"  class="btnCancel btn-outline-warning" routerLink="/guests/page">
+    <i class="fa fa-floppy-o" aria-hidden="true" ></i>cancel
+  </button>
+  <button type="submit" class="btnEdit btn-outline-danger">
+    <i class="fa fa-floppy-o" aria-hidden="true"></i>Edit
+  </button>
     <h1>Edit</h1>
     <form (ngSubmit)="editGuest()" [formGroup]="newGuestGroup" novalidate>
       <div class="form-group">
-        <label class="center-block">FirstName:
+        <label>FirstName:
           <input class="form-control" formControlName="firstName">
-        </label>
+        </label><br>
         <label class="center-block">LastName:
-            <input class="form-control" formControlName="lastName">
-          </label>
-          <label class="center-block">Address:
-              <input class="form-control" formControlName="address">
-            </label>
-            <button type="submit" class="btn btn-outline-info">
-              <i class="fa fa-floppy-o" aria-hidden="true"></i>Submit
-            </button>
+          <input class="form-control" formControlName="lastName">
+        </label><br>
+        <label class="center-block">Address:
+          <input class="form-control" formControlName="address">
+        </label><br>
+        <label class="center-block">Email:
+          <input class="form-control" formControlName="email">
+        </label><br>
+        <label class="center-block">Username:
+          <input class="form-control" formControlName="userName">
+        </label><br>
+        <label class="center-block">Password:
+          <input class="form-control" formControlName="password">
+        </label><br>
+        <label class="center-block">New Password:
+          <input class="form-control" formControlName="password">
+        </label><br>
+        <label class="center-block">Confirm Password:
+          <input class="form-control" formControlName="password">
+        </label><br>
       </div>
     </form>
 </div>
