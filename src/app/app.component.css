@@ -25,24 +25,20 @@ nav {
   float: left;
   font-weight: 0;
   margin: 0px 5px;
-  width: 45%;
   font-size: 23px;
 
 
 
 }
 
-.links {
-  float: left;
-  width: 49%;
+.btnLogin{
+  top:5px;
+  position: fixed;
+  right: 5%;
 }
-.links button {
-  float: right;
-  margin: 0px 5px;
-  margin: 5px;
-  padding: 5px 10px;
-  border: 1px gray solid;
-  border-radius: 5px;
-  background: forestgreen;
-  color: white;
+
+.btnSignup{
+  top:5px;
+  position: fixed;
+  right: 9%;
 }

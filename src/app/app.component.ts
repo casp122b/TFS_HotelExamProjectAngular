@@ -7,14 +7,12 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   guests: string;
+  loggedIn = false;
   constructor(private router:Router ) {
 
   }
   public registerGuests() {
     this.router
       .navigateByUrl('/guests/create');
-  }
-  public clicke(){
-    this.guests = "poul";
   }
 }

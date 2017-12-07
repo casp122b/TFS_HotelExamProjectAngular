@@ -1,15 +1,9 @@
 .room-display {
-  float: left;
-  width: calc(94%/3);
-  margin: 1%;
-  position: relative;
 
+  display: inline;
 }
 
-.room-img {
-  position: absolute;
-  width: 100%;
-}
+
 .links {
   float: left;
   width: 49%;
@@ -23,3 +17,16 @@
   background: forestgreen;
   color: white;
 }
+
+.single{
+  max-height: 375px;
+  max-width: 500px;
+}
+.double{
+  max-height: 375px;
+  max-width: 500px;
+}
+.suite{
+  max-height: 375px;
+  min-width: 515px;}
+

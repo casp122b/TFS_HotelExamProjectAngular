@@ -1,6 +1,10 @@
 <div class="container">
     <h1>Register</h1>
-    <form (ngSubmit)="createGuest()" [formGroup]="guestGroup" novalidate>
+  <button type="submit" class="btnRegi btn-outline-danger">
+    <i class="fa fa-floppy-o" aria-hidden="true"></i>Register
+  </button>
+</div>
+  <form (ngSubmit)="createGuest()" [formGroup]="guestGroup" novalidate>
       <div class="form-group">
         <label>FirstName:
           <input class="form-control" formControlName="firstName">
@@ -17,20 +21,14 @@
         <label class="center-block">Username:
           <input class="form-control" formControlName="userName">
         </label><br>
-        <label class="center-block">Password:
+       <label class="center-block">Password:
           <input class="form-control" formControlName="password">
         </label><br>
         <label class="center-block">Repeat Password:
           <input class="form-control" formControlName="password">
         </label><br>
-        <button
-          class="btn btn-outline-success"
-          routerLink="/front">Back
-        </button>
-            <button type="submit" class="btn btn-outline-info">
-              <i class="fa fa-floppy-o" aria-hidden="true"></i>Register
-            </button>
+
       </div>
     </form>
-</div>
+
 

@@ -16,5 +16,8 @@ right: 10px;
   font-size: 19px;
 
 }
-.Adminbuttons{
+.btnSignup{
+  visibility: hidden;
+  bottom: auto;
+  position: fixed;
 }

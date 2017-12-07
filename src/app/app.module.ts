@@ -72,6 +72,16 @@ const appRoutes: Routes = [
     component: SuiteListComponent,
     data: { title: 'Room List' }
   },
+  {
+    path: 'guests/page',
+    component: GuestPageComponent,
+    data: { title: 'Guest page' }
+  },
+  {
+  path: 'guest/detail',
+  component: GuestDetailComponent,
+  data: { title: 'Guest Details' }
+},
   { path: 'front',
     component: FrontPageDetailComponent },
   { path: '',

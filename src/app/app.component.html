@@ -1,14 +1,14 @@
 <router-outlet></router-outlet>
 
 <nav>
-  <div class="logo"  routerLink="/front" >JensensHotels.com</div>
+  <label class="logo"  routerLink="/front" >JensensHotels.com</label>
   <h1>
 
   </h1>
   <div class="links">
-    <button  (click)="registerGuests()"
+    <button class="btnSignup" (click)="registerGuests()"
     >Signup</button>
-    <button  >Login</button>
+    <button  class="btnLogin"  routerLink="/guest/detail">Login</button>
   </div>
 </nav>
 
