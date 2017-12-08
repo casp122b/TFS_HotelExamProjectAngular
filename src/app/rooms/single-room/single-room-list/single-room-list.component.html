@@ -55,9 +55,11 @@
 
           </div>
         </div>
-        <div *ngFor="let singleRoom of singleRoom" class="fugl list-group-item-action">
-          <h5 > Room {{singleRoom.id}}
-            <h5 > Guest {{singleRoom.guest.firstName}}</h5> </h5>
+        <div class="roomlist">
+          <div *ngFor="let singleRoom of singleRoom" class="list-group-item list-group-item-action">
+            <h5 > Room {{singleRoom.id}}
+              <h5 > Guest {{singleRoom.guest.firstName}}</h5> </h5>
+          </div>
         </div>
       </div>
     </div>

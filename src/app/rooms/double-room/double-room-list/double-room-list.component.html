@@ -54,9 +54,11 @@
 
           </div>
         </div>
-        <div *ngFor="let doubleRoom of doubleRoom" class="fish list-group-item-action">
-          <h5 > Suite {{doubleRoom.id}}
-            <h5 > Guest {{doubleRoom.guest.firstName}}</h5> </h5>
+        <div class="roomlist">
+          <div *ngFor="let doubleRoom of doubleRoom" class="list-group-item list-group-item-action">
+            <h5 > Room {{doubleRoom.id}}
+              <h5 > Guest {{doubleRoom.guest.firstName}}</h5> </h5>
+          </div>
         </div>
       </div>
     </div>
