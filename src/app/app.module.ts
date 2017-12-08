@@ -1,3 +1,4 @@
+import { AuthenticationService } from './login/authentication.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -24,13 +25,28 @@ import {SuiteService} from './rooms/suites/shared/suite.service';
 import {GuestService} from './guests/shared/guest.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { GuestPageComponent } from './guests/guest-page/guest-page/guest-page.component';
+import { LoginComponent } from './login/login.component';
+import { TryingComponent } from './trying/trying.component';
+import { AuthGuard } from './guard/auth.guard';
+import { HttpModule } from '@angular/http';
+import { AdminService } from './adminstrators/shared/admin.service';
 
 const appRoutes: Routes = [
   {
     path: 'signin',
     component: GuestPageComponent
+  },
+  {
+    path: 'guests/page',
+    component: GuestPageComponent,
+    data: { title: 'Guest page' }
+  },
+  {
+  path: 'guest/detail',
+  component: GuestDetailComponent,
+  data: { title: 'Guest Details' }
   },
   {
     path: 'guest/:id',
@@ -45,8 +61,10 @@ const appRoutes: Routes = [
     component: GuestListComponent,
     data: { title: 'Room List' }
   },
-  { path: 'doubleRooms/:id',
-    component: DoubleRoomDetailComponent },
+  { 
+    path: 'doubleRooms/:id',
+    component: DoubleRoomDetailComponent 
+  },
   { path: 'doubleRoom/create',
     component: DoubleRoomCreateComponent },
   {
@@ -54,40 +72,51 @@ const appRoutes: Routes = [
     component: DoubleRoomListComponent,
     data: { title: 'Room List' }
   },
-  { path: 'singleRooms/:id',
-    component: SingleRoomDetailComponent },
-  { path: 'singleRoom/create',
-    component: SingleRoomCreateComponent },
+  { 
+    path: 'singleRooms/:id',
+    component: SingleRoomDetailComponent 
+  },
+  { 
+    path: 'singleRoom/create',
+    component: SingleRoomCreateComponent 
+  },
   {
     path: 'singleRooms',
     component: SingleRoomListComponent,
     data: { title: 'Room List' }
   },
-  { path: 'suites/:id',
-    component: SuiteDetailComponent },
-  { path: 'suite/create',
-    component: SuiteCreateComponent },
+  { 
+    path: 'suites/:id',
+    component: SuiteDetailComponent 
+  },
+  { 
+    path: 'suite/create',
+    component: SuiteCreateComponent 
+  },
   {
     path: 'suites',
     component: SuiteListComponent,
     data: { title: 'Room List' }
   },
-  {
-    path: 'guests/page',
-    component: GuestPageComponent,
-    data: { title: 'Guest page' }
-  },
-  {
-  path: 'guest/detail',
-  component: GuestDetailComponent,
-  data: { title: 'Guest Details' }
-},
+  
   { path: 'front',
     component: FrontPageDetailComponent },
+
   { path: '',
     redirectTo: '/front',
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: "trying/now",
+    component: TryingComponent, 
+    canActivate: [AuthGuard],
+    
+  },
+
 ];
 @NgModule({
   declarations: [
@@ -108,20 +137,27 @@ const appRoutes: Routes = [
     DoubleRoomCreateComponent,
     DoubleRoomListComponent,
     FrontPageDetailComponent,
-    GuestPageComponent
+    GuestPageComponent,
+    LoginComponent,
+    TryingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],
   providers: [
+    AuthGuard,
     DoubleRoomService,
     SingleRoomService,
     SuiteService,
-    GuestService
+    GuestService,
+    AuthenticationService,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })
