@@ -53,6 +53,10 @@
 
             </div>
         </div>
+        <div *ngFor="let suite of suite" class="fish list-group-item-action">
+          <h5 > Suite {{suite.id}}
+          <h5 > Guest {{suite.guest.firstName}}</h5> </h5>
+        </div>
       </div>
     </div>
   </div>

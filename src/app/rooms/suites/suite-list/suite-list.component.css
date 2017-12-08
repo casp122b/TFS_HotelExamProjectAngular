@@ -1,4 +1,9 @@
-
+.fish{
+  bottom: 75px;
+  left: 50%;
+  display: inline-table;
+position: fixed;
+}
 .card-header{
   position: fixed;
 right: 10px;
