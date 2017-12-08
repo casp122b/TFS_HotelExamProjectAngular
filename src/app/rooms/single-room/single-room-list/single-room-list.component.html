@@ -7,7 +7,7 @@
         <h4 class="card-header">Room Details<br>
           <img class="suite1"   src="../../../assets/images/singleRoom.jpg">
 
-          <div class="list-group-item list-group-item-action" >
+          <div class  ="list-group-item list-group-item-action" >
             <h6><img class="singleroom1"></h6>
             <h5> pris på enkelt værelse {{singleRoom[1].price}}kr.
               <h5> rum tilgænglig {{singleRoom[1].available }} </h5> </h5>
@@ -54,6 +54,10 @@
               Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</h1>
 
           </div>
+        </div>
+        <div *ngFor="let singleRoom of singleRoom" class="fugl list-group-item-action">
+          <h5 > Room {{singleRoom.id}}
+            <h5 > Guest {{singleRoom.guest.firstName}}</h5> </h5>
         </div>
       </div>
     </div>
