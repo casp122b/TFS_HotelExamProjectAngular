@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
+import { environment } from '../../environments/environment';
+
+const url = environment.apiEndpoint + '/login';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -13,7 +16,7 @@ export class AuthGuard implements CanActivate {
         }
 
         // not logged in so redirect to login page
-        this.router.navigateByUrl("http://localhost:17711/login");
+        this.router.navigateByUrl(url);
         return false;
     }
 }
