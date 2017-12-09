@@ -38,7 +38,10 @@ export class LoginComponent implements OnInit {
       .subscribe(
         success => {
           auth.token = success.token;
+          auth.username = success.username;
+          
           localStorage.setItem('currentUser', success.token);
+          localStorage.setItem('username', success.username);
           this.router.navigateByUrl('/trying/now');
         },
         error => {

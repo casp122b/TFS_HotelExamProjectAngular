@@ -11,15 +11,14 @@ import { AdminService } from '../adminstrators/shared/admin.service';
 export class TryingComponent implements OnInit {
 
   admins: Admin[] = [];
-  username = '';
   errormessage = '';
+  username = '';
 
-  constructor(private adminService: AdminService,
-    private tokenInterceptor: TokenInterceptor) {
-    this.username = this.tokenInterceptor.getToken();
+  constructor(private adminService: AdminService) {
   }
 
   ngOnInit() {
+    this.username = localStorage.getItem('username');
     this.adminService.get()
       .subscribe(
       items => {

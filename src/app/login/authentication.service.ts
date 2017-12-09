@@ -7,7 +7,6 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthenticationService {
-    public token: string;
 
     constructor(private http: HttpClient) {
         // set token if saved in local storage
@@ -20,7 +19,7 @@ export class AuthenticationService {
 
     logout(): void {
         // clear token remove user from local storage to log user out
-        this.token = null;
+        localStorage.removeItem('username');
         localStorage.removeItem('currentUser');
     }
 }
