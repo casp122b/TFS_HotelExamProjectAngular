@@ -1,6 +1,6 @@
-export class admin{
+export class Admin{
   id?: number;
   firstName: string;
   lastName: string;
-  address:string;
+  address: string;
 }

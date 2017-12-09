@@ -1,21 +1,20 @@
 <div class="container">
   <div class="row">
+    <div class="card">
+      <h4 class="card-header">Suite Details
+        <br>
+        <img class="suite1" src="../../../assets/images/suite.jpg">
 
-
-    <div>
-      <div class="card">
-        <h4 class="card-header">Suite Details<br>
-          <img class="suite1"  src="../../../assets/images/suite.jpg">
-
-          <div  class="list-group-item list-group-item-action">
-            <h5> pris på den eksklusive suite {{suite[1].price}} kr.
-              <h5> rum tilgænglig {{suite[1].available}} </h5> </h5>
-          </div>
-          <div class="card-footer bg-transparent">
-            <button class="btn book" >
-              <i class="fa fa-bed"  aria-hidden="true" ></i> Book
-            </button>
-            <h3 class="Adminbuttons"  *ngIf="nghide == true; hidden" >
+        <div class="list-group-item list-group-item-action">
+          <h5> pris på den eksklusive suite {{suite[1].price}} kr.
+            <h5> rum tilgænglig {{suite[1].available}} </h5>
+          </h5>
+        </div>
+        <div class="card-footer bg-transparent">
+          <button class="btn book">
+            <i class="fa fa-bed" aria-hidden="true"></i> Book
+          </button>
+          <h3 class="Adminbuttons" *ngIf="nghide == true; hidden">
             <div class="pull-right" *ngIf="!confirmDelete">
               <button class="btn btn-outline-danger" (click)="delete()">
                 <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
@@ -29,29 +28,28 @@
                 <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
               </button>
             </div>
-            </h3>
-          </div>
-        </h4>
+          </h3>
+        </div>
+      </h4>
 
-        <div class="card-body">
-            <div class="list-group">
+      <div class="card-body">
+        <div class="list-group">
           <h1 class="infotext">
-            Denne suite er en del af Skandinavisk Kongrescenter Århus og ligger i hjertet af byen. suiten byder på et privat fitnesscentret, Fitness World, suiten kommer med moderne værelser med gratis, trådløs internetadgang.<br>
-
-            suiten er indrettede i 3 forskellige stilarter, alle med aircondition. Samtlige værelser har fladskærms-tv med kabelkanaler, minibar, værdiboks samt buksepresse.<br>
-
-            Det veludstyrede fitnesscenter byder på professionelle personlige trænere hvis ønskes. <br>
+            Denne suite er en del af Skandinavisk Kongrescenter Århus og ligger i hjertet af byen. suiten byder på et privat fitnesscentret,
+            Fitness World, suiten kommer med moderne værelser med gratis, trådløs internetadgang.
+            <br> suiten er indrettede i 3 forskellige stilarter, alle med aircondition. Samtlige værelser har fladskærms-tv med
+            kabelkanaler, minibar, værdiboks samt buksepresse.
+            <br> Det veludstyrede fitnesscenter byder på professionelle personlige trænere hvis ønskes.
             <br>
-            ved ophold på suiten kan du få V.I.P access til Restaurant le Fresh som serverer lettere, internationale anretninger i uformelle omgivelser. Restaurant le Fresh byder på imponerende, skandinavisk morgenbuffet. <br>
-
-            Friluftsmuseet Den Gamle By ligger 10 minutters kørsel derfra. ARoS Aarhus Kunstmuseum og Musikhuset Aarhus ligger lige ved siden af suiten så hvis man er kunst elsker er det atraktion man ikke må misse. <br>
+            <br> ved ophold på suiten kan du få V.I.P access til Restaurant le Fresh som serverer lettere, internationale anretninger
+            i uformelle omgivelser. Restaurant le Fresh byder på imponerende, skandinavisk morgenbuffet.
+            <br> Friluftsmuseet Den Gamle By ligger 10 minutters kørsel derfra. ARoS Aarhus Kunstmuseum og Musikhuset Aarhus
+            ligger lige ved siden af suiten så hvis man er kunst elsker er det atraktion man ikke må misse.
             <br>
-            Ifølge vores gæsters uafhængige anmeldelser er dette deres yndlingsdel ved ophold på suiten.<br>
-            Par er særligt glade for suiten og dens beligenhed da den befinder sig 2 minutters gå gang fra stranden.
-            <br>
-            Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</h1>
+            <br> Ifølge vores gæsters uafhængige anmeldelser er dette deres yndlingsdel ved ophold på suiten.
+            <br> Par er særligt glade for suiten og dens beligenhed da den befinder sig 2 minutters gå gang fra stranden.
+            <br> Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</h1>
 
-            </div>
         </div>
         <div class="suitelist">
         <div *ngFor="let suite of suite" class="list-group-item list-group-item-action">
