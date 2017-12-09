@@ -51,6 +51,12 @@
             <br> Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</h1>
 
         </div>
+        <div class="suitelist">
+        <div *ngFor="let suite of suite" class="list-group-item list-group-item-action">
+        <h5 > Suite {{suite.id}}
+          <h5 > Guest {{suite.guest.firstName}}</h5> </h5>
+        </div>
+        </div>
       </div>
     </div>
   </div>

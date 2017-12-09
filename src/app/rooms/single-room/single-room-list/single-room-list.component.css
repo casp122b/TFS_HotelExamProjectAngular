@@ -1,3 +1,8 @@
+.roomlist{
+  position: fixed;
+  top: 50px;
+  left: 45%;
+}
 
 .card-header{
   position: fixed;
