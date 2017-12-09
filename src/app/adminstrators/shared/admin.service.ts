@@ -13,8 +13,8 @@ export class AdminService {
               private authenticationService: AuthenticationService) { }
 
   get(): Observable<Admin[]> {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.authenticationService.token}`)
+    //const headers = new HttpHeaders().set('Authorization', `Bearer ${this.authenticationService.token}`)
     return this.http
-      .get<Admin[]>('http://localhost:17711/api/admins', {headers: headers});
+      .get<Admin[]>('http://localhost:17711/api/admins');
   }
 }

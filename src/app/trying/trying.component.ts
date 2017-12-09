@@ -1,3 +1,4 @@
+import { TokenInterceptor } from './../login/token.interceptor';
 import { Component, OnInit } from '@angular/core';
 import { Admin } from '../adminstrators/shared/admin.model';
 import { AdminService } from '../adminstrators/shared/admin.service';
@@ -10,17 +11,17 @@ import { AdminService } from '../adminstrators/shared/admin.service';
 export class TryingComponent implements OnInit {
 
   admins: Admin[] = [];
-  username: string;
-  errormessage: string = '';
+  username = '';
+  errormessage = '';
 
-  constructor(private adminService: AdminService) {
-    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.username = currentUser && currentUser.username;
+  constructor(private adminService: AdminService,
+    private tokenInterceptor: TokenInterceptor) {
+    this.username = this.tokenInterceptor.getToken();
   }
 
   ngOnInit() {
     this.adminService.get()
-    .subscribe(
+      .subscribe(
       items => {
         this.admins = items;
       },

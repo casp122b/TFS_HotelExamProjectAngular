@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Suite} from '../shared/suite.model';
-import {SuiteService} from '../shared/suite.service';
-import {Router} from '@angular/router';
+import { Suite } from '../shared/suite.model';
+import { SuiteService } from '../shared/suite.service';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'app-suite-list',
@@ -14,17 +14,15 @@ export class SuiteListComponent implements OnInit {
   suite: Suite[];
   suiteToDelete: Suite;
   constructor(private suiteService: SuiteService,
-              private router: Router) {
+    private router: Router) {
   }
 
   ngOnInit() {
-    // Ask for a bunch of code to execute
     this.suiteService.get()
-    // Executing and explaning when done let me know
       .subscribe(
-        suites => {
-          this.suite = suites;
-        }
+      suites => {
+        this.suite = suites;
+      }
       );
   }
 
@@ -34,7 +32,6 @@ export class SuiteListComponent implements OnInit {
   }
 
   delete(suite: Suite, $event) {
-    console.log('delete Clicked');
     this.suiteToDelete = suite;
     $event.stopPropagation();
   }
@@ -48,9 +45,9 @@ export class SuiteListComponent implements OnInit {
     this.suiteService.delete(this.suiteToDelete.id)
       .switchMap(suite => this.suiteService.get())
       .subscribe(
-        suite => {
-          this.suite = suite;
-        }
+      suite => {
+        this.suite = suite;
+      }
       );
     $event.stopPropagation();
   }

@@ -1,7 +1,7 @@
 
 
 
-  <div class="col-md-6 col-md-offset-3">
+<!--   <div class="col-md-6 col-md-offset-3">
     <div class="alert alert-info">
         Username: UserJoe, Password: 1234<br />
         Username: AdminAnn, Password: 1234
@@ -25,3 +25,23 @@
         <div *ngIf="errormessage" class="alert alert-danger">{{errormessage}}</div>
     </form>
 </div>
+ -->
+
+ <div class="container">
+    <h1>Login</h1>
+
+</div>
+  <form (ngSubmit)="login()" [formGroup]="authGroup" novalidate>
+      <div class="form-group">
+        <label>Username:
+          <input class="form-control" formControlName="username">
+        </label><br>
+       <label class="center-block">Password:
+          <input class="form-control" formControlName="password">
+        </label><br>
+        <button type="submit" class="btnRegi btn-outline-danger">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>Login
+        </button>
+      </div>
+      <div *ngIf="errormessage" class="alert alert-danger">{{errormessage}}</div>
+    </form>
