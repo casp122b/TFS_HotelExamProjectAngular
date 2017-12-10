@@ -9,7 +9,7 @@ export class AppComponent {
   guests: string;
   loggedIn = false;
   constructor(private router: Router) {
-
+    
   }
   public registerGuests() {
     this.router
