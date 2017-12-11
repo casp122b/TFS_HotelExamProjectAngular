@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map'
 import { environment } from '../../environments/environment';
 
 const url = environment.apiEndpoint + '/login';
+//const urlForCreate = environment.apiEndpoint + '/users';
 
 @Injectable()
 export class AuthenticationService {
@@ -19,9 +20,13 @@ export class AuthenticationService {
         return this.http.post<Authentication>(url, authentication)
     }
 
-    logout(): void {
+    logout() {
         // clear token remove user from local storage to log user out
         localStorage.removeItem('username');
         localStorage.removeItem('currentUser');
+    }
+
+    createUser(authentication: Authentication): Observable<Authentication> {
+        return this.http.post<Authentication>('http://localhost:17711/api/users', authentication)
     }
 }

@@ -34,6 +34,7 @@ import { TryingComponent } from './trying/trying.component';
 import { AuthGuard } from './guard/auth.guard';
 import { HttpModule } from '@angular/http';
 import { AdminService } from './adminstrators/shared/admin.service';
+import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
   {
@@ -146,7 +147,8 @@ const appRoutes: Routes = [
     FrontPageDetailComponent,
     GuestPageComponent,
     LoginComponent,
-    TryingComponent
+    TryingComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

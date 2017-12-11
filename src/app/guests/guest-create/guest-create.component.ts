@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Guest } from '../shared/guest.model';
 import { GuestService } from '../shared/guest.service';
 import { Router } from '@angular/router';
+import { Authentication } from '../../login/authentication.model';
+import { AuthenticationService } from '../../login/authentication.service';
 
 @Component({
   selector: 'app-guest-create',
@@ -13,14 +15,13 @@ export class GuestCreateComponent implements OnInit {
 
   guestGroup: FormGroup;
   constructor(private guestService: GuestService,
+              private authenticationService: AuthenticationService,
               private fb: FormBuilder,
               private router: Router) {
       this.guestGroup = this.fb.group({
         firstName: '',
         lastName: '',
         address: '',
-        phoneNumber: '',
-        email: '',
         username: '',
         password: ''
       })
@@ -36,8 +37,16 @@ export class GuestCreateComponent implements OnInit {
       lastName: values.lastName,
       address: values.address
     };
+    const authentication: Authentication = {
+      username: values.username,
+      password: values.password
+    };
     this.guestService.create(guest)
     .subscribe(guest => {
+;
+    });
+    this.authenticationService.createUser(authentication)
+    .subscribe(authentication => {
       this.guestGroup.reset();
       this.router.navigateByUrl("/front")
     });
