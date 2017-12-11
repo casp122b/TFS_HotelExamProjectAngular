@@ -33,7 +33,6 @@ export class GuestDetailComponent implements OnInit {
 
   editGuest() {
     const currentGuest = this.guestId;
-    console.log(currentGuest);
     const newValues = this.newGuestGroup.value;
     const updatedGuest: Guest = {
       id: currentGuest,
