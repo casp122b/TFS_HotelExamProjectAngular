@@ -1,3 +1,17 @@
-<p>
-  suite-create works!
-</p>
+<div class="container">
+  <h1>Create Suite</h1>
+
+</div>
+<form (ngSubmit)="createSuite()" [formGroup]="suiteGroup" novalidate>
+    <div class="form-group">
+      <label>FirstName:
+        <input class="form-control" formControlName="firstName">
+      </label><br>
+      <label class="center-block">LastName:
+          <input class="form-control" formControlName="lastName">
+        </label><br>
+      <button type="submit" class="btnRegi btn-outline-danger">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>Register
+      </button>
+    </div>
+  </form>

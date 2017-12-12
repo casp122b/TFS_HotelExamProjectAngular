@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Jensens Hotel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/front">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li *ngIf="role == 'Administrator'" class="nav-item">
+        <a class="nav-link" routerLink="/guests">Guests</a>
+      </li>
+      <li *ngIf="role == 'Administrator'" class="nav-item">
+        <a class="nav-link" routerLink="/suite/create">Create Suite</a>
+      </li>
+      <li *ngIf="role == 'Administrator'" class="nav-item">
+        <a class="nav-link" routerLink="/doubleRoom/create">Create DoubleRoom</a>
+      </li>
+      <li *ngIf="role == 'Administrator'" class="nav-item">
+        <a class="nav-link" routerLink="/singleRoom/create">Create SingleRoom</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li *ngIf="!authentication" class="nav-item">
+        <button routerLink="/login" class="btn btn-outline-success my-2 my-sm-0" type="button">Login</button>
+        <button routerLink="/guests/create" class="btn btn-outline-success my-2 my-sm-0" type="button">Register</button>
+      </li>
+      <li *ngIf="authentication" class="nav-item dropdown">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Welcome {{authentication}}</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button (click)="logout()" class="dropdown-item">Logout</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

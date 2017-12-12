@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 
-const url = environment.apiEndpoint + '/Suites';
+const url = environment.apiEndpoint + '/suites';
 
 @Injectable()
 export class SuiteService {

@@ -1,27 +1,34 @@
-.suitelist{
-  position: fixed;
-  top: 50px;
-  left: 45%;
+.roomlist{
+  position: relative;
 }
+
 .card-header{
-  position: fixed;
-right: 10px;
+  position: relative;
   z-index: 1;
   background-image: linear-gradient(to top, #F4F4F4 0%, #DFDEDC 100%);
-  top: 55px;
 
-
+}
+.double-room-img {
+  width:100%;
+}
+.card {
+  padding: 0;
 }
 .infotext{
-  width: 650px;
-  top: 75px;
-  position: fixed;
-  left: 5px;
+  position: relative;
   font-size: 19px;
-
+  width: 90%;
 }
-.btnSignup{
-  visibility: hidden;
-  bottom: auto;
-  position: fixed;
+.button-cliff {
+overflow-y: scroll;
+}
+.button-hill {
+padding: 10px;
+width: 90%;
+margin: 0 5%;
+border-bottom: 2px solid lightgray; 
+}
+.hill-p {
+  padding: 5px 10px;
+  margin: 0;
 }

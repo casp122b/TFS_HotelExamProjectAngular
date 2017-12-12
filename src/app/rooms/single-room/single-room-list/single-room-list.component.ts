@@ -10,19 +10,18 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class SingleRoomListComponent implements OnInit {
-  singleRoom: SingleRoom[];
+  singleRooms: SingleRoom[];
   singleRoomToDelete: SingleRoom;
+  role: string = localStorage.getItem('role');
   constructor(private singleRoomService: SingleRoomService,
               private router: Router) {
   }
 
   ngOnInit() {
-    // Ask for a bunch of code to execute
     this.singleRoomService.get()
-    // Executing and explaning when done let me know
       .subscribe(
         singleRooms => {
-          this.singleRoom = singleRooms;
+          this.singleRooms = singleRooms;
         }
       );
   }
@@ -33,7 +32,6 @@ export class SingleRoomListComponent implements OnInit {
   }
 
   delete(singleRoom: SingleRoom, $event) {
-    console.log('delete Clicked');
     this.singleRoomToDelete = singleRoom;
     $event.stopPropagation();
   }
@@ -47,8 +45,8 @@ export class SingleRoomListComponent implements OnInit {
     this.singleRoomService.delete(this.singleRoomToDelete.id)
       .switchMap(singleRoom => this.singleRoomService.get())
       .subscribe(
-        singleRoom => {
-          this.singleRoom = singleRoom;
+        singleRooms => {
+          this.singleRooms = singleRooms;
         }
       );
     $event.stopPropagation();
@@ -56,7 +54,7 @@ export class SingleRoomListComponent implements OnInit {
 
   createCustomer() {
     this.router
-      .navigateByUrl('/singleRoom/create');
+      .navigateByUrl('/singleRooms/create');
   }
 
 

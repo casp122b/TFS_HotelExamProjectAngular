@@ -1,21 +1,10 @@
 .room-display {
-
   display: inline;
 }
-
 
 .links {
   float: left;
   width: 49%;
-}
-.links button {
-  float: right;
-  margin: 5px;
-  padding: 5px 10px;
-  border: 1px gray solid;
-  border-radius: 5px;
-  background: forestgreen;
-  color: white;
 }
 
 .single{

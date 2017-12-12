@@ -6,13 +6,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  guests: string;
-  loggedIn = false;
-  constructor(private router: Router) {
-    
-  }
-  public registerGuests() {
-    this.router
-      .navigateByUrl('/guests/create');
+  constructor() {
   }
 }
