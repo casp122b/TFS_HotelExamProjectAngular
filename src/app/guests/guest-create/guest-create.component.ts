@@ -32,24 +32,28 @@ export class GuestCreateComponent implements OnInit {
 
   createGuest() {
     const values = this.guestGroup.value;
-    const guest: Guest = {
-      firstName: values.firstName,
-      lastName: values.lastName,
-      address: values.address
-    };
     const authentication: Authentication = {
       username: values.username,
       password: values.password
     };
-    this.guestService.create(guest)
-    .subscribe(guest => {
-;
-    });
+    const guest: Guest = {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      address: values.address,
+      userId: authentication.id
+    };
+
     this.authenticationService.createUser(authentication)
     .subscribe(authentication => {
-      this.guestGroup.reset();
-      this.router.navigateByUrl("/front")
     });
+    
+    this.guestService.create(guest)
+    .subscribe(guest => {
+      authentication.id = guest.userId;
+     this.guestGroup.reset();
+      this.router.navigateByUrl("/guests/page")
+    });
+    
 
   }
 }

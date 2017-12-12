@@ -10,8 +10,9 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class SuiteListComponent implements OnInit {
-  suite: Suite[];
+  suites: Suite[];
   suiteToDelete: Suite;
+  role: string = localStorage.getItem('role');
   constructor(private suiteService: SuiteService,
     private router: Router) {
   }
@@ -20,7 +21,7 @@ export class SuiteListComponent implements OnInit {
     this.suiteService.get()
       .subscribe(
       suites => {
-        this.suite = suites;
+        this.suites = suites;
       }
       );
   }
@@ -44,8 +45,8 @@ export class SuiteListComponent implements OnInit {
     this.suiteService.delete(this.suiteToDelete.id)
       .switchMap(suite => this.suiteService.get())
       .subscribe(
-      suite => {
-        this.suite = suite;
+      suites => {
+        this.suites = suites;
       }
       );
     $event.stopPropagation();
@@ -53,7 +54,7 @@ export class SuiteListComponent implements OnInit {
 
   createCustomer() {
     this.router
-      .navigateByUrl('/suite/create');
+      .navigateByUrl('/suites/create');
   }
 
 

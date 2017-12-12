@@ -12,9 +12,4 @@ export class UnAuthorizedComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  back() {
-    this.router.navigateByUrl('/guests/page');
-  }
-
 }

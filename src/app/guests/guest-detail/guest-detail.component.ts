@@ -20,7 +20,8 @@ export class GuestDetailComponent implements OnInit {
       this.newGuestGroup = this.fb.group({
         firstName: '',
         lastName: '',
-        address: ''
+        address: '',
+        userId: null
       })
    }
 
@@ -38,13 +39,13 @@ export class GuestDetailComponent implements OnInit {
       id: currentGuest,
       firstName: newValues.firstName,
       lastName: newValues.lastName,
-      address: newValues.address
+      address: newValues.address,
+      userId: newValues.userId
     };
     this.guestService.update(currentGuest, updatedGuest)
     .subscribe(guest => {
       this.newGuestGroup.reset();
-      this.router.navigateByUrl("/front")
+      this.router.navigateByUrl("/guests/page")
     });
-
   }
 }

@@ -1,15 +1,13 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <hr>
-      <h4>
-        My bookings
-      </h4>
-      <hr>
+      <h1>
+        Edit Guest
+      </h1>
     </div>
     <form (ngSubmit)="editGuest()" [formGroup]="newGuestGroup" novalidate>
       <div class="form-group">
-        <label>FirstName:
+        <label class="center-block">FirstName:
           <input class="form-control" formControlName="firstName">
         </label>
         <br>
@@ -21,10 +19,10 @@
           <input class="form-control" formControlName="address">
         </label>
         <br>
-        <button type="submit" class="btnCancel2 btn-outline-warning" routerLink="/guests/page">
+        <button type="submit" class="btnCancel btn-outline-warning" routerLink="/guests/page">
           <i class="fa fa-floppy-o" aria-hidden="true"></i>Cancel
         </button>
-        <button type="submit" class="btnEdit2 btn-outline-danger">
+        <button type="submit" class="btnEdit btn-outline-danger">
           <i class="fa fa-floppy-o" aria-hidden="true"></i>Edit
         </button>
       </div>

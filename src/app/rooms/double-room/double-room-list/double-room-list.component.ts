@@ -12,14 +12,13 @@ import 'rxjs/add/operator/switchMap';
 export class DoubleRoomListComponent implements OnInit {
   doubleRooms: DoubleRoom[];
   doubleRoomToDelete: DoubleRoom;
+  role: string = localStorage.getItem('role');
   constructor(private doubleRoomService: DoubleRoomService,
               private router: Router) {
   }
 
   ngOnInit() {
-    // Ask for a bunch of code to execute
     this.doubleRoomService.get()
-    // Executing and explaning when done let me know
       .subscribe(
         doubleRooms => {
           this.doubleRooms = doubleRooms;
@@ -33,7 +32,6 @@ export class DoubleRoomListComponent implements OnInit {
   }
 
   delete(doubleRoom: DoubleRoom, $event) {
-    console.log('delete Clicked');
     this.doubleRoomToDelete = doubleRoom;
     $event.stopPropagation();
   }
@@ -53,11 +51,4 @@ export class DoubleRoomListComponent implements OnInit {
       );
     $event.stopPropagation();
   }
-
-  createCustomer() {
-    this.router
-      .navigateByUrl('/doubleRoom/create');
-  }
-
-
 }

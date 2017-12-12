@@ -3,4 +3,5 @@ export class Guest {
   firstName: string;
    lastName: string;
    address: string;
+   userId: number;
 }

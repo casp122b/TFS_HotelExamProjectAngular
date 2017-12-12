@@ -39,18 +39,9 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
 
 const appRoutes: Routes = [
   {
-    path: 'signin',
-    component: GuestPageComponent
-  },
-  {
     path: 'guests/page',
     component: GuestPageComponent,
     data: { title: 'Guest page' }
-  },
-  {
-    path: 'guest/detail',
-    component: GuestDetailComponent,
-    data: { title: 'Guest Details' }
   },
   {
     path: 'guest/:id',
@@ -66,11 +57,11 @@ const appRoutes: Routes = [
     data: { title: 'Room List' }
   },
   {
-    path: 'doubleRooms/:id',
+    path: 'doubleRoom/:id',
     component: DoubleRoomDetailComponent
   },
   {
-    path: 'doubleRoom/create',
+    path: 'doubleRooms/create',
     component: DoubleRoomCreateComponent
   },
   {
@@ -79,11 +70,11 @@ const appRoutes: Routes = [
     data: { title: 'Room List' }
   },
   {
-    path: 'singleRooms/:id',
+    path: 'singleRoom/:id',
     component: SingleRoomDetailComponent
   },
   {
-    path: 'singleRoom/create',
+    path: 'singleRooms/create',
     component: SingleRoomCreateComponent
   },
   {
@@ -92,11 +83,11 @@ const appRoutes: Routes = [
     data: { title: 'Room List' }
   },
   {
-    path: 'suites/:id',
+    path: 'suite/:id',
     component: SuiteDetailComponent
   },
   {
-    path: 'suite/create',
+    path: 'suites/create',
     component: SuiteCreateComponent
   },
   {
