@@ -41,7 +41,6 @@ export class GuestCreateComponent implements OnInit {
     this.authenticationService.createUser(authentication)
     .subscribe(done => {
       authentication.id = done.id;
-      //this.guestGroup.reset();
       const guest: Guest = {
         firstName: values.firstName,
         lastName: values.lastName,
