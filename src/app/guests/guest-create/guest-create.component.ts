@@ -14,6 +14,7 @@ import { AuthenticationService } from '../../login/authentication.service';
 export class GuestCreateComponent implements OnInit {
 
   guestGroup: FormGroup;
+  authId: number;
   constructor(private guestService: GuestService,
               private authenticationService: AuthenticationService,
               private fb: FormBuilder,
@@ -32,28 +33,27 @@ export class GuestCreateComponent implements OnInit {
 
   createGuest() {
     const values = this.guestGroup.value;
+    
     const authentication: Authentication = {
       username: values.username,
       password: values.password
     };
-    const guest: Guest = {
-      firstName: values.firstName,
-      lastName: values.lastName,
-      address: values.address,
-      userId: authentication.id
-    };
-
     this.authenticationService.createUser(authentication)
-    .subscribe(authentication => {
+    .subscribe(done => {
+      authentication.id = done.id;
+      //this.guestGroup.reset();
+      const guest: Guest = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        address: values.address,
+        userId: done.id
+      };
+      this.guestService.create(guest)
+      .subscribe(guest => {
+        this.router.navigateByUrl('/guests/page');
+      });
     });
-    
-    this.guestService.create(guest)
-    .subscribe(guest => {
-      authentication.id = guest.userId;
-     this.guestGroup.reset();
-      this.router.navigateByUrl("/guests/page")
-    });
-    
 
+    
   }
-}
+  }
