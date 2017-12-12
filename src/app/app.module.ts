@@ -36,91 +36,9 @@ import { HttpModule } from '@angular/http';
 import { AdminService } from './adminstrators/shared/admin.service';
 import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
+import {appRoutes} from './app.routing';
+import { AdminModule } from './adminstrators/shared/admin.module';
 
-const appRoutes: Routes = [
-  {
-    path: 'guests/page',
-    component: GuestPageComponent,
-    data: { title: 'Guest page' }
-  },
-  {
-    path: 'guest/:id',
-    component: GuestDetailComponent
-  },
-  {
-    path: 'guests/create',
-    component: GuestCreateComponent
-  },
-  {
-    path: 'guests',
-    component: GuestListComponent,
-    data: { title: 'Room List' }
-  },
-  {
-    path: 'doubleRoom/:id',
-    component: DoubleRoomDetailComponent
-  },
-  {
-    path: 'doubleRooms/create',
-    component: DoubleRoomCreateComponent
-  },
-  {
-    path: 'doubleRooms',
-    component: DoubleRoomListComponent,
-    data: { title: 'Room List' }
-  },
-  {
-    path: 'singleRoom/:id',
-    component: SingleRoomDetailComponent
-  },
-  {
-    path: 'singleRooms/create',
-    component: SingleRoomCreateComponent
-  },
-  {
-    path: 'singleRooms',
-    component: SingleRoomListComponent,
-    data: { title: 'Room List' }
-  },
-  {
-    path: 'suite/:id',
-    component: SuiteDetailComponent
-  },
-  {
-    path: 'suites/create',
-    component: SuiteCreateComponent
-  },
-  {
-    path: 'suites',
-    component: SuiteListComponent,
-    data: { title: 'Room List' }
-  },
-
-  {
-    path: 'front',
-    component: FrontPageDetailComponent
-  },
-
-  {
-    path: '',
-    redirectTo: '/front',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'trying/now',
-    component: TryingComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'unauthorized',
-    component: UnAuthorizedComponent
-  },
-
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -130,9 +48,6 @@ const appRoutes: Routes = [
     GuestListComponent,
     GuestDetailComponent,
     GuestCreateComponent,
-    AdminCreateComponent,
-    AdminDetailComponent,
-    AdminListComponent,
     SingleRoomCreateComponent,
     SingleRoomDetailComponent,
     SingleRoomListComponent,
@@ -150,8 +65,10 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    RouterModule,
+    AdminModule,
+    appRoutes,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],
   providers: [
@@ -160,8 +77,7 @@ const appRoutes: Routes = [
     SingleRoomService,
     SuiteService,
     GuestService,
-    AuthenticationService,
-    AdminService, {
+    AuthenticationService, {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true

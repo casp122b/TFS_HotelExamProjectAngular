@@ -29,7 +29,7 @@ export class GuestListComponent implements OnInit {
 
   details(guest: Guest) {
     this.router
-      .navigateByUrl('/guest/' + guest.id);
+      .navigateByUrl('/guests/' + guest.id);
   }
 
   delete(guest: Guest, $event) {
