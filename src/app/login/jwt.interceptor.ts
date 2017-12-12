@@ -16,12 +16,13 @@
       }, (err: any) => {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 401) {
-            // TODO: Add information about unAuthorized to user and redirect user.
-            console.log('We intercepted a 401 boys!!!');
+            this.router.navigateByUrl('/unauthorized');
           }
           if (err.status === 404) {
-            console.log(err.url);
             console.log('We intercepted a 404 boys!!!');
+          }
+          if (err.status === 403) {
+            this.router.navigateByUrl('/unauthorized');
           }
         }
       });

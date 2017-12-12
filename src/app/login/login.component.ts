@@ -39,9 +39,11 @@ export class LoginComponent implements OnInit {
         success => {
           auth.token = success.token;
           auth.username = success.username;
+          auth.role = success.role;
           
           localStorage.setItem('currentUser', success.token);
           localStorage.setItem('username', success.username);
+          localStorage.setItem('role', success.role);
           this.router.navigateByUrl('/trying/now');
         },
         error => {

@@ -11,6 +11,7 @@ import { AuthenticationService } from '../../login/authentication.service';
 export class NavBarComponent implements OnInit {
 
   authentication: string = localStorage.getItem('username');
+  role: string = localStorage.getItem('role');
   constructor(private auth: AuthenticationService,
               private router: Router) {
   }
@@ -21,6 +22,7 @@ export class NavBarComponent implements OnInit {
   logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('currentUser');
-    this.router.navigateByUrl('/front');
+    localStorage.removeItem('role');
+    this.router.navigateByUrl('/guests/page');
   }
 }

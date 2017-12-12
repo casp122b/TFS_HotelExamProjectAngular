@@ -8,8 +8,8 @@
           <img class="suite1"    src="../../../assets/images/doubleRoom.jpg">
 
           <div class="list-group-item list-group-item-action">
-            <h5> pris på dobbelt værelse {{doubleRoom[1].price}} kr.
-              <h5> rum tilgænglig {{doubleRoom[1].available}} </h5> </h5>
+            <h5> pris på dobbelt værelse {{doubleRooms[0].price}} kr.
+              <h5> rum tilgænglig {{doubleRooms[0].available}} </h5> </h5>
           </div>
 
           <div class="card-footer bg-transparent">
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="roomlist">
-          <div *ngFor="let doubleRoom of doubleRoom" class="list-group-item list-group-item-action">
+          <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
             <h5 > Room {{doubleRoom.id}}
               <h5 > Guest {{doubleRoom.guest.firstName}}</h5> </h5>
           </div>

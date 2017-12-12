@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class DoubleRoomListComponent implements OnInit {
-  doubleRoom: DoubleRoom[];
+  doubleRooms: DoubleRoom[];
   doubleRoomToDelete: DoubleRoom;
   constructor(private doubleRoomService: DoubleRoomService,
               private router: Router) {
@@ -22,7 +22,7 @@ export class DoubleRoomListComponent implements OnInit {
     // Executing and explaning when done let me know
       .subscribe(
         doubleRooms => {
-          this.doubleRoom = doubleRooms;
+          this.doubleRooms = doubleRooms;
         }
       );
   }
@@ -47,8 +47,8 @@ export class DoubleRoomListComponent implements OnInit {
     this.doubleRoomService.delete(this.doubleRoomToDelete.id)
       .switchMap(doubleRoom => this.doubleRoomService.get())
       .subscribe(
-        doubleRoom => {
-          this.doubleRoom = doubleRoom;
+        doubleRooms => {
+          this.doubleRooms = doubleRooms;
         }
       );
     $event.stopPropagation();

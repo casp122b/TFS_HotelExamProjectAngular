@@ -35,6 +35,7 @@ import { AuthGuard } from './guard/auth.guard';
 import { HttpModule } from '@angular/http';
 import { AdminService } from './adminstrators/shared/admin.service';
 import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
+import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 
 const appRoutes: Routes = [
   {
@@ -122,7 +123,10 @@ const appRoutes: Routes = [
     path: 'trying/now',
     component: TryingComponent,
     canActivate: [AuthGuard],
-
+  },
+  {
+    path: 'unauthorized',
+    component: UnAuthorizedComponent
   },
 
 ];
@@ -148,7 +152,8 @@ const appRoutes: Routes = [
     GuestPageComponent,
     LoginComponent,
     TryingComponent,
-    NavBarComponent
+    NavBarComponent,
+    UnAuthorizedComponent
   ],
   imports: [
     BrowserModule,
