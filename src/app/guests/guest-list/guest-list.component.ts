@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {Guest} from '../shared/guest.model';
-import {GuestService} from '../shared/guest.service';
-import {Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Guest } from '../shared/guest.model';
+import { GuestService } from '../shared/guest.service';
+
 @Component({
   selector: 'app-guest-list',
   templateUrl: './guest-list.component.html',
@@ -13,15 +16,15 @@ export class GuestListComponent implements OnInit {
   guests: Guest[];
   guestToDelete: Guest;
   constructor(private guestService: GuestService,
-              private router: Router) {
+    private router: Router) {
   }
 
   ngOnInit() {
     this.guestService.get()
       .subscribe(
-        guests => {
-          this.guests = guests;
-        }
+      guests => {
+        this.guests = guests;
+      }
       );
   }
 
@@ -44,9 +47,9 @@ export class GuestListComponent implements OnInit {
     this.guestService.delete(this.guestToDelete.id)
       .switchMap(guest => this.guestService.get())
       .subscribe(
-        guests => {
-          this.guests = guests;
-        }
+      guests => {
+        this.guests = guests;
+      }
       );
     $event.stopPropagation();
   }
