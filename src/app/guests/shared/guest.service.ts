@@ -1,11 +1,10 @@
-import 'rxjs/add/operator/map';
-
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import {Guest} from './guest.model';
 
-import { environment } from '../../../environments/environment';
-import { Guest } from './guest.model';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 const url = environment.apiEndpoint + '/guests';
 

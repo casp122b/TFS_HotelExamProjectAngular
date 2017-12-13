@@ -1,35 +1,38 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <button class="btn btn-outline-success" routerLink="/guests/page" routerLinkActive="active">Back
+      <button
+        class="btn btn-outline-success"
+        routerLink="/front"
+        routerLinkActive="active">Back
       </button>
     </div>
     <hr>
-    <h4>Registered guests</h4>
-    <hr>
+      <h4>Registered guests</h4>
+      <hr>
     <div class="col-md-12">
-      <div class="list-group">
-        <a *ngFor="let guest of guests" class="list-group-item list-group-item-action">
-          <h5>{{guest.firstName}} {{guest.lastName}} {{guest.address}}
-            <div *ngIf="!guestToDelete || guestToDelete.id != guest.id" class="pull-right">
-              <button class="btn btn-outline-danger" (click)="delete(guest, $event)">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </button>
-              <button class="btn btn-outline-warning" (click)="details(guest)">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-              </button>
+            <div class="list-group">
+              <a *ngFor="let guest of guests" class="list-group-item list-group-item-action">
+                <h5>{{guest.firstName}} {{guest.lastName}} {{guest.address}}
+                <div *ngIf="!guestToDelete || guestToDelete.id != guest.id" class="pull-right">
+                  <button class="btn btn-outline-danger" (click)="delete(guest, $event)">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                  <button class="btn btn-outline-warning" (click)="details(guest)">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div *ngIf="guestToDelete && guestToDelete.id == guest.id" class="pull-right">
+                  <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
+                  </button>
+                  <button class="btn btn-outline-info" (click)="deleteAborted($event)">
+                    <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
+                  </button>
+                </div>
+              </h5>
+              </a>
             </div>
-            <div *ngIf="guestToDelete && guestToDelete.id == guest.id" class="pull-right">
-              <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
-                <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
-              </button>
-              <button class="btn btn-outline-info" (click)="deleteAborted($event)">
-                <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
-              </button>
-            </div>
-          </h5>
-        </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>

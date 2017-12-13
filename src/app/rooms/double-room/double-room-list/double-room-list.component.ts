@@ -1,11 +1,8 @@
-import 'rxjs/add/operator/switchMap';
-
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { DoubleRoom } from '../shared/double-room.model';
-import { DoubleRoomService } from '../shared/double-room.service';
-
+import {DoubleRoom} from '../shared/double-room.model';
+import {DoubleRoomService} from '../shared/double-room.service';
+import {Router} from '@angular/router';
+import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'app-double-room-list',
   templateUrl: './double-room-list.component.html',
@@ -17,21 +14,21 @@ export class DoubleRoomListComponent implements OnInit {
   doubleRoomToDelete: DoubleRoom;
   role: string = localStorage.getItem('role');
   constructor(private doubleRoomService: DoubleRoomService,
-    private router: Router) {
+              private router: Router) {
   }
 
   ngOnInit() {
     this.doubleRoomService.get()
       .subscribe(
-      doubleRooms => {
-        this.doubleRooms = doubleRooms;
-      }
+        doubleRooms => {
+          this.doubleRooms = doubleRooms;
+        }
       );
   }
 
   details(doubleRoom: DoubleRoom) {
     this.router
-      .navigateByUrl('/doubleRooms/' + doubleRoom.id);
+      .navigateByUrl('/doubleRoom/' + doubleRoom.id);
   }
 
   delete(doubleRoom: DoubleRoom, $event) {
@@ -48,9 +45,9 @@ export class DoubleRoomListComponent implements OnInit {
     this.doubleRoomService.delete(this.doubleRoomToDelete.id)
       .switchMap(doubleRoom => this.doubleRoomService.get())
       .subscribe(
-      doubleRooms => {
-        this.doubleRooms = doubleRooms;
-      }
+        doubleRooms => {
+          this.doubleRooms = doubleRooms;
+        }
       );
     $event.stopPropagation();
   }

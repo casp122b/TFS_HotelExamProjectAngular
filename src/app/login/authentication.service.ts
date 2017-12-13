@@ -1,14 +1,13 @@
-import 'rxjs/add/operator/map';
-
 import { HttpClient } from '@angular/common/http';
+import { Authentication } from './authentication.model';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-
+import 'rxjs/add/operator/map'
 import { environment } from '../../environments/environment';
-import { Authentication } from './authentication.model';
 
 const url = environment.apiEndpoint + '/login';
 const urlForUser = environment.apiEndpoint + '/users';
+//const urlForCreate = environment.apiEndpoint + '/users';
 
 @Injectable()
 export class AuthenticationService {
