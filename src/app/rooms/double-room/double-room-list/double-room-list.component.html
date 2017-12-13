@@ -1,47 +1,50 @@
-<app-nav-bar></app-nav-bar>
-  <div class="row custom-content">
+<div class="row custom-content">
 
-      <div class="card col-6">
-        <div class="card-header">Room name</div>
-          <div class="card-body">
-                <p>Dette er doubleroom som er en del af Skandinavisk Kongrescenter Århus og ligger i hjertet af byen. suiten byder på et privat fitnesscentret, Fitness World, suiten kommer med moderne værelser med gratis, trådløs internetadgang.</p>
-                <p>suiten er indrettede i 3 forskellige stilarter, alle med aircondition. Samtlige værelser har fladskærms-tv med kabelkanaler, minibar, værdiboks samt buksepresse.</p>
-                <p>Det veludstyrede fitnesscenter byder på  professionelle personlige trænere hvis ønskes. </p>
-                <p>ved ophold på suiten kan du få V.I.P access til Restaurant le Fresh som serverer lettere, internationale anretninger i uformelle omgivelser. Restaurant le Fresh byder på imponerende, skandinavisk morgenbuffet. </p>
-                <p>Friluftsmuseet Den Gamle By ligger 10 minutters kørsel derfra. ARoS Aarhus Kunstmuseum og Musikhuset Aarhus ligger lige ved siden af suiten så hvis man er kunst elsker er det atraktion man ikke må misse. </p>
-                <p>Ifølge vores gæsters uafhængige anmeldelser er dette deres yndlingsdel ved ophold på suiten.</p>
-                <p>Par er særligt glade for suiten og dens beligenhed da den befinder sig 2 minutters gå gang fra stranden.</p>
-                <p>Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</p>
-            </div>
-        </div>
-        
-      <div class="card col-6">
-        <div class="card-header">Room Details</div>
-          <img class="suite1" src="../../../assets/images/doubleRoom.jpg">
-          <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
-            <p> pris på dobbelt værelse {{doubleRoom.price}} kr.</p>
-              <p> rum tilgængelige {{doubleRoom.available}} </p> 
-            <button class="btn book" >
-              <i class="fa fa-bed"  aria-hidden="true" ></i> Book
-            </button>
-            <div *ngIf="role == 'Administrator'" class="Adminbuttons">
-              <div *ngIf="!doubleRoomToDelete || doubleRoomToDelete.id != doubleRoom.id" class="pull-right">
-                <button class="btn btn-outline-danger" (click)="delete(doubleRoom, $event)">
-                  <i class="fa fa-trash-o" aria-hidden="true"></i>
-                </button>
-                <button class="btn btn-outline-warning" (click)="details(doubleRoom)">
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div *ngIf="doubleRoomToDelete && doubleRoomToDelete.id == doubleRoom.id" class="pull-right">
-                <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
-                  <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
-                </button>
-                <button class="btn btn-outline-info" (click)="deleteAborted($event)">
-                  <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
-                </button>
-              </div>
-            </div>
-        </div>
-      </div> 
+  <div class="card col-6">
+    <div class="card-header">Room name</div>
+    <div class="card-body">
+      <p>Dette er doubleroom som er en del af Skandinavisk Kongrescenter Århus og ligger i hjertet af byen. suiten byder på
+        et privat fitnesscentret, Fitness World, suiten kommer med moderne værelser med gratis, trådløs internetadgang.</p>
+      <p>suiten er indrettede i 3 forskellige stilarter, alle med aircondition. Samtlige værelser har fladskærms-tv med kabelkanaler,
+        minibar, værdiboks samt buksepresse.</p>
+      <p>Det veludstyrede fitnesscenter byder på professionelle personlige trænere hvis ønskes. </p>
+      <p>ved ophold på suiten kan du få V.I.P access til Restaurant le Fresh som serverer lettere, internationale anretninger
+        i uformelle omgivelser. Restaurant le Fresh byder på imponerende, skandinavisk morgenbuffet. </p>
+      <p>Friluftsmuseet Den Gamle By ligger 10 minutters kørsel derfra. ARoS Aarhus Kunstmuseum og Musikhuset Aarhus ligger
+        lige ved siden af suiten så hvis man er kunst elsker er det atraktion man ikke må misse. </p>
+      <p>Ifølge vores gæsters uafhængige anmeldelser er dette deres yndlingsdel ved ophold på suiten.</p>
+      <p>Par er særligt glade for suiten og dens beligenhed da den befinder sig 2 minutters gå gang fra stranden.</p>
+      <p>Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</p>
     </div>
+  </div>
+
+  <div class="card col-6">
+    <div class="card-header">Room Details</div>
+    <img class="suite1" src="../../../assets/images/suite.jpg">
+    <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
+      <p> pris på dobbelt værelse {{doubleRoom.price}} kr.</p>
+      <p> rum tilgængelige {{doubleRoom.available}} </p>
+      <button class="btn book">
+        <i class="fa fa-bed" aria-hidden="true"></i> Book
+      </button>
+      <div *ngIf="role === 'Administrator'" class="Adminbuttons">
+        <div *ngIf="!doubleRoomToDelete || doubleRoomToDelete.id != doubleRoom.id" class="pull-right">
+          <button class="btn btn-outline-danger" (click)="delete(doubleRoom, $event)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-outline-warning" (click)="details(doubleRoom)">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div *ngIf="doubleRoomToDelete && doubleRoomToDelete.id == doubleRoom.id" class="pull-right">
+          <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
+          </button>
+          <button class="btn btn-outline-info" (click)="deleteAborted($event)">
+            <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-export class Admin{
+export class Admin {
   id?: number;
   firstName: string;
   lastName: string;
