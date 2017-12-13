@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { GuestService } from '../shared/guest.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Guest } from '../shared/guest.model';
+import { GuestService } from '../shared/guest.service';
 
 @Component({
   selector: 'app-guest-detail',
@@ -14,22 +15,21 @@ export class GuestDetailComponent implements OnInit {
   guestId: number;
   newGuestGroup: FormGroup;
   constructor(private guestService: GuestService,
-              private fb: FormBuilder,
-              private router: Router,
-              private route: ActivatedRoute) {
-      this.newGuestGroup = this.fb.group({
-        firstName: '',
-        lastName: '',
-        address: '',
-        userId: null
-      })
-   }
+    private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute) {
+    this.newGuestGroup = this.fb.group({
+      firstName: '',
+      lastName: '',
+      address: '',
+    });
+  }
 
-   ngOnInit() {
+  ngOnInit() {
     this.route.paramMap
-            .switchMap(params =>
-              this.guestService.getById(+params.get('id'))
-           ).subscribe(guestId => this.guestId = guestId.id);
+      .switchMap(params =>
+        this.guestService.getById(+params.get('id'))
+      ).subscribe(guest => this.guestId = guest.id);
   }
 
   editGuest() {
@@ -39,13 +39,12 @@ export class GuestDetailComponent implements OnInit {
       id: currentGuest,
       firstName: newValues.firstName,
       lastName: newValues.lastName,
-      address: newValues.address,
-      userId: newValues.userId
+      address: newValues.address
     };
     this.guestService.update(currentGuest, updatedGuest)
-    .subscribe(guest => {
-      this.newGuestGroup.reset();
-      this.router.navigateByUrl("/guests/page")
-    });
+      .subscribe(guest => {
+        this.newGuestGroup.reset();
+        this.router.navigateByUrl("/guests/page")
+      });
   }
 }
