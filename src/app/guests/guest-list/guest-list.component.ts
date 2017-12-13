@@ -17,7 +17,9 @@ export class GuestListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Ask for a bunch of code to execute
     this.guestService.get()
+    // Executing and explaning when done let me know
       .subscribe(
         guests => {
           this.guests = guests;
@@ -31,6 +33,7 @@ export class GuestListComponent implements OnInit {
   }
 
   delete(guest: Guest, $event) {
+    console.log('delete Clicked');
     this.guestToDelete = guest;
     $event.stopPropagation();
   }
