@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {SingleRoom} from '../shared/single-room.model';
-import {SingleRoomService} from '../shared/single-room.service';
-import {Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { SingleRoom } from '../shared/single-room.model';
+import { SingleRoomService } from '../shared/single-room.service';
+
 @Component({
   selector: 'app-single-room-list',
   templateUrl: './single-room-list.component.html',
@@ -28,7 +31,7 @@ export class SingleRoomListComponent implements OnInit {
 
   details(singleRoom: SingleRoom) {
     this.router
-      .navigateByUrl('/singleRoom/' + singleRoom.id);
+      .navigateByUrl('/singleRooms/' + singleRoom.id);
   }
 
   delete(singleRoom: SingleRoom, $event) {
@@ -56,6 +59,4 @@ export class SingleRoomListComponent implements OnInit {
     this.router
       .navigateByUrl('/singleRooms/create');
   }
-
-
 }

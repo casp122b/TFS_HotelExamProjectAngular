@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { GuestService } from '../shared/guest.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Guest } from '../shared/guest.model';
+import { GuestService } from '../shared/guest.service';
 
 @Component({
   selector: 'app-guest-detail',

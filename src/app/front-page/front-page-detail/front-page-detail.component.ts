@@ -14,14 +14,14 @@ export class FrontPageDetailComponent implements OnInit {
   ngOnInit() {
     this.rooms = [{
       src: "../../../assets/images/singleRoom.jpg",
-      routerLink: "/singleRooms/"
+      routerLink: "/singleRooms"
     },
     {
       src: "../../../assets/images/doubleRoom.jpg",
-      routerLink: "/doubleRooms/"
+      routerLink: "/doubleRooms"
     }, {
       src: "../../../assets/images/suite.jpg",
-      routerLink: "/suites/"
+      routerLink: "/suites"
     }]
   }
 

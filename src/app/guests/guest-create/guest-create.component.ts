@@ -1,10 +1,11 @@
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Guest } from '../shared/guest.model';
-import { GuestService } from '../shared/guest.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { Authentication } from '../../login/authentication.model';
 import { AuthenticationService } from '../../login/authentication.service';
+import { Guest } from '../shared/guest.model';
+import { GuestService } from '../shared/guest.service';
 
 @Component({
   selector: 'app-guest-create',

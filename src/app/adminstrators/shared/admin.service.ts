@@ -1,9 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Admin } from './admin.model';
-import { AuthenticationService } from '../../login/authentication.service';
+
 import { environment } from '../../../environments/environment';
+import { AuthenticationService } from '../../login/authentication.service';
+import { Admin } from './admin.model';
 
 const url = environment.apiEndpoint + '/admins';
 

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 import { AdminCreateComponent } from '../admin-create/admin-create.component';
 import { AdminDetailComponent } from '../admin-detail/admin-detail.component';
@@ -18,8 +17,7 @@ import { AdminService } from './admin.service';
     imports: [
         CommonModule,
         FormsModule,
-        ReactiveFormsModule,
-        RouterModule
+        ReactiveFormsModule
     ],
     exports: [
         AdminListComponent,
