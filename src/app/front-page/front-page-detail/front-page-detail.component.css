@@ -1,19 +1,16 @@
 .room-display {
-
   display: inline;
 }
+
 .text1{
   position: fixed;
-;
   bottom: 250px;
   left: 150px;
 border: #8f3dff;
 }
 
-
 .text2{
   position: fixed;
- ;
   bottom: 250px;
   right: 750px;
 }
@@ -24,11 +21,11 @@ border: #8f3dff;
 bottom: 250px;
 }
 
-
 .links {
   float: left;
   width: 49%;
 }
+
 .links button {
   float: right;
   margin: 5px;

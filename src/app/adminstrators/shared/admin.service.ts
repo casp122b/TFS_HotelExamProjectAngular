@@ -18,4 +18,24 @@ export class AdminService {
     return this.http
       .get<Admin[]>(url);
   }
+
+  getById(id: number): Observable<Admin> {
+    return this.http
+      .get<Admin>(url + '/' + id);
+  }
+
+  delete(id: number): Observable<Admin> {
+    return this.http
+      .delete<Admin>(url + '/' + id);
+  }
+
+  update(id: number, admin: Admin): Observable<Admin> {
+    return this.http
+    .put<Admin>(url + '/' + id, admin);
+  }
+
+  create(admin: Admin): Observable<Admin> {
+    return this.http
+      .post<Admin>(url, admin);
+  }
 }

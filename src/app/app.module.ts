@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AdminModule } from './adminstrators/shared/admin.module';
-import { AdminService } from './adminstrators/shared/admin.service';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routing';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
@@ -18,7 +17,7 @@ import { AuthenticationService } from './login/authentication.service';
 import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './login/token.interceptor';
-import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
+import { NavBarModule } from './navigation/nav-bar/nav-bar.module';
 import { DoubleRoomCreateComponent } from './rooms/double-room/double-room-create/double-room-create.component';
 import { DoubleRoomDetailComponent } from './rooms/double-room/double-room-detail/double-room-detail.component';
 import { DoubleRoomListComponent } from './rooms/double-room/double-room-list/double-room-list.component';
@@ -31,7 +30,6 @@ import { SuiteService } from './rooms/suites/shared/suite.service';
 import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.component';
 import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
 import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
-import { TryingComponent } from './trying/trying.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 
 @NgModule({
@@ -48,8 +46,6 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
     DoubleRoomListComponent,
     FrontPageDetailComponent,
     LoginComponent,
-    TryingComponent,
-    NavBarComponent,
     UnAuthorizedComponent
   ],
   imports: [
@@ -57,8 +53,9 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
     HttpClientModule,
     HttpModule,
     RouterModule,
-    AdminModule,
     GuestModule,
+    AdminModule,
+    NavBarModule,
     appRoutes,
     ReactiveFormsModule,
     NgbModule.forRoot()
@@ -69,7 +66,6 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
     SingleRoomService,
     SuiteService,
     GuestService,
-    AdminService,
     AuthenticationService,
     {
       provide: HTTP_INTERCEPTORS,
