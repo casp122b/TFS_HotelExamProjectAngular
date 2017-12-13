@@ -16,43 +16,43 @@ export class GuestCreateComponent implements OnInit {
   guestGroup: FormGroup;
   authId: number;
   constructor(private guestService: GuestService,
-              private authenticationService: AuthenticationService,
-              private fb: FormBuilder,
-              private router: Router) {
-      this.guestGroup = this.fb.group({
-        firstName: '',
-        lastName: '',
-        address: '',
-        username: '',
-        password: ''
-      })
-   }
+    private authenticationService: AuthenticationService,
+    private fb: FormBuilder,
+    private router: Router) {
+    this.guestGroup = this.fb.group({
+      firstName: '',
+      lastName: '',
+      address: '',
+      username: '',
+      password: ''
+    })
+  }
 
   ngOnInit() {
   }
 
   createGuest() {
     const values = this.guestGroup.value;
-    
+
     const authentication: Authentication = {
       username: values.username,
       password: values.password
     };
     this.authenticationService.createUser(authentication)
-    .subscribe(done => {
-      authentication.id = done.id;
-      const guest: Guest = {
-        firstName: values.firstName,
-        lastName: values.lastName,
-        address: values.address,
-        userId: done.id
-      };
-      this.guestService.create(guest)
-      .subscribe(guest => {
-        this.router.navigateByUrl('/guests/page');
+      .subscribe(done => {
+        authentication.id = done.id;
+        const guest: Guest = {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          address: values.address,
+          userId: done.id
+        };
+        this.guestService.create(guest)
+          .subscribe(guest => {
+            this.router.navigateByUrl('/guests/page');
+          });
       });
-    });
 
-    
+
   }
-  }
+}
