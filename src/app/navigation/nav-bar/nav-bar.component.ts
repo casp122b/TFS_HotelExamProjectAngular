@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { AuthenticationService } from '../../login/authentication.service';
 
 @Component({
@@ -9,6 +8,7 @@ import { AuthenticationService } from '../../login/authentication.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  
 
   authentication: string = localStorage.getItem('username');
   role: string = localStorage.getItem('role');

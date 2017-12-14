@@ -1,6 +1,6 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -12,7 +12,6 @@ import { appRoutes } from './app.routing';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 import { AuthGuard } from './guard/auth.guard';
 import { GuestModule } from './guests/shared/guest.module';
-import { GuestService } from './guests/shared/guest.service';
 import { AuthenticationService } from './login/authentication.service';
 import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
@@ -27,7 +26,6 @@ import { SingleRoomCreateComponent } from './rooms/single-room/single-room-creat
 import { SingleRoomDetailComponent } from './rooms/single-room/single-room-detail/single-room-detail.component';
 import { SingleRoomListComponent } from './rooms/single-room/single-room-list/single-room-list.component';
 import { SuiteModule } from './rooms/suites/shared/suite.module';
-import { SuiteService } from './rooms/suites/shared/suite.service';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 
 @NgModule({
@@ -52,16 +50,15 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
     GuestModule,
     AdminModule,
     SuiteModule,
-    appRoutes,
     ReactiveFormsModule,
+    FormsModule,
+    appRoutes,
     NgbModule.forRoot()
   ],
   providers: [
     AuthGuard,
     DoubleRoomService,
     SingleRoomService,
-    SuiteService,
-    GuestService,
     AuthenticationService,
     {
       provide: HTTP_INTERCEPTORS,

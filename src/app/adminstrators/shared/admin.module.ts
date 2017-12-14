@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { NavBarModule } from '../../navigation/nav-bar/nav-bar.module';
 import { AdminCreateComponent } from '../admin-create/admin-create.component';
@@ -14,13 +13,7 @@ import { AdminService } from './admin.service';
         AdminDetailComponent
     ],
     imports: [
-        ReactiveFormsModule,
         NavBarModule
-    ],
-    exports: [
-        AdminListComponent,
-        AdminCreateComponent,
-        AdminDetailComponent
     ],
     providers: [
         AdminService

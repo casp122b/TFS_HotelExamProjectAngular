@@ -38,7 +38,7 @@ export class AdminCreateComponent implements OnInit {
     const authentication: Authentication = {
       username: values.username,
       password: values.password,
-      role: "Administrator"
+      role: 'Administrator'
     };
     this.authenticationService.createUser(authentication)
       .subscribe(done => {

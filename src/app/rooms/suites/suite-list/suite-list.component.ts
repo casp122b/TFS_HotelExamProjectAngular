@@ -54,9 +54,4 @@ export class SuiteListComponent implements OnInit {
       );
     $event.stopPropagation();
   }
-
-  createCustomer() {
-    this.router
-      .navigateByUrl('/suites/create');
-  }
 }
