@@ -26,7 +26,7 @@ export class AdminListComponent implements OnInit {
 
   details(admin: Admin) {
     this.router
-      .navigateByUrl('/admins/' + admin.id);
+      .navigateByUrl('/admin/' + admin.id);
   }
 
   delete(admin: Admin, $event) {

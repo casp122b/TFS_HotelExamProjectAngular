@@ -1,5 +1,7 @@
 import { RouterModule } from '@angular/router';
 
+import { AdminCreateComponent } from './adminstrators/admin-create/admin-create.component';
+import { AdminDetailComponent } from './adminstrators/admin-detail/admin-detail.component';
 import { AdminListComponent } from './adminstrators/admin-list/admin-list.component';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 import { AuthGuard } from './guard/auth.guard';
@@ -27,7 +29,7 @@ export const appRoutes = RouterModule.forRoot(
       data: { title: 'Guest page' }
     },
     {
-      path: 'guests/:id',
+      path: 'guest/:id',
       component: GuestDetailComponent
     },
     {
@@ -41,7 +43,7 @@ export const appRoutes = RouterModule.forRoot(
       canActivate: [AuthGuard]
     },
     {
-      path: 'doubleRooms/:id',
+      path: 'doubleRoom/:id',
       component: DoubleRoomDetailComponent
     },
     {
@@ -54,7 +56,7 @@ export const appRoutes = RouterModule.forRoot(
       data: { title: 'Room List' }
     },
     {
-      path: 'singleRooms/:id',
+      path: 'singleRoom/:id',
       component: SingleRoomDetailComponent
     },
     {
@@ -67,7 +69,7 @@ export const appRoutes = RouterModule.forRoot(
       data: { title: 'Room List' }
     },
     {
-      path: 'suites/:id',
+      path: 'suite/:id',
       component: SuiteDetailComponent
     },
     {
@@ -100,6 +102,14 @@ export const appRoutes = RouterModule.forRoot(
     {
       path: 'admins',
       component: AdminListComponent
+    },
+    {
+      path: 'admin/:id',
+      component: AdminDetailComponent
+    },
+    {
+      path: 'admins/create',
+      component: AdminCreateComponent
     }
   ]
 )

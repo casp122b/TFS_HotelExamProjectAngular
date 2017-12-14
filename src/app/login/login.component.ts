@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('currentUser', success.token);
         localStorage.setItem('username', success.username);
         localStorage.setItem('role', success.role);
-        this.router.navigateByUrl('/trying/now');
+        this.router.navigateByUrl('/front');
       },
       error => {
         this.errormessage = 'Wrong username or password!';
