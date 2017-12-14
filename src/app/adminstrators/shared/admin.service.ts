@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 import { environment } from '../../../environments/environment';
 import { AuthenticationService } from '../../login/authentication.service';
@@ -11,8 +11,7 @@ const url = environment.apiEndpoint + '/admins';
 @Injectable()
 export class AdminService {
 
-  constructor(private http: HttpClient,
-    private authenticationService: AuthenticationService) { }
+  constructor(private http: HttpClient) { }
 
   get(): Observable<Admin[]> {
     return this.http
@@ -31,7 +30,7 @@ export class AdminService {
 
   update(id: number, admin: Admin): Observable<Admin> {
     return this.http
-    .put<Admin>(url + '/' + id, admin);
+      .put<Admin>(url + '/' + id, admin);
   }
 
   create(admin: Admin): Observable<Admin> {

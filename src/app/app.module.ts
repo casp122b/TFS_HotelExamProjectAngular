@@ -26,18 +26,13 @@ import { SingleRoomService } from './rooms/single-room/shared/single-room.servic
 import { SingleRoomCreateComponent } from './rooms/single-room/single-room-create/single-room-create.component';
 import { SingleRoomDetailComponent } from './rooms/single-room/single-room-detail/single-room-detail.component';
 import { SingleRoomListComponent } from './rooms/single-room/single-room-list/single-room-list.component';
+import { SuiteModule } from './rooms/suites/shared/suite.module';
 import { SuiteService } from './rooms/suites/shared/suite.service';
-import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.component';
-import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
-import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SuiteCreateComponent,
-    SuiteDetailComponent,
-    SuiteListComponent,
     SingleRoomCreateComponent,
     SingleRoomDetailComponent,
     SingleRoomListComponent,
@@ -53,9 +48,10 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
     HttpClientModule,
     HttpModule,
     RouterModule,
+    NavBarModule,
     GuestModule,
     AdminModule,
-    NavBarModule,
+    SuiteModule,
     appRoutes,
     ReactiveFormsModule,
     NgbModule.forRoot()

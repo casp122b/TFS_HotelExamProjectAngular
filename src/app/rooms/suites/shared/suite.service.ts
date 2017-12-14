@@ -34,4 +34,9 @@ export class SuiteService {
     return this.http
       .post<Suite>(url, suite);
   }
+
+  update(id: number, suite: Suite): Observable<Suite> {
+    return this.http
+    .put<Suite>(url + '/' + id, suite);
+  }
 }
