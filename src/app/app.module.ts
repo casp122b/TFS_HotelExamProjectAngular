@@ -37,6 +37,7 @@ import { AdminService } from './adminstrators/shared/admin.service';
 import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 
+
 const appRoutes: Routes = [
   {
     path: 'guests/page',
@@ -46,6 +47,10 @@ const appRoutes: Routes = [
   {
     path: 'guest/:id',
     component: GuestDetailComponent
+  },
+  {
+    path: 'admin/create',
+    component: AdminCreateComponent
   },
   {
     path: 'guests/create',
@@ -144,7 +149,8 @@ const appRoutes: Routes = [
     LoginComponent,
     TryingComponent,
     NavBarComponent,
-    UnAuthorizedComponent
+    UnAuthorizedComponent,
+
   ],
   imports: [
     BrowserModule,

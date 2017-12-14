@@ -23,6 +23,10 @@
       <li *ngIf="role == 'Administrator'" class="nav-item">
         <a class="nav-link" routerLink="/singleRoom/create">Create SingleRoom</a>
       </li>
+      <li *ngIf="role == 'Administrator'" class="nav-item">
+        <a class="nav-link" routerLink="/admin/create">Create Admins</a>
+      </li>
+
     </ul>
     <ul class="navbar-nav ml-auto">
       <li *ngIf="!authentication" class="nav-item">
