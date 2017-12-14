@@ -4,5 +4,6 @@ export class Suite{
   id?: number;
  price?: number;
  available: number;
- guest: Guest;
+ guestId?: number;
+ guest?: Guest;
 }

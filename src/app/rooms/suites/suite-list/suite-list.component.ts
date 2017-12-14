@@ -31,7 +31,7 @@ export class SuiteListComponent implements OnInit {
 
   details(suite: Suite) {
     this.router
-      .navigateByUrl('/suites/' + suite.id);
+      .navigateByUrl('/suite/' + suite.id);
   }
 
   delete(suite: Suite, $event) {

@@ -1,4 +1,32 @@
 <app-nav-bar></app-nav-bar>
-<p>
-  suite-detail works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        Edit Suite
+      </h1>
+    </div>
+    <form (ngSubmit)="editSuite()" [formGroup]="newSuiteGroup" novalidate>
+      <div class="form-group">
+        <label class="center-block">Price:
+          <input class="form-control" formControlName="price">
+        </label>
+        <br>
+        <label class="center-block">Available:
+          <input class="form-control" formControlName="available">
+        </label>
+        <br>
+        <label class="center-block">GuestId:
+          <input class="form-control" formControlName="guestId">
+        </label>
+        <br>
+        <button type="submit" class="btnCancel btn-outline-warning" routerLink="/guests/page">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>Cancel
+        </button>
+        <button type="submit" class="btnEdit btn-outline-danger">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>Edit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
