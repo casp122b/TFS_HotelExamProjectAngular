@@ -33,7 +33,7 @@ export class GuestCreateComponent implements OnInit {
 
   createGuest() {
     const values = this.guestGroup.value;
-    
+
     const authentication: Authentication = {
       username: values.username,
       password: values.password
@@ -50,10 +50,8 @@ export class GuestCreateComponent implements OnInit {
       };
       this.guestService.create(guest)
       .subscribe(guest => {
-        this.router.navigateByUrl('/guests/page');
+        this.router.navigateByUrl('/front');
       });
     });
-
-    
   }
   }

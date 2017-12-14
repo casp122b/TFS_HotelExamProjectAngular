@@ -3,4 +3,5 @@ export class Admin{
   firstName: string;
   lastName: string;
   address: string;
+  userId?: number;
 }
