@@ -8,7 +8,7 @@ export class AuthGuard implements CanActivate {
     constructor(private router: Router) { }
 
     canActivate() {
-        if (localStorage.getItem('role') == 'Administrator') {
+        if (localStorage.getItem('role') === 'Administrator') {
             // logged in so return true
             return true;
         }
@@ -16,6 +16,6 @@ export class AuthGuard implements CanActivate {
         //if the user is not logged in, return to guest's front page and canActivate == false;
         this.router.navigateByUrl('/guests/page');
         return false;
-        
-        };
-    }
+
+    };
+}

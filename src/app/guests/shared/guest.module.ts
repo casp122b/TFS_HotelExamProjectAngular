@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { NavBarModule } from '../../navigation/nav-bar/nav-bar.module';
 import { GuestCreateComponent } from '../guest-create/guest-create.component';
 import { GuestDetailComponent } from '../guest-detail/guest-detail.component';
 import { GuestListComponent } from '../guest-list/guest-list.component';
@@ -10,15 +10,8 @@ import { GuestService } from './guest.service';
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
-    exports: [
-        GuestListComponent,
-        GuestCreateComponent,
-        GuestDetailComponent,
-        GuestPageComponent
+        ReactiveFormsModule,
+        NavBarModule
     ],
     declarations: [
         GuestListComponent,

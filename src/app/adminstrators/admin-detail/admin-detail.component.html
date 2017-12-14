@@ -1,3 +1,32 @@
-<p>
-  admin-detail works!
-</p>
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        Edit Guest
+      </h1>
+    </div>
+    <form (ngSubmit)="editAdmin()" [formGroup]="newAdminGroup" novalidate>
+      <div class="form-group">
+        <label class="center-block">FirstName:
+          <input class="form-control" formControlName="firstName">
+        </label>
+        <br>
+        <label class="center-block">LastName:
+          <input class="form-control" formControlName="lastName">
+        </label>
+        <br>
+        <label class="center-block">Address:
+          <input class="form-control" formControlName="address">
+        </label>
+        <br>
+        <button type="submit" class="btnCancel btn-outline-warning" routerLink="/front">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>Cancel
+        </button>
+        <button type="submit" class="btnEdit btn-outline-danger">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>Edit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

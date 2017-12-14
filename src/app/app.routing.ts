@@ -1,5 +1,8 @@
 import { RouterModule } from '@angular/router';
 
+import { AdminCreateComponent } from './adminstrators/admin-create/admin-create.component';
+import { AdminDetailComponent } from './adminstrators/admin-detail/admin-detail.component';
+import { AdminListComponent } from './adminstrators/admin-list/admin-list.component';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 import { AuthGuard } from './guard/auth.guard';
 import { GuestCreateComponent } from './guests/guest-create/guest-create.component';
@@ -16,7 +19,6 @@ import { SingleRoomListComponent } from './rooms/single-room/single-room-list/si
 import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.component';
 import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
 import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
-import { TryingComponent } from './trying/trying.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 
 export const appRoutes = RouterModule.forRoot(
@@ -27,7 +29,7 @@ export const appRoutes = RouterModule.forRoot(
       data: { title: 'Guest page' }
     },
     {
-      path: 'guests/:id',
+      path: 'guest/:id',
       component: GuestDetailComponent
     },
     {
@@ -37,10 +39,11 @@ export const appRoutes = RouterModule.forRoot(
     {
       path: 'guests',
       component: GuestListComponent,
-      data: { title: 'Room List' }
+      data: { title: 'Room List' },
+      canActivate: [AuthGuard]
     },
     {
-      path: 'doubleRooms/:id',
+      path: 'doubleRoom/:id',
       component: DoubleRoomDetailComponent
     },
     {
@@ -53,7 +56,7 @@ export const appRoutes = RouterModule.forRoot(
       data: { title: 'Room List' }
     },
     {
-      path: 'singleRooms/:id',
+      path: 'singleRoom/:id',
       component: SingleRoomDetailComponent
     },
     {
@@ -66,7 +69,7 @@ export const appRoutes = RouterModule.forRoot(
       data: { title: 'Room List' }
     },
     {
-      path: 'suites/:id',
+      path: 'suite/:id',
       component: SuiteDetailComponent
     },
     {
@@ -83,7 +86,6 @@ export const appRoutes = RouterModule.forRoot(
       path: 'front',
       component: FrontPageDetailComponent
     },
-
     {
       path: '',
       redirectTo: '/front',
@@ -94,13 +96,20 @@ export const appRoutes = RouterModule.forRoot(
       component: LoginComponent
     },
     {
-      path: 'trying/now',
-      component: TryingComponent,
-      canActivate: [AuthGuard],
-    },
-    {
       path: 'unauthorized',
       component: UnAuthorizedComponent
+    },
+    {
+      path: 'admins',
+      component: AdminListComponent
+    },
+    {
+      path: 'admin/:id',
+      component: AdminDetailComponent
+    },
+    {
+      path: 'admins/create',
+      component: AdminCreateComponent
     }
   ]
-);
+)
