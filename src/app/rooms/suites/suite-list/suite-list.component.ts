@@ -1,8 +1,11 @@
+import 'rxjs/add/operator/switchMap';
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Suite } from '../shared/suite.model';
 import { SuiteService } from '../shared/suite.service';
-import { Router } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
+
 @Component({
   selector: 'app-suite-list',
   templateUrl: './suite-list.component.html',
@@ -28,7 +31,7 @@ export class SuiteListComponent implements OnInit {
 
   details(suite: Suite) {
     this.router
-      .navigateByUrl('/suite/' + suite.id);
+      .navigateByUrl('/suites/' + suite.id);
   }
 
   delete(suite: Suite, $event) {
@@ -56,6 +59,4 @@ export class SuiteListComponent implements OnInit {
     this.router
       .navigateByUrl('/suites/create');
   }
-
-
 }

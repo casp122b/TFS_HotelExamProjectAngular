@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import {SingleRoom} from './single-room.model';
-
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../../environments/environment';
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { environment } from '../../../../environments/environment';
+import { SingleRoom } from './single-room.model';
 
 const url = environment.apiEndpoint + '/singleRooms';
 

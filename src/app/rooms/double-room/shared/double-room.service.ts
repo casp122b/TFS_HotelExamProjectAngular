@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import {DoubleRoom} from './double-room.model';
-
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../../environments/environment';
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { environment } from '../../../../environments/environment';
+import { DoubleRoom } from './double-room.model';
 
 const url = environment.apiEndpoint + '/doubleRooms';
 

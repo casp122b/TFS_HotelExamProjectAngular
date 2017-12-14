@@ -12,11 +12,16 @@ export class FrontPageDetailComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.rooms = [{src:"../../../assets/images/singleRoom.jpg",
-    routerLink:"/singleRooms/"},
-    {src:"../../../assets/images/doubleRoom.jpg",
-    routerLink:"/doubleRooms/"}, {src:"../../../assets/images/suite.jpg",
-    routerLink:"/suites/"
+    this.rooms = [{
+      src: "../../../assets/images/singleRoom.jpg",
+      routerLink: "/singleRooms"
+    },
+    {
+      src: "../../../assets/images/doubleRoom.jpg",
+      routerLink: "/doubleRooms"
+    }, {
+      src: "../../../assets/images/suite.jpg",
+      routerLink: "/suites"
     }]
   }
 
