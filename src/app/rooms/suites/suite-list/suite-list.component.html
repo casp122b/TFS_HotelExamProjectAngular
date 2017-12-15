@@ -20,7 +20,28 @@
   </div>
 
   <div class="card col-6">
-    <img class="suite1" src="../../../assets/images/suite.jpg">
+    <ngb-carousel class="carousel">
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/singleroom.jpg" alt="Random first slide">
+        <div class="carousel-caption">
+          <h3>Værelset</h3>
+
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/hotelsinglebath.jpg" alt="Random second slide">
+        <div class="carousel-caption">
+          <h3>Badeværelset</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/oceanview.jpg" alt="Random third slide">
+        <div class="carousel-caption">
+          <h3>Altanen</h3>
+
+        </div>
+      </ng-template>
+    </ngb-carousel>
     <div *ngFor="let suite of suites" class="list-group-item list-group-item-action">
       <p> pris på suite {{suite.price}} kr.</p>
       <p> rum tilgængelige {{suite.available}} </p>
