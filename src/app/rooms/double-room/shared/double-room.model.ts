@@ -4,5 +4,5 @@ export class DoubleRoom {
   id?: number;
  price: number;
  available: number;
- guest: Guest;
+ guest?: Guest;
 }

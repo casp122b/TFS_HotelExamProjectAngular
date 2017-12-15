@@ -67,7 +67,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'doubleRooms/create',
-    component: DoubleRoomCreateComponent
+    component: DoubleRoomCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'doubleRooms',
@@ -80,7 +81,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'singleRooms/create',
-    component: SingleRoomCreateComponent
+    component: SingleRoomCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'singleRooms',
@@ -93,7 +95,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'suites/create',
-    component: SuiteCreateComponent
+    component: SuiteCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'suites',

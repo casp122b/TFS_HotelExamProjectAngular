@@ -3,6 +3,6 @@ import { Guest } from '../../../guests/shared/guest.model';
 export class SingleRoom {
   id?: number;
  price?: number;
- available: number;
- guest: Guest;
+ available?: number;
+ guest?: Guest;
 }
