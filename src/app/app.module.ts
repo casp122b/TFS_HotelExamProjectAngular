@@ -23,7 +23,6 @@ import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './login/token.interceptor';
 import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
-import { NavBarModule } from './navigation/nav-bar/nav-bar.module';
 import { DoubleRoomCreateComponent } from './rooms/double-room/double-room-create/double-room-create.component';
 import { DoubleRoomDetailComponent } from './rooms/double-room/double-room-detail/double-room-detail.component';
 import { DoubleRoomListComponent } from './rooms/double-room/double-room-list/double-room-list.component';
@@ -149,6 +148,7 @@ const appRoutes: Routes = [
     FrontPageDetailComponent,
     LoginComponent,
     NavBarComponent,
+    GuestPageComponent,
     UnAuthorizedComponent,
 
   ],
@@ -156,7 +156,6 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    NavBarModule,
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
