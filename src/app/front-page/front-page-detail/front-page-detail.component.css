@@ -21,30 +21,18 @@ border: #8f3dff;
 bottom: 250px;
 }
 
-.links {
-  float: left;
-  width: 49%;
-}
-
-.links button {
-  float: right;
-  margin: 5px;
-  padding: 5px 10px;
-  border: 1px gray solid;
-  border-radius: 5px;
-  background: forestgreen;
-  color: white;
-}
-
 .single{
+  margin-top: 80px;
   max-height: 375px;
   max-width: 500px;
 }
 .double{
+  margin-top: 80px;
   max-height: 375px;
   max-width: 500px;
 }
 .suite {
+  margin-top: 80px;
   max-height: 375px;
   min-width: 510px;
 }

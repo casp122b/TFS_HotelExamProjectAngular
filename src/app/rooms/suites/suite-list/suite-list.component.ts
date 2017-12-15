@@ -47,8 +47,7 @@ export class SuiteListComponent implements OnInit {
   deleteConfirmed($event) {
     this.suiteService.delete(this.suiteToDelete.id)
       .switchMap(suite => this.suiteService.get())
-      .subscribe(
-      suites => {
+      .subscribe(suites => {
         this.suites = suites;
       }
       );
