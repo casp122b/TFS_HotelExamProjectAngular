@@ -1,22 +1,26 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AdminModule } from './adminstrators/shared/admin.module';
+import { AdminCreateComponent } from './adminstrators/admin-create/admin-create.component';
+import { AdminService } from './adminstrators/shared/admin.service';
 import { AppComponent } from './app.component';
-import { appRoutes } from './app.routing';
-import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
+import {FrontPageDetailComponent, FrontPageDetailComponent,  FrontPageDetailComponent} from './front-page/front-page-detail/front-page-detail.component';
 import { AuthGuard } from './guard/auth.guard';
-import { GuestModule } from './guests/shared/guest.module';
+import { GuestCreateComponent } from './guests/guest-create/guest-create.component';
+import { GuestDetailComponent } from './guests/guest-detail/guest-detail.component';
+import { GuestListComponent } from './guests/guest-list/guest-list.component';
+import { GuestPageComponent } from './guests/guest-page/guest-page/guest-page.component';
 import { GuestService } from './guests/shared/guest.service';
 import { AuthenticationService } from './login/authentication.service';
 import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './login/token.interceptor';
+import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
 import { NavBarModule } from './navigation/nav-bar/nav-bar.module';
 import { DoubleRoomCreateComponent } from './rooms/double-room/double-room-create/double-room-create.component';
 import { DoubleRoomDetailComponent } from './rooms/double-room/double-room-detail/double-room-detail.component';
@@ -26,14 +30,28 @@ import { SingleRoomService } from './rooms/single-room/shared/single-room.servic
 import { SingleRoomCreateComponent } from './rooms/single-room/single-room-create/single-room-create.component';
 import { SingleRoomDetailComponent } from './rooms/single-room/single-room-detail/single-room-detail.component';
 import { SingleRoomListComponent } from './rooms/single-room/single-room-list/single-room-list.component';
-import { SuiteModule } from './rooms/suites/shared/suite.module';
 import { SuiteService } from './rooms/suites/shared/suite.service';
+import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.component';
+import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
+import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
+import { AdminDetailComponent } from './adminstrators/admin-detail/admin-detail.component';
+import { AdminListComponent } from './adminstrators/admin-list/admin-list.component';
 
-<<<<<<< HEAD
-=======
 
 const appRoutes: Routes = [
+  {
+    path: 'admins/create',
+    component: AdminCreateComponent
+  },
+  {
+    path: 'admin/:id',
+    component: AdminDetailComponent
+  },
+  {
+    path: 'admins',
+    component: AdminListComponent
+  },
   {
     path: 'guests/page',
     component: GuestPageComponent,
@@ -44,17 +62,13 @@ const appRoutes: Routes = [
     component: GuestDetailComponent
   },
   {
-    path: 'admin/create',
-    component: AdminCreateComponent
+    path: 'guests',
+    component: GuestListComponent,
+    data: { title: 'Room List' }
   },
   {
     path: 'guests/create',
     component: GuestCreateComponent
-  },
-  {
-    path: 'guests',
-    component: GuestListComponent,
-    data: { title: 'Room List' }
   },
   {
     path: 'doubleRoom/:id',
@@ -98,12 +112,10 @@ const appRoutes: Routes = [
     component: SuiteListComponent,
     data: { title: 'Room List' }
   },
-
   {
     path: 'front',
     component: FrontPageDetailComponent
   },
-
   {
     path: '',
     redirectTo: '/front',
@@ -114,17 +126,11 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'trying/now',
-    component: TryingComponent,
-    canActivate: [AuthGuard],
-  },
-  {
     path: 'unauthorized',
     component: UnAuthorizedComponent
   },
 
 ];
->>>>>>> refs/remotes/origin/Virker
 @NgModule({
   declarations: [
     AppComponent,
@@ -134,28 +140,26 @@ const appRoutes: Routes = [
     DoubleRoomDetailComponent,
     DoubleRoomCreateComponent,
     DoubleRoomListComponent,
+    SuiteCreateComponent,
+    SuiteDetailComponent,
+    SuiteListComponent,
+    AdminCreateComponent,
+    AdminDetailComponent,
+    AdminListComponent,
     FrontPageDetailComponent,
     LoginComponent,
-<<<<<<< HEAD
-    UnAuthorizedComponent
-=======
-    TryingComponent,
     NavBarComponent,
     UnAuthorizedComponent,
 
->>>>>>> refs/remotes/origin/Virker
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    RouterModule,
     NavBarModule,
-    GuestModule,
-    AdminModule,
-    SuiteModule,
-    appRoutes,
     ReactiveFormsModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],
   providers: [
@@ -164,6 +168,7 @@ const appRoutes: Routes = [
     SingleRoomService,
     SuiteService,
     GuestService,
+    AdminService,
     AuthenticationService,
     {
       provide: HTTP_INTERCEPTORS,
