@@ -21,7 +21,8 @@ export class DoubleRoomCreateComponent implements OnInit {
               private router: Router) {
     this.doubleRoomGroup = this.fb.group({
       price: '',
-      available: ''
+      available: '',
+      name: ''
     });
   }
   ngOnInit() {
@@ -36,8 +37,8 @@ export class DoubleRoomCreateComponent implements OnInit {
     };
     const doubleRoom: DoubleRoom = {
       price: values.price,
-      available: values.available
-
+      available: values.available,
+      name: values.name
     };
     this.doubleRoomService.create(doubleRoom)
       .subscribe(doubleRoom => {

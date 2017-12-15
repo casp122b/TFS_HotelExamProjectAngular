@@ -5,4 +5,5 @@ export class Suite{
  price?: number;
  available: boolean;
  guest?: Guest;
+  name?: string;
 }

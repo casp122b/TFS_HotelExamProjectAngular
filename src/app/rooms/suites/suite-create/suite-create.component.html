@@ -1,19 +1,19 @@
 <app-nav-bar></app-nav-bar>
 <div class="container">
-  <h1>Register</h1>
+  <h1>Fill</h1>
 </div>
 <form (ngSubmit)="createSuite()" [formGroup]="suiteGroup" novalidate>
   <div class="form-group">
-    <label class="center-block">Price:
+
+    <label class="center-block">navn på rummet:
+      <input class="form-control" formControlName="name">
+    </label>
+    <label class="center-block">Price for the new suite:
       <input class="form-control" formControlName="price">
     </label>
     <br>
-    <label class="center-block">available:
+    <label class="center-block">Available:
       <input class="form-control" formControlName="available">
-    </label>
-    <br>
-    <label class="center-block">Address:
-      <input class="form-control" formControlName="guestId">
     </label>
     <br>
     <button type="submit" class="btnRegi btn-outline-danger">

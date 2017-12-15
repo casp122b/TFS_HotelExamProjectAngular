@@ -1,10 +1,13 @@
+<app-nav-bar></app-nav-bar>
 <div class="container">
-  <h1>Register</h1>
-
+  <h1>Fill</h1>
 </div>
 <form (ngSubmit)="createDoubleRoom()" [formGroup]="doubleRoomGroup" novalidate>
   <div class="form-group">
-    <label>Price for the double room
+    <label>navn på rummet
+      <input class="form-control" formControlName="name">
+    </label><br>
+    <label>Price for the new double-room
       <input class="form-control" formControlName="price">
     </label><br>
     <label class="center-block">Available:

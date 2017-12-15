@@ -21,7 +21,8 @@ export class SingleRoomCreateComponent implements OnInit {
               private router: Router) {
     this.singleRoomGroup = this.fb.group({
       price: '',
-    available: ''
+    available: '',
+      name: ''
     });
   }
 
@@ -32,12 +33,12 @@ export class SingleRoomCreateComponent implements OnInit {
 
     const authentication: Authentication = {
       username: values.username,
-      password: values.password
+      password: values.password,
     };
   const singleRoom: SingleRoom = {
     price: values.price,
-  available: values.available
-
+  available: values.available,
+    name: values.name
   };
 
   this.singleRoomService.create(singleRoom)

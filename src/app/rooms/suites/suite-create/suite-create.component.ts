@@ -21,7 +21,8 @@ export class SuiteCreateComponent implements OnInit {
               private router: Router) {
     this.suiteGroup = this.fb.group({
       price: '',
-      available: ''
+      available: '',
+      name: ''
     });
   }
 
@@ -37,7 +38,8 @@ export class SuiteCreateComponent implements OnInit {
     };
     const suite: Suite = {
       price: values.price,
-      available: values.available
+      available: values.available,
+      name: values.name
 
     };
     this.suiteService.create(suite)

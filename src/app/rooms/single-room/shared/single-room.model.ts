@@ -5,4 +5,5 @@ export class SingleRoom {
  price?: number;
  available?: boolean;
  guest?: Guest;
+ name?: string;
 }

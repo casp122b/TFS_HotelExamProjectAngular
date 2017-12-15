@@ -5,4 +5,5 @@ export class DoubleRoom {
  price: number;
  available: boolean;
  guest?: Guest;
+ name?: string;
 }

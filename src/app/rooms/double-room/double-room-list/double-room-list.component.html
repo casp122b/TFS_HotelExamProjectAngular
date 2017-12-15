@@ -14,13 +14,14 @@
                 <p>Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</p>
             </div>
         </div>
-        
+
       <div class="card col-6">
         <div class="card-header">Room Details</div>
           <img class="suite1" src="../../../assets/images/doubleRoom.jpg">
           <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
             <p> pris på dobbelt værelse {{doubleRoom.price}} kr.</p>
-              <p> rum tilgængelige {{doubleRoom.available}} </p> 
+              <p> rum tilgængelige {{doubleRoom.available}} </p>
+            <p> navn på rummet {{doubleRoom.name}} </p>
             <button class="btn book" >
               <i class="fa fa-bed"  aria-hidden="true" ></i> Book
             </button>
@@ -43,5 +44,5 @@
               </div>
             </div>
         </div>
-      </div> 
+      </div>
     </div>

@@ -1,13 +1,17 @@
+<app-nav-bar></app-nav-bar>
 <div class="container">
-  <h1>Register</h1>
-
+  <h1>Fill</h1>
 </div>
 <form (ngSubmit)="createSingleRoom()" [formGroup]="singleRoomGroup" novalidate>
+
   <div class="form-group">
-    <label>FirstName:
+    <label class="center-block">navn på rummet:
+      <input class="form-control" formControlName="name">
+    </label>
+    <label>Price for the new single-room:
       <input class="form-control" formControlName="price">
     </label><br>
-    <label class="center-block">LastName:
+    <label class="center-block">Available:
       <input class="form-control" formControlName="available">
     </label><br>
     <button type="submit" class="btnRegi btn-outline-danger">
