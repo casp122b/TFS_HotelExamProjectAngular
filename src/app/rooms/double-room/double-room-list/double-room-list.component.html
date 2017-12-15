@@ -1,5 +1,4 @@
-<app-nav-bar></app-nav-bar>
-  <div class="row custom-content">
+ <div class="row custom-content">
 
       <div class="card col-6">
         <div class="card-header">Room name</div>
@@ -17,7 +16,29 @@
 
       <div class="card col-6">
         <div class="card-header">Room Details</div>
-          <img class="suite1" src="../../../assets/images/doubleRoom.jpg">
+        <ngb-carousel>
+          <ng-template ngbSlide>
+            <img class="Fix" src="../../../assets/images/doubleRoom.jpg" alt="Random first slide">
+            <div class="carousel-caption">
+              <h3>Værelset</h3>
+
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img src="../../../assets/images/Bathroomdouble.jpg" alt="Random second slide">
+            <div class="carousel-caption">
+              <h3>Badeværelset</h3>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img src="../../../assets/images/oceanView.jpg" alt="Random third slide">
+            <div class="carousel-caption">
+              <h3>Altanen</h3>
+
+            </div>
+          </ng-template>
+        </ngb-carousel>
+
           <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
             <p> pris på dobbelt værelse {{doubleRoom.price}} kr.</p>
               <p> rum tilgængelige {{doubleRoom.available}} </p>

@@ -8,9 +8,6 @@
   background-image: linear-gradient(to top, #F4F4F4 0%, #DFDEDC 100%);
 
 }
-.double-room-img {
-  width:100%;
-}
 .card {
   padding: 0;
 }
@@ -26,9 +23,10 @@ overflow-y: scroll;
 padding: 10px;
 width: 90%;
 margin: 0 5%;
-border-bottom: 2px solid lightgray; 
+border-bottom: 2px solid lightgray;
 }
 .hill-p {
   padding: 5px 10px;
   margin: 0;
 }
+
