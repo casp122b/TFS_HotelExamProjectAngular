@@ -20,7 +20,7 @@ export class SuiteDetailComponent implements OnInit {
       this.newSuiteGroup = this.fb.group({
         price: '',
         available: '',
-        guestId: ''
+        name: ''
       });
     }
   
@@ -38,7 +38,7 @@ export class SuiteDetailComponent implements OnInit {
         id: currentSuite,
         price: newValues.price,
         available: newValues.available,
-        guestId: newValues.guestId
+        name: newValues.name
       };
       this.suiteService.update(currentSuite, updatedSuite)
         .subscribe(suite => {

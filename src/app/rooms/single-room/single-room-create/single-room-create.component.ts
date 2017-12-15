@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Router} from '@angular/router';
-import {SingleRoomService} from '../shared/single-room.service';
-import {SingleRoom} from '../shared/single-room.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { Authentication } from '../../../login/authentication.model';
 import { AuthenticationService } from '../../../login/authentication.service';
+import { SingleRoom } from '../shared/single-room.model';
+import { SingleRoomService } from '../shared/single-room.service';
 
 
 @Component({
@@ -16,12 +17,12 @@ export class SingleRoomCreateComponent implements OnInit {
   singleRoomGroup: FormGroup;
   authId: number;
   constructor(private singleRoomService: SingleRoomService,
-              private authenticationService: AuthenticationService,
-              private fb: FormBuilder,
-              private router: Router) {
+    private authenticationService: AuthenticationService,
+    private fb: FormBuilder,
+    private router: Router) {
     this.singleRoomGroup = this.fb.group({
       price: '',
-    available: '',
+      available: '',
       name: ''
     });
   }
@@ -35,17 +36,17 @@ export class SingleRoomCreateComponent implements OnInit {
       username: values.username,
       password: values.password,
     };
-  const singleRoom: SingleRoom = {
-    price: values.price,
-  available: values.available,
-    name: values.name
-  };
+    const singleRoom: SingleRoom = {
+      price: values.price,
+      available: values.available,
+      name: values.name
+    };
 
-  this.singleRoomService.create(singleRoom)
-.subscribe(singleRoom => {
-  this.router.navigateByUrl('/front');
-});
-}
+    this.singleRoomService.create(singleRoom)
+      .subscribe(singleRoom => {
+        this.router.navigateByUrl('/front');
+      });
+  }
 }
 
 

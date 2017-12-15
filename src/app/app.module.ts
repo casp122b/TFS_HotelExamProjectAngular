@@ -1,15 +1,17 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AdminCreateComponent } from './adminstrators/admin-create/admin-create.component';
+import { AdminDetailComponent } from './adminstrators/admin-detail/admin-detail.component';
+import { AdminListComponent } from './adminstrators/admin-list/admin-list.component';
 import { AdminService } from './adminstrators/shared/admin.service';
 import { AppComponent } from './app.component';
-import {FrontPageDetailComponent, FrontPageDetailComponent,  FrontPageDetailComponent} from './front-page/front-page-detail/front-page-detail.component';
+import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 import { AuthGuard } from './guard/auth.guard';
 import { GuestCreateComponent } from './guests/guest-create/guest-create.component';
 import { GuestDetailComponent } from './guests/guest-detail/guest-detail.component';
@@ -35,8 +37,6 @@ import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.c
 import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
 import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
-import { AdminDetailComponent } from './adminstrators/admin-detail/admin-detail.component';
-import { AdminListComponent } from './adminstrators/admin-list/admin-list.component';
 
 
 const appRoutes: Routes = [
