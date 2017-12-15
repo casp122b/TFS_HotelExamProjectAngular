@@ -1,5 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <div class="container">
+<<<<<<< HEAD
   <h1>Register</h1>
 </div>
 <form (ngSubmit)="createSuite()" [formGroup]="suiteGroup" novalidate>
@@ -16,6 +17,24 @@
       <input class="form-control" formControlName="guestId">
     </label>
     <br>
+=======
+  <h1>Fill</h1>
+</div>
+<form (ngSubmit)="createSuite()" [formGroup]="suiteGroup" novalidate>
+  <div class="form-group">
+
+    <label class="center-block">navn på rummet:
+      <input class="form-control" formControlName="name">
+    </label>
+    <label class="center-block">Price for the new suite:
+      <input class="form-control" formControlName="price">
+    </label>
+    <br>
+    <label class="center-block">Available:
+      <input class="form-control" formControlName="available">
+    </label>
+    <br>
+>>>>>>> refs/remotes/origin/Virker
     <button type="submit" class="btnRegi btn-outline-danger">
       <i class="fa fa-floppy-o" aria-hidden="true"></i>Register
     </button>

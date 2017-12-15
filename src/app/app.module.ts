@@ -30,6 +30,101 @@ import { SuiteModule } from './rooms/suites/shared/suite.module';
 import { SuiteService } from './rooms/suites/shared/suite.service';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 
+<<<<<<< HEAD
+=======
+
+const appRoutes: Routes = [
+  {
+    path: 'guests/page',
+    component: GuestPageComponent,
+    data: { title: 'Guest page' }
+  },
+  {
+    path: 'guest/:id',
+    component: GuestDetailComponent
+  },
+  {
+    path: 'admin/create',
+    component: AdminCreateComponent
+  },
+  {
+    path: 'guests/create',
+    component: GuestCreateComponent
+  },
+  {
+    path: 'guests',
+    component: GuestListComponent,
+    data: { title: 'Room List' }
+  },
+  {
+    path: 'doubleRoom/:id',
+    component: DoubleRoomDetailComponent
+  },
+  {
+    path: 'doubleRooms/create',
+    component: DoubleRoomCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'doubleRooms',
+    component: DoubleRoomListComponent,
+    data: { title: 'Room List' }
+  },
+  {
+    path: 'singleRoom/:id',
+    component: SingleRoomDetailComponent
+  },
+  {
+    path: 'singleRooms/create',
+    component: SingleRoomCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'singleRooms',
+    component: SingleRoomListComponent,
+    data: { title: 'Room List' }
+  },
+  {
+    path: 'suite/:id',
+    component: SuiteDetailComponent
+  },
+  {
+    path: 'suites/create',
+    component: SuiteCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'suites',
+    component: SuiteListComponent,
+    data: { title: 'Room List' }
+  },
+
+  {
+    path: 'front',
+    component: FrontPageDetailComponent
+  },
+
+  {
+    path: '',
+    redirectTo: '/front',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'trying/now',
+    component: TryingComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'unauthorized',
+    component: UnAuthorizedComponent
+  },
+
+];
+>>>>>>> refs/remotes/origin/Virker
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +136,14 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
     DoubleRoomListComponent,
     FrontPageDetailComponent,
     LoginComponent,
+<<<<<<< HEAD
     UnAuthorizedComponent
+=======
+    TryingComponent,
+    NavBarComponent,
+    UnAuthorizedComponent,
+
+>>>>>>> refs/remotes/origin/Virker
   ],
   imports: [
     BrowserModule,

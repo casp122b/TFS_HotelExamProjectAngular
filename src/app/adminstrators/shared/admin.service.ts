@@ -5,6 +5,10 @@ import { Observable } from 'rxjs/Observable';
 import { environment } from '../../../environments/environment';
 import { AuthenticationService } from '../../login/authentication.service';
 import { Admin } from './admin.model';
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/Virker
 
 const url = environment.apiEndpoint + '/admins';
 

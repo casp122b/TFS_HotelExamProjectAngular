@@ -40,6 +40,7 @@ export class GuestCreateComponent implements OnInit {
       password: values.password
     };
     this.authenticationService.createUser(authentication)
+<<<<<<< HEAD
       .subscribe(done => {
         authentication.id = done.id;
         const guest: Guest = {
@@ -57,3 +58,21 @@ export class GuestCreateComponent implements OnInit {
 
   }
 }
+=======
+    .subscribe(done => {
+      authentication.id = done.id;
+      //this.guestGroup.reset();
+      const guest: Guest = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        address: values.address,
+        userId: done.id
+      };
+      this.guestService.create(guest)
+      .subscribe(guest => {
+        this.router.navigateByUrl('/front');
+      });
+    });
+  }
+  }
+>>>>>>> refs/remotes/origin/Virker

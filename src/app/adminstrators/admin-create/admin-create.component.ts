@@ -17,9 +17,15 @@ export class AdminCreateComponent implements OnInit {
   adminGroup: FormGroup;
   authId: number;
   constructor(private adminService: AdminService,
+<<<<<<< HEAD
     private authenticationService: AuthenticationService,
     private fb: FormBuilder,
     private router: Router) {
+=======
+              private authenticationService: AuthenticationService,
+              private fb: FormBuilder,
+              private router: Router) {
+>>>>>>> refs/remotes/origin/Virker
     this.adminGroup = this.fb.group({
       firstName: '',
       lastName: '',
@@ -38,7 +44,11 @@ export class AdminCreateComponent implements OnInit {
     const authentication: Authentication = {
       username: values.username,
       password: values.password,
+<<<<<<< HEAD
       role: "Administrator"
+=======
+      role: 'Administrator'
+>>>>>>> refs/remotes/origin/Virker
     };
     this.authenticationService.createUser(authentication)
       .subscribe(done => {

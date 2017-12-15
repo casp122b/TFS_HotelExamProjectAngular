@@ -1,4 +1,22 @@
-  <p>
-  single-room-create works!
-</p>
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <h1>Fill</h1>
+</div>
+<form (ngSubmit)="createSingleRoom()" [formGroup]="singleRoomGroup" novalidate>
+
+  <div class="form-group">
+    <label class="center-block">navn på rummet:
+      <input class="form-control" formControlName="name">
+    </label>
+    <label>Price for the new single-room:
+      <input class="form-control" formControlName="price">
+    </label><br>
+    <label class="center-block">Available:
+      <input class="form-control" formControlName="available">
+    </label><br>
+    <button type="submit" class="btnRegi btn-outline-danger">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>Register
+    </button>
+  </div>
+</form>
 
