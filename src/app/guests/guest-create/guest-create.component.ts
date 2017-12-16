@@ -31,6 +31,7 @@ export class GuestCreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  //username and password is defined by the user input from the formgroup.
   createGuest() {
     const values = this.guestGroup.value;
 
@@ -42,12 +43,15 @@ export class GuestCreateComponent implements OnInit {
     .subscribe(done => {
       user.id = done.id;
 
+      //a guest with the input from the user is defined
       const guest: Guest = {
         firstName: values.firstName,
         lastName: values.lastName,
         address: values.address,
         userId: done.id
       };
+
+      //By the guestService and through the entire backend, the guest is created. The subscribtion routes the guest to /front
       this.guestService.create(guest)
       .subscribe(guest => {
         this.router.navigateByUrl('/front');

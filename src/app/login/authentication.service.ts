@@ -17,6 +17,7 @@ export class AuthenticationService {
         localStorage.getItem('currentUser');
     }
 
+    //Sends the username and password to the backend. Returns a username, role and token for further use in the frontend
     login(authentication: Authentication): Observable<Authentication> {
         return this.http.post<Authentication>(url, authentication)
     }

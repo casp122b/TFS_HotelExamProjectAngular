@@ -8,7 +8,12 @@ import { environment } from '../../../environments/environment';
 import { Guest } from './guest.model';
 
 const url = environment.apiEndpoint + '/guests';
-
+/**
+ * CRUD functions for guests.
+ * 
+ * @export
+ * @class GuestService
+ */
 @Injectable()
 export class GuestService {
 
