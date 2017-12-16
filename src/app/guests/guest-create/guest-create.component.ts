@@ -15,7 +15,6 @@ import { GuestService } from '../shared/guest.service';
 export class GuestCreateComponent implements OnInit {
 
   guestGroup: FormGroup;
-  authId: number;
   constructor(private guestService: GuestService,
     private userService: UserService,
     private fb: FormBuilder,
