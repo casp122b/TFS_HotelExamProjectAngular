@@ -31,7 +31,7 @@ export class SingleRoomListComponent implements OnInit {
 
   details(singleRoom: SingleRoom) {
     this.router
-      .navigateByUrl('/singleRooms/' + singleRoom.id);
+      .navigateByUrl('/singleRoom/' + singleRoom.id);
   }
 
   delete(singleRoom: SingleRoom, $event) {

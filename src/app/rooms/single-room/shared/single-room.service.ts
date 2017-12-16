@@ -34,4 +34,8 @@ export class SingleRoomService {
     return this.http
       .post<SingleRoom>(url, singleRoom);
   }
+  update(id: number, singleRoom: SingleRoom): Observable<SingleRoom> {
+    return this.http
+      .put<SingleRoom>(url + '/' + id, singleRoom);
+  }
 }

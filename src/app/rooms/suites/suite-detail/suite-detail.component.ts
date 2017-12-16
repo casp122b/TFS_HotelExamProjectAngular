@@ -31,7 +31,7 @@ export class SuiteDetailComponent implements OnInit {
         ).subscribe(suite => this.suiteId = suite.id);
     }
 
-    editSuite() {
+    editSuite(  ) {
       const currentSuite = this.suiteId;
       const newValues = this.newSuiteGroup.value;
       const updatedSuite: Suite = {
