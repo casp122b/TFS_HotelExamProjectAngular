@@ -46,9 +46,6 @@
       <p> pris på suite: {{suite.price}} kr.</p>
       <p> rum tilgængelig: {{suite.available}} </p>
       <p> rummets navn: {{suite.name}} </p>
-      <button class="btn book">
-        <i class="fa fa-bed" aria-hidden="true"></i> Book
-      </button>
       <div *ngIf="role === 'Administrator'" class="Adminbuttons">
         <div *ngIf="!suiteToDelete || suiteToDelete.id != suite.id" class="pull-right">
           <button class="btn btn-outline-danger" (click)="delete(suite, $event)">

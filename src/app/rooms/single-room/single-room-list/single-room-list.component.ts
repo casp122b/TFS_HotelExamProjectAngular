@@ -54,9 +54,4 @@ export class SingleRoomListComponent implements OnInit {
       );
     $event.stopPropagation();
   }
-
-  createCustomer() {
-    this.router
-      .navigateByUrl('/singleRooms/create');
-  }
 }
