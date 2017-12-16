@@ -14,9 +14,7 @@ import {Authentication} from '../../../login/authentication.model';
 export class SuiteCreateComponent implements OnInit {
 
   suiteGroup: FormGroup;
-  authId: number;
   constructor(private suiteService: SuiteService,
-              private authenticationService: AuthenticationService,
               private fb: FormBuilder,
               private router: Router) {
     this.suiteGroup = this.fb.group({
@@ -31,11 +29,6 @@ export class SuiteCreateComponent implements OnInit {
 
   createSuite() {
     const values = this.suiteGroup.value;
-
-    const authentication: Authentication = {
-      username: values.username,
-      password: values.password
-    };
     const suite: Suite = {
       price: values.price,
       available: values.available,
