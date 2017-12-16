@@ -62,7 +62,7 @@ export class GuestDetailComponent implements OnInit {
         this.userService.update(currentUserId, updatedUser)
         .subscribe(user => {
           this.newGuestGroup.reset();
-        this.router.navigateByUrl("/front")
+        this.router.navigateByUrl('/front')
         })
       });
   }
