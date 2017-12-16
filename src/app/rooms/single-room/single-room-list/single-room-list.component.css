@@ -1,17 +1,14 @@
-.card-header{
+.card-header {
   position: relative;
   z-index: 1;
   background-image: linear-gradient(to top, #F4F4F4 0%, #DFDEDC 100%);
+}
 
+.carousel{
+  width: 600px;
+  height: 450px;
 }
-.double-room-img {
-  width:100%;
-}
+
 .card {
   padding: 0;
-}
-.infotext{
-  position: relative;
-  font-size: 19px;
-  width: 90%;
 }
