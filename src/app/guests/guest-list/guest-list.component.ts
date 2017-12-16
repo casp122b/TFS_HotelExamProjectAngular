@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { Guest } from '../shared/guest.model';
 import { GuestService } from '../shared/guest.service';
+import { UserService } from '../../users/shared/user.service';
 
 @Component({
   selector: 'app-guest-list',
@@ -16,7 +17,8 @@ export class GuestListComponent implements OnInit {
   guests: Guest[];
   guestToDelete: Guest;
   constructor(private guestService: GuestService,
-    private router: Router) {
+              private userService: UserService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -44,6 +46,8 @@ export class GuestListComponent implements OnInit {
   }
 
   deleteConfirmed($event) {
+    this.userService.delete(this.guestToDelete.userId)
+      .subscribe(user => this.guestToDelete.userId = user.id);
     this.guestService.delete(this.guestToDelete.id)
       .switchMap(guest => this.guestService.get())
       .subscribe(

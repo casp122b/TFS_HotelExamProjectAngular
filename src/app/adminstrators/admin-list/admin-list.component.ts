@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../shared/admin.service';
 import { Admin } from '../shared/admin.model';
 import { Router } from '@angular/router';
+import { UserService } from '../../users/shared/user.service';
 
 @Component({
   selector: 'app-admin-list',
@@ -12,6 +13,7 @@ export class AdminListComponent implements OnInit {
   admins: Admin[];
   adminToDelete: Admin;
   constructor(private adminService: AdminService,
+    private userService: UserService,
     private router: Router) {
   }
 
@@ -40,10 +42,12 @@ export class AdminListComponent implements OnInit {
   }
 
   deleteConfirmed($event) {
+    this.userService.delete(this.adminToDelete.userId)
+      .subscribe(user => this.adminToDelete.userId = user.id);
     this.adminService.delete(this.adminToDelete.id)
       .switchMap(admin => this.adminService.get())
       .subscribe(
-        admins => {
+      admins => {
         this.admins = admins;
       }
       );

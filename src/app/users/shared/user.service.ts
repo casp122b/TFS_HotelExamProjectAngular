@@ -22,5 +22,10 @@ export class UserService {
     update(id: number, user: User): Observable<User> {
         return this.http
         .put<User>(url + '/' + id, user);
+    }
+
+    delete(id: number): Observable<User> {
+        return this.http
+          .delete<User>(url + '/' + id);
       }
 }
