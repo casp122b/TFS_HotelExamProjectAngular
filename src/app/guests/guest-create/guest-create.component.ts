@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Authentication } from '../../login/authentication.model';
-import { AuthenticationService } from '../../login/authentication.service';
+import { User } from '../../users/shared/user.model';
+import { UserService } from '../../users/shared/user.service';
 import { Guest } from '../shared/guest.model';
 import { GuestService } from '../shared/guest.service';
 
@@ -17,7 +17,7 @@ export class GuestCreateComponent implements OnInit {
   guestGroup: FormGroup;
   authId: number;
   constructor(private guestService: GuestService,
-    private authenticationService: AuthenticationService,
+    private userService: UserService,
     private fb: FormBuilder,
     private router: Router) {
     this.guestGroup = this.fb.group({
@@ -35,14 +35,14 @@ export class GuestCreateComponent implements OnInit {
   createGuest() {
     const values = this.guestGroup.value;
 
-    const authentication: Authentication = {
+    const user: User = {
       username: values.username,
       password: values.password
     };
-    this.authenticationService.createUser(authentication)
+    this.userService.createUser(user)
     .subscribe(done => {
-      authentication.id = done.id;
-      //this.guestGroup.reset();
+      user.id = done.id;
+
       const guest: Guest = {
         firstName: values.firstName,
         lastName: values.lastName,

@@ -19,6 +19,7 @@ import { GuestListComponent } from './guests/guest-list/guest-list.component';
 import { GuestPageComponent } from './guests/guest-page/guest-page/guest-page.component';
 import { GuestService } from './guests/shared/guest.service';
 import { AuthenticationService } from './login/authentication.service';
+import { UserService } from './users/shared/user.service';
 import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './login/token.interceptor';
@@ -172,6 +173,7 @@ const appRoutes: Routes = [
     GuestService,
     AdminService,
     AuthenticationService,
+    UserService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
