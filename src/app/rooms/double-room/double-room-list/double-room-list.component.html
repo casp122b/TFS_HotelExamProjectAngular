@@ -20,15 +20,37 @@
   </div>
 
   <div class="card col-6">
-    <div class="card-header">Room Details</div>
-    <img class="suite1" src="../../../assets/images/suite.jpg">
+    <div class="card-header">DoubleRoom Details</div>
+    <ngb-carousel class="carousel">
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/singleroom.jpg" alt="Random first slide">
+        <div class="carousel-caption">
+          <h3>Værelset</h3>
+
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/hotelsinglebath.jpg" alt="Random second slide">
+        <div class="carousel-caption">
+          <h3>Badeværelset</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/oceanview.jpg" alt="Random third slide">
+        <div class="carousel-caption">
+          <h3>Altanen</h3>
+
+        </div>
+      </ng-template>
+    </ngb-carousel>
     <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
-      <p> pris på dobbelt værelse {{doubleRoom.price}} kr.</p>
-      <p> rum tilgængelige {{doubleRoom.available}} </p>
-      <button class="btn book">
-        <i class="fa fa-bed" aria-hidden="true"></i> Book
+      <p> pris på dobbeltværelse: {{doubleRoom.price}} kr.</p>
+      <p> rum tilgængelig: {{doubleRoom.available}} </p>
+      <p> rummets navn: {{doubleRoom.name}} </p>
+      <button class="btn book" >
+        <i class="fa fa-bed"  aria-hidden="true" ></i> Book
       </button>
-      <div *ngIf="role === 'Administrator'" class="Adminbuttons">
+      <div *ngIf="role == 'Administrator'" class="Adminbuttons">
         <div *ngIf="!doubleRoomToDelete || doubleRoomToDelete.id != doubleRoom.id" class="pull-right">
           <button class="btn btn-outline-danger" (click)="delete(doubleRoom, $event)">
             <i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -37,56 +59,13 @@
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
         </div>
-
-      <div class="card col-6">
-        <div class="card-header">Room Details</div>
-        <ngb-carousel class="carousel">
-          <ng-template ngbSlide>
-            <img src="../../../../assets/images/singleroom.jpg" alt="Random first slide">
-            <div class="carousel-caption">
-              <h3>Værelset</h3>
-
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <img src="../../../../assets/images/hotelsinglebath.jpg" alt="Random second slide">
-            <div class="carousel-caption">
-              <h3>Badeværelset</h3>
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <img src="../../../../assets/images/oceanview.jpg" alt="Random third slide">
-            <div class="carousel-caption">
-              <h3>Altanen</h3>
-
-            </div>
-          </ng-template>
-        </ngb-carousel>
-          <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
-            <p> pris på dobbeltværelse: {{doubleRoom.price}} kr.</p>
-              <p> rum tilgængelig: {{doubleRoom.available}} </p>
-            <p> rummets navn: {{doubleRoom.name}} </p>
-            <button class="btn book" >
-              <i class="fa fa-bed"  aria-hidden="true" ></i> Book
-            </button>
-            <div *ngIf="role == 'Administrator'" class="Adminbuttons">
-              <div *ngIf="!doubleRoomToDelete || doubleRoomToDelete.id != doubleRoom.id" class="pull-right">
-                <button class="btn btn-outline-danger" (click)="delete(doubleRoom, $event)">
-                  <i class="fa fa-trash-o" aria-hidden="true"></i>
-                </button>
-                <button class="btn btn-outline-warning" (click)="details(doubleRoom)">
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div *ngIf="doubleRoomToDelete && doubleRoomToDelete.id == doubleRoom.id" class="pull-right">
-                <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
-                  <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
-                </button>
-                <button class="btn btn-outline-info" (click)="deleteAborted($event)">
-                  <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
-                </button>
-              </div>
-            </div>
+        <div *ngIf="doubleRoomToDelete && doubleRoomToDelete.id == doubleRoom.id" class="pull-right">
+          <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i> Sure?
+          </button>
+          <button class="btn btn-outline-info" (click)="deleteAborted($event)">
+            <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
+          </button>
         </div>
       </div>
     </div>
