@@ -10,6 +10,9 @@
         <a class="nav-link" routerLink="/guests">Guests</a>
       </li>
       <li *ngIf="role == 'Administrator'" class="nav-item">
+        <a class="nav-link" routerLink="/admins">Admins</a>
+      </li>
+      <li *ngIf="role == 'Administrator'" class="nav-item">
         <a class="nav-link" routerLink="/suites/create">Create Suite</a>
       </li>
       <li *ngIf="role == 'Administrator'" class="nav-item">
