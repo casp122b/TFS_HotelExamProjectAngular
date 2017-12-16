@@ -4,16 +4,13 @@
 
 .text1{
   position: fixed;
-;
   bottom: 250px;
   left: 150px;
-  border: #8f3dff;
+border: #8f3dff;
 }
-
 
 .text2{
   position: fixed;
-;
   bottom: 250px;
   right: 750px;
 }
@@ -21,12 +18,7 @@
 .text3{
   position: fixed;
   right: 250px ;
-  bottom: 250px;
-}
-
-.links {
-  float: left;
-  width: 49%;
+bottom: 250px;
 }
 
 .single{
@@ -37,7 +29,7 @@
   max-height: 375px;
   max-width: 500px;
 }
-.suite{
+.suite {
   max-height: 375px;
-  min-width: 510px;}
-
+  min-width: 510px;
+}

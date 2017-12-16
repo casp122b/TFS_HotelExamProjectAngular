@@ -8,7 +8,6 @@ import { environment } from '../../environments/environment';
 import { Authentication } from './authentication.model';
 
 const url = environment.apiEndpoint + '/login';
-const urlForUser = environment.apiEndpoint + '/users';
 
 @Injectable()
 export class AuthenticationService {
@@ -27,9 +26,5 @@ export class AuthenticationService {
         localStorage.removeItem('username');
         localStorage.removeItem('currentUser');
         localStorage.removeItem('role');
-    }
-
-    createUser(authentication: Authentication): Observable<Authentication> {
-        return this.http.post<Authentication>(urlForUser, authentication)
     }
 }
