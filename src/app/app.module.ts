@@ -19,7 +19,6 @@ import { GuestListComponent } from './guests/guest-list/guest-list.component';
 import { GuestPageComponent } from './guests/guest-page/guest-page/guest-page.component';
 import { GuestService } from './guests/shared/guest.service';
 import { AuthenticationService } from './login/authentication.service';
-import { UserService } from './users/shared/user.service';
 import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './login/token.interceptor';
@@ -37,8 +36,9 @@ import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.c
 import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
 import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
+import { UserService } from './users/shared/user.service';
 
-
+//defines the routes for all components used in the frontend.
 const appRoutes: Routes = [
   {
     path: 'admins/create',
@@ -138,6 +138,7 @@ const appRoutes: Routes = [
   },
 
 ];
+//Lists all the components used by the root module.
 @NgModule({
   declarations: [
     AppComponent,
@@ -163,6 +164,7 @@ const appRoutes: Routes = [
     UnAuthorizedComponent,
 
   ],
+  //All imports used by the root module.
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -172,6 +174,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],
+  //List of services from all the components in the frontend.
   providers: [
     AuthGuard,
     DoubleRoomService,
