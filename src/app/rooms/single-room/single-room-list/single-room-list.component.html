@@ -43,8 +43,9 @@
       </ng-template>
     </ngb-carousel>
     <div *ngFor="let singleRoom of singleRooms" class="list-group-item list-group-item-action">
-      <p> pris på singleværelse {{singleRoom.price}} kr.</p>
-      <p> rum tilgængelige {{singleRoom.available}} </p>
+      <p> pris på enkeltværelse: {{singleRoom.price}} kr.</p>
+      <p> rum tilgængelig: {{singleRoom.available}} </p>
+      <p> rummets navn: {{singleRoom.name}} </p>
       <button class="btn book">
         <i class="fa fa-bed" aria-hidden="true"></i> Book
       </button>
