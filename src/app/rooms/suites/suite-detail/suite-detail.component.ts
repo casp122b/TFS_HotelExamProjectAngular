@@ -10,7 +10,7 @@ import { Suite } from '../shared/suite.model';
   styleUrls: ['./suite-detail.component.css']
 })
 export class SuiteDetailComponent implements OnInit {
-  
+
     suiteId: number;
     newSuiteGroup: FormGroup;
     constructor(private suiteService: SuiteService,
@@ -23,14 +23,14 @@ export class SuiteDetailComponent implements OnInit {
         name: ''
       });
     }
-  
+
     ngOnInit() {
       this.route.paramMap
         .switchMap(params =>
           this.suiteService.getById(+params.get('id'))
         ).subscribe(suite => this.suiteId = suite.id);
     }
-  
+
     editSuite() {
       const currentSuite = this.suiteId;
       const newValues = this.newSuiteGroup.value;
@@ -38,7 +38,8 @@ export class SuiteDetailComponent implements OnInit {
         id: currentSuite,
         price: newValues.price,
         available: newValues.available,
-        name: newValues.name
+        name: newValues.name,
+
       };
       this.suiteService.update(currentSuite, updatedSuite)
         .subscribe(suite => {
