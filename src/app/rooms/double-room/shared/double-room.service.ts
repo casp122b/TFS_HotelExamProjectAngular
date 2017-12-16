@@ -34,4 +34,9 @@ export class DoubleRoomService {
     return this.http
       .post<DoubleRoom>(url, doubleRoom);
   }
+
+  update(id: number, doubleRoom: DoubleRoom): Observable<DoubleRoom> {
+    return this.http
+    .put<DoubleRoom>(url + '/' + id, doubleRoom);
+  }
 }

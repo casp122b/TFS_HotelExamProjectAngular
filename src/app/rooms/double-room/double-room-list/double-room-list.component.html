@@ -20,23 +20,23 @@
   </div>
 
   <div class="card col-6">
-    <div class="card-header">DoubleRoom Details</div>
+    <div class="card-header">DoubleRoom List</div>
     <ngb-carousel class="carousel">
       <ng-template ngbSlide>
-        <img src="../../../../assets/images/singleroom.jpg" alt="Random first slide">
+        <img src="../../../../assets/images/doubleRoom.jpg" alt="Random first slide">
         <div class="carousel-caption">
           <h3>Værelset</h3>
 
         </div>
       </ng-template>
       <ng-template ngbSlide>
-        <img src="../../../../assets/images/hotelsinglebath.jpg" alt="Random second slide">
+        <img src="../../../../assets/images/doubleroombath.jpg" alt="Random second slide">
         <div class="carousel-caption">
           <h3>Badeværelset</h3>
         </div>
       </ng-template>
       <ng-template ngbSlide>
-        <img src="../../../../assets/images/oceanview.jpg" alt="Random third slide">
+        <img src="../../../../assets/images/oceanView.jpg" alt="Random third slide">
         <div class="carousel-caption">
           <h3>Altanen</h3>
 
@@ -47,9 +47,6 @@
       <p> pris på dobbeltværelse: {{doubleRoom.price}} kr.</p>
       <p> rum tilgængelig: {{doubleRoom.available}} </p>
       <p> rummets navn: {{doubleRoom.name}} </p>
-      <button class="btn book" >
-        <i class="fa fa-bed"  aria-hidden="true" ></i> Book
-      </button>
       <div *ngIf="role == 'Administrator'" class="Adminbuttons">
         <div *ngIf="!doubleRoomToDelete || doubleRoomToDelete.id != doubleRoom.id" class="pull-right">
           <button class="btn btn-outline-danger" (click)="delete(doubleRoom, $event)">

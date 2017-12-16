@@ -25,13 +25,12 @@ export class DoubleRoomListComponent implements OnInit {
       .subscribe(
       doubleRooms => {
         this.doubleRooms = doubleRooms;
-      }
-      );
+      });
   }
 
   details(doubleRoom: DoubleRoom) {
     this.router
-      .navigateByUrl('/doubleRooms/' + doubleRoom.id);
+      .navigateByUrl('/doubleRoom/' + doubleRoom.id);
   }
 
   delete(doubleRoom: DoubleRoom, $event) {
