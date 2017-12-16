@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <div class="row custom-content">
 
   <div class="card col-6">
@@ -22,20 +23,20 @@
     <div class="card-header">SingleRoom Details</div>
     <ngb-carousel class="carousel">
       <ng-template ngbSlide>
-        <img src="../../../../assets/images/singleroom.jpg" alt="Random first slide">
+        <img src="../../../../assets/images/singleRoom.jpg" alt="Random first slide">
         <div class="carousel-caption">
           <h3>Værelset</h3>
 
         </div>
       </ng-template>
       <ng-template ngbSlide>
-        <img src="../../../../assets/images/hotelsinglebath.jpg" alt="Random second slide">
+        <img src="../../../../assets/images/singleroombath.jpg" alt="Random second slide">
         <div class="carousel-caption">
           <h3>Badeværelset</h3>
         </div>
       </ng-template>
       <ng-template ngbSlide>
-        <img src="../../../../assets/images/oceanview.jpg" alt="Random third slide">
+        <img src="../../../../assets/images/oceanView.jpg" alt="Random third slide">
         <div class="carousel-caption">
           <h3>Altanen</h3>
 
@@ -43,8 +44,9 @@
       </ng-template>
     </ngb-carousel>
     <div *ngFor="let singleRoom of singleRooms" class="list-group-item list-group-item-action">
-      <p> pris på singleværelse {{singleRoom.price}} kr.</p>
-      <p> rum tilgængelige {{singleRoom.available}} </p>
+      <p> pris på enkeltværelse: {{singleRoom.price}} kr.</p>
+      <p> rum tilgængelig: {{singleRoom.available}} </p>
+      <p> rummets navn: {{singleRoom.name}} </p>
       <button class="btn book">
         <i class="fa fa-bed" aria-hidden="true"></i> Book
       </button>

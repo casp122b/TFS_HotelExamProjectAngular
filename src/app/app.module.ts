@@ -19,6 +19,7 @@ import { GuestListComponent } from './guests/guest-list/guest-list.component';
 import { GuestPageComponent } from './guests/guest-page/guest-page/guest-page.component';
 import { GuestService } from './guests/shared/guest.service';
 import { AuthenticationService } from './login/authentication.service';
+import { UserService } from './users/shared/user.service';
 import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './login/token.interceptor';
@@ -41,15 +42,18 @@ import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.
 const appRoutes: Routes = [
   {
     path: 'admins/create',
-    component: AdminCreateComponent
+    component: AdminCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/:id',
-    component: AdminDetailComponent
+    component: AdminDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admins',
-    component: AdminListComponent
+    component: AdminListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'guests/page',
@@ -63,7 +67,8 @@ const appRoutes: Routes = [
   {
     path: 'guests',
     component: GuestListComponent,
-    data: { title: 'Room List' }
+    canActivate: [AuthGuard],
+    data: { title: 'Guest List' }
   },
   {
     path: 'guests/create',
@@ -71,7 +76,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'doubleRoom/:id',
-    component: DoubleRoomDetailComponent
+    component: DoubleRoomDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'doubleRooms/create',
@@ -85,7 +91,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'singleRoom/:id',
-    component: SingleRoomDetailComponent
+    component: SingleRoomDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'singleRooms/create',
@@ -99,7 +106,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'suite/:id',
-    component: SuiteDetailComponent
+    component: SuiteDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'suites/create',
@@ -172,6 +180,7 @@ const appRoutes: Routes = [
     GuestService,
     AdminService,
     AuthenticationService,
+    UserService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
