@@ -4,18 +4,22 @@
   <div class="card col-6">
     <div class="card-header">Room name</div>
     <div class="card-body">
-      <p>Dette er doubleroom som er en del af Skandinavisk Kongrescenter Århus og ligger i hjertet af byen. suiten byder på
-        et privat fitnesscentret, Fitness World, suiten kommer med moderne værelser med gratis, trådløs internetadgang.</p>
-      <p>suiten er indrettede i 3 forskellige stilarter, alle med aircondition. Samtlige værelser har fladskærms-tv med kabelkanaler,
-        minibar, værdiboks samt buksepresse.</p>
-      <p>Det veludstyrede fitnesscenter byder på professionelle personlige trænere hvis ønskes. </p>
-      <p>ved ophold på suiten kan du få V.I.P access til Restaurant le Fresh som serverer lettere, internationale anretninger
-        i uformelle omgivelser. Restaurant le Fresh byder på imponerende, skandinavisk morgenbuffet. </p>
-      <p>Friluftsmuseet Den Gamle By ligger 10 minutters kørsel derfra. ARoS Aarhus Kunstmuseum og Musikhuset Aarhus ligger
-        lige ved siden af suiten så hvis man er kunst elsker er det atraktion man ikke må misse. </p>
-      <p>Ifølge vores gæsters uafhængige anmeldelser er dette deres yndlingsdel ved ophold på suiten.</p>
-      <p>Par er særligt glade for suiten og dens beligenhed da den befinder sig 2 minutters gå gang fra stranden.</p>
-      <p>Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</p>
+      <p>This is the Doubleroom, the Doubleroom is inspired by the movie The room and is located in the heart of the city. The Doubleroom offers acess to a public fitness center.
+        The Doubleroom also comes with modern rooms with free wireless internet access and a minibar.
+      </p>
+      <p> The Doubleroom is decorated in three different styles, all with air conditioning. All rooms have a flat-screen TV with cable channels, minibar, safe and trouser press.</p>
+      <p>The well-equipped fitness center offers professional personal trainers if desired or else the guest can come and go as much he/she desires. </p>
+      <p>By staying at the Doubleroom you can access V.I.P to the Restaurant Le Fresh, which serves light, international meals in the informal surroundings. Restaurant le Fresh offers impressive, Scandinavian breakfast buffet. </p>
+      <p>
+        The open-air museum Old Town is a 10-minute drive away. ARoS Aarhus Art Museum and Music Housing Aarhus is located right next to the suite so if you are art love is the atraktion we must not squander.
+      </p>
+      <p>According to our guests independent reviews this is their favorite part of stay at The Suite.</p>
+      <p>
+        couples are particularly pleased with the Doubleroom and the location, as it is only 5 minutes walk to the beach.
+      </p>
+      <p>
+        Our staff speak english,Spanish,French,German,Norwegian and of course Danish.
+      </p>
     </div>
   </div>
 
@@ -25,27 +29,27 @@
       <ng-template ngbSlide>
         <img src="../../../../assets/images/doubleRoom.jpg" alt="Random first slide">
         <div class="carousel-caption">
-          <h3>Værelset</h3>
+          <h3>The Room</h3>
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <img src="../../../../assets/images/doubleroombath.jpg" alt="Random second slide">
         <div class="carousel-caption">
-          <h3>Badeværelset</h3>
+          <h3>Bathroom</h3>
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <img src="../../../../assets/images/oceanview2.png" alt="Random third slide">
         <div class="carousel-caption">
-          <h3>Altanen</h3>
+          <h3>balcony</h3>
 
         </div>
       </ng-template>
     </ngb-carousel>
     <div *ngFor="let doubleRoom of doubleRooms" class="list-group-item list-group-item-action">
-      <p> pris på dobbeltværelse: {{doubleRoom.price}} kr.</p>
-      <p> rum tilgængelig: {{doubleRoom.available}} </p>
-      <p> rummets navn: {{doubleRoom.name}} </p>
+      <p> Price on the room: {{doubleRoom.price}} kr.</p>
+      <p> Room available: {{doubleRoom.available}} </p>
+      <p> Name of the room: {{doubleRoom.name}} </p>
       <div *ngIf="role == 'Administrator'" class="Adminbuttons">
         <div *ngIf="!doubleRoomToDelete || doubleRoomToDelete.id != doubleRoom.id" class="pull-right">
           <button class="btn btn-outline-danger" (click)="delete(doubleRoom, $event)">
