@@ -4,7 +4,6 @@ import {SuiteService} from '../shared/suite.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {Suite} from '../shared/suite.model';
-import {Authentication} from '../../../login/authentication.model';
 
 @Component({
   selector: 'app-suite-create',
@@ -26,7 +25,7 @@ export class SuiteCreateComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //Method that create a suite with the properties below which it takes from the FormGroup called suiteGroup, which is given data inside the html and route you to front
   createSuite() {
     const values = this.suiteGroup.value;
     const suite: Suite = {

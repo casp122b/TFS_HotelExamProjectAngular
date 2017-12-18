@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
-import { Authentication } from '../../../login/authentication.model';
-import { AuthenticationService } from '../../../login/authentication.service';
 import { SingleRoom } from '../shared/single-room.model';
 import { SingleRoomService } from '../shared/single-room.service';
 
@@ -15,9 +12,7 @@ import { SingleRoomService } from '../shared/single-room.service';
 })
 export class SingleRoomCreateComponent implements OnInit {
   singleRoomGroup: FormGroup;
-  authId: number;
   constructor(private singleRoomService: SingleRoomService,
-    private authenticationService: AuthenticationService,
     private fb: FormBuilder,
     private router: Router) {
     this.singleRoomGroup = this.fb.group({
@@ -29,13 +24,9 @@ export class SingleRoomCreateComponent implements OnInit {
 
   ngOnInit() {
   }
+  //Method that create a singleRoom with the properties below which it takes from the FormGroup called singleRoomGroup, which is given data inside the html and route you to front
   createSingleRoom() {
     const values = this.singleRoomGroup.value;
-
-    const authentication: Authentication = {
-      username: values.username,
-      password: values.password,
-    };
     const singleRoom: SingleRoom = {
       price: values.price,
       available: values.available,
