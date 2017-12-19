@@ -42,15 +42,14 @@ export class AdminListComponent implements OnInit {
   }
 //deletes the admins data and his admin user login
   deleteConfirmed($event) {
-    this.userService.delete(this.adminToDelete.userId)
-      .subscribe(user => this.adminToDelete.userId = user.id);
+    
     this.adminService.delete(this.adminToDelete.id)
-      .switchMap(admin => this.adminService.get())
-      .subscribe(
-      admins => {
+    .switchMap(admin => this.adminService.get())
+      .subscribe( admins => {
         this.admins = admins;
-      }
-      );
+        this.userService.delete(this.adminToDelete.userId)
+      .subscribe(user => this.adminToDelete.userId = user.id);
+      });
     $event.stopPropagation();
   }
 }

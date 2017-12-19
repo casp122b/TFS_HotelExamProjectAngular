@@ -58,7 +58,8 @@ export class AdminDetailComponent implements OnInit {
     const updatedUser: User = {
       id: currentUserId,
       username: newValues.username,
-      password: newValues.password
+      password: newValues.password,
+      role: "Administrator"
     }
     this.adminService.update(currentAdmin, updatedAdmin)
       .subscribe(admin => {

@@ -52,15 +52,14 @@ export class GuestListComponent implements OnInit {
   //When clicking the "are you sure?" button, the corresponding user to the guest's userId is deleted. 
   //Afterwards, the guest itself is deleted. The list of guests is refreshed due to the get request
   deleteConfirmed($event) {
-    this.userService.delete(this.guestToDelete.userId)
-      .subscribe(user => this.guestToDelete.userId = user.id);
+    
     this.guestService.delete(this.guestToDelete.id)
-      .switchMap(guest => this.guestService.get())
-      .subscribe(
-      guests => {
+    .switchMap(guest => this.guestService.get())
+      .subscribe( guests => {
         this.guests = guests;
-      }
-      );
+        this.userService.delete(this.guestToDelete.userId)
+      .subscribe(user => this.guestToDelete.userId = user.id);
+      });
     $event.stopPropagation();
   }
 }
