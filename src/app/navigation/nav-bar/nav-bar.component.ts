@@ -7,6 +7,7 @@ import { AuthenticationService } from '../../login/authentication.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
+//Checks if the users has authencation, which then is used in the HTML code to give Admininstrators more options than a normal Guest
 export class NavBarComponent implements OnInit {
   
 
@@ -18,7 +19,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+// Logs the user out
   logout() {
     this.auth.logout();
     this.router.navigateByUrl('/guests/page');

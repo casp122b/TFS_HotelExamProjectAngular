@@ -1,32 +1,54 @@
+<app-nav-bar></app-nav-bar>
 <div class="row custom-content">
 
   <div class="card col-6">
     <div class="card-header">SingleRoom</div>
     <div class="card-body">
-      <p>Dette er et singleRoom som er en del af Skandinavisk Kongrescenter Århus og ligger i hjertet af byen. suiten byder
-        på et privat fitnesscentret, Fitness World, suiten kommer med moderne værelser med gratis, trådløs internetadgang.</p>
-      <p>suiten er indrettede i 3 forskellige stilarter, alle med aircondition. Samtlige værelser har fladskærms-tv med kabelkanaler,
-        minibar, værdiboks samt buksepresse.</p>
-      <p>Det veludstyrede fitnesscenter byder på professionelle personlige trænere hvis ønskes. </p>
-      <p>ved ophold på suiten kan du få V.I.P access til Restaurant le Fresh som serverer lettere, internationale anretninger
-        i uformelle omgivelser. Restaurant le Fresh byder på imponerende, skandinavisk morgenbuffet. </p>
-      <p>Friluftsmuseet Den Gamle By ligger 10 minutters kørsel derfra. ARoS Aarhus Kunstmuseum og Musikhuset Aarhus ligger
-        lige ved siden af suiten så hvis man er kunst elsker er det atraktion man ikke må misse. </p>
-      <p>Ifølge vores gæsters uafhængige anmeldelser er dette deres yndlingsdel ved ophold på suiten.</p>
-      <p>Par er særligt glade for suiten og dens beligenhed da den befinder sig 2 minutters gå gang fra stranden.</p>
-      <p>Vores staff snakker engelsk,spansk,fransk,tysk,norsk og selvfølgelig dansk</p>
+      <p>This is the well known Singleroom, which is a inspired by the famous danish author H.C Andersons house and is located in the heart of the city. The Singleroom offers a public fitness center.
+        All The Singlerooms comes with modern rooms with free wireless internet access and a minibar.
+      </p>
+      <p> The Singleroom is decorated in three different styles, all with air conditioning. All rooms have a flat-screen TV with cable channels, minibar, safe and trouser press.</p>
+      <p>The well-equipped fitness center offers professional personal trainers if desired or else the guest can come and go as much he/she desires. </p>
+      <p>By staying at the Singleroom you can access V.I.P to the Restaurant Le Bøf, which serves light, international meals in the informal surroundings. Restaurant Le Bøf offers impressive, Scandinavian breakfast buffet. </p>
+      <p>
+        The open-air museum Old Town is a 10-minute drive away. ARoS Aarhus Art Museum and Music Housing Aarhus is located right next to the Singleroom so if you are art love is the atraktion we must not squander.
+      </p>
+      <p>According to our guests independent reviews this is their favorite part of stay at The Singleroom.</p>
+
+      <p>
+        Our staff speak English,Spanish,French,German,Norwegian and of course Danish.
+      </p>
     </div>
   </div>
 
   <div class="card col-6">
     <div class="card-header">SingleRoom Details</div>
-    <img class="suite1" src="../../../assets/images/singleRoom.jpg">
+    <ngb-carousel class="carousel">
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/singleRoom.jpg" alt="Random first slide">
+        <div class="carousel-caption">
+          <h3>The room</h3>
+
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/singleroombath.jpg" alt="Random second slide">
+        <div class="carousel-caption">
+          <h3>Bathroom</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="../../../../assets/images/oceanView.jpg" alt="Random third slide">
+        <div class="carousel-caption">
+          <h3>Balcony</h3>
+
+        </div>
+      </ng-template>
+    </ngb-carousel>
     <div *ngFor="let singleRoom of singleRooms" class="list-group-item list-group-item-action">
-      <p> pris på singleværelse {{singleRoom.price}} kr.</p>
-      <p> rum tilgængelige {{singleRoom.available}} </p>
-      <button class="btn book">
-        <i class="fa fa-bed" aria-hidden="true"></i> Book
-      </button>
+      <p> Price on the room: {{singleRoom.price}} kr.</p>
+      <p> Room available: {{singleRoom.available}} </p>
+      <p> Name of the room: {{singleRoom.name}} </p>
       <div *ngIf="role === 'Administrator'" class="Adminbuttons">
         <div *ngIf="!singleRoomToDelete || singleRoomToDelete.id != singleRoom.id" class="pull-right">
           <button class="btn btn-outline-danger" (click)="delete(singleRoom, $event)">

@@ -10,7 +10,7 @@ export class FrontPageDetailComponent implements OnInit {
 
   rooms: Object[];
   constructor(private router: Router) { }
-
+//Adds the images from the assets page and defines routes for each of the images
   ngOnInit() {
     this.rooms = [{
       src: "../../../assets/images/singleRoom.jpg",

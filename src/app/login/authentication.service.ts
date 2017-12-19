@@ -8,16 +8,16 @@ import { environment } from '../../environments/environment';
 import { Authentication } from './authentication.model';
 
 const url = environment.apiEndpoint + '/login';
-const urlForUser = environment.apiEndpoint + '/users';
 
 @Injectable()
 export class AuthenticationService {
 
     constructor(private http: HttpClient) {
-        // set token if saved in local storage
+        // sets token if saved in local storage
         localStorage.getItem('currentUser');
     }
 
+    //Sends the username and password to the backend. Returns a username, role and token for further use in the frontend
     login(authentication: Authentication): Observable<Authentication> {
         return this.http.post<Authentication>(url, authentication)
     }
@@ -27,9 +27,5 @@ export class AuthenticationService {
         localStorage.removeItem('username');
         localStorage.removeItem('currentUser');
         localStorage.removeItem('role');
-    }
-
-    createUser(authentication: Authentication): Observable<Authentication> {
-        return this.http.post<Authentication>(urlForUser, authentication)
     }
 }

@@ -10,6 +10,7 @@ export class GuestPageComponent implements OnInit {
   rooms: Object[];
   constructor(private router: Router) { }
 
+  //initializes an array of images including RouterLink's for all of them
   ngOnInit() {
     this.rooms = [{
       src: "../../../assets/images/singleRoom.jpg",

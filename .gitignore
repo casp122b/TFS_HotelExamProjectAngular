@@ -41,3 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 .angulardoc.json
+src/app/rooms/suites/suite-list/suite-list.component.css
+src/app/rooms/suites/suite-list/suite-list.component.css
+src/app/navigation/nav-bar/nav-bar.component.html

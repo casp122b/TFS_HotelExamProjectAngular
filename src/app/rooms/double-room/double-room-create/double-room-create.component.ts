@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { DoubleRoom } from '../shared/double-room.model';
+import { DoubleRoomService } from '../shared/double-room.service';
 
 @Component({
   selector: 'app-double-room-create',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoubleRoomCreateComponent implements OnInit {
 
-  constructor() { }
+  doubleRoomGroup: FormGroup;
 
+  constructor(private doubleRoomService: DoubleRoomService,
+    private fb: FormBuilder,
+    private router: Router) {
+    this.doubleRoomGroup = this.fb.group({
+      price: '',
+      available: '',
+      name: ''
+    });
+  }
   ngOnInit() {
   }
-
+  //Method that create a doubleroom by userinput from the formgropup
+  createDoubleRoom() {
+    const values = this.doubleRoomGroup.value;
+    const doubleRoom: DoubleRoom = {
+      price: values.price,
+      available: values.available,
+      name: values.name
+    };
+    this.doubleRoomService.create(doubleRoom)
+      .subscribe(doubleRoom => {
+        this.router.navigateByUrl('/front');
+      });
+  }
 }

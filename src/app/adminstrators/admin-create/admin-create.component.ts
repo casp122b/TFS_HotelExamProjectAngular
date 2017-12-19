@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Authentication } from '../../login/authentication.model';
-import { AuthenticationService } from '../../login/authentication.service';
+import { User } from '../../users/shared/user.model';
 import { Admin } from '../shared/admin.model';
 import { AdminService } from '../shared/admin.service';
+import { UserService } from '../../users/shared/user.service';
 
 @Component({
   selector: 'app-admin-create',
@@ -15,9 +15,8 @@ import { AdminService } from '../shared/admin.service';
 export class AdminCreateComponent implements OnInit {
 
   adminGroup: FormGroup;
-  authId: number;
   constructor(private adminService: AdminService,
-    private authenticationService: AuthenticationService,
+    private userService: UserService,
     private fb: FormBuilder,
     private router: Router) {
     this.adminGroup = this.fb.group({
@@ -31,24 +30,27 @@ export class AdminCreateComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //username and password is defined by the user input from the formgroup. Also, we define role to be Administrator
   createAdmin() {
     const values = this.adminGroup.value;
 
-    const authentication: Authentication = {
+    const user: User = {
       username: values.username,
       password: values.password,
       role: 'Administrator'
     };
-    this.authenticationService.createUser(authentication)
+    this.userService.createUser(user)
       .subscribe(done => {
-        authentication.id = done.id;
+        user.id = done.id;
+        //an admin with the input from the user is defined
         const admin: Admin = {
           firstName: values.firstName,
           lastName: values.lastName,
           address: values.address,
           userId: done.id
         };
+
+        //By the adminService and through the entire backend, the admin is created. The subscribtion routes the admin to /front
         this.adminService.create(admin)
           .subscribe(admin => {
             this.router.navigateByUrl('/front');

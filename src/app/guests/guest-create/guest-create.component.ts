@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Authentication } from '../../login/authentication.model';
-import { AuthenticationService } from '../../login/authentication.service';
+import { User } from '../../users/shared/user.model';
+import { UserService } from '../../users/shared/user.service';
 import { Guest } from '../shared/guest.model';
 import { GuestService } from '../shared/guest.service';
 
@@ -15,9 +15,8 @@ import { GuestService } from '../shared/guest.service';
 export class GuestCreateComponent implements OnInit {
 
   guestGroup: FormGroup;
-  authId: number;
   constructor(private guestService: GuestService,
-    private authenticationService: AuthenticationService,
+    private userService: UserService,
     private fb: FormBuilder,
     private router: Router) {
     this.guestGroup = this.fb.group({
@@ -32,28 +31,31 @@ export class GuestCreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  //username and password is defined by the user input from the formgroup.
   createGuest() {
     const values = this.guestGroup.value;
 
-    const authentication: Authentication = {
+    const user: User = {
       username: values.username,
       password: values.password
     };
-    this.authenticationService.createUser(authentication)
+    this.userService.createUser(user)
       .subscribe(done => {
-        authentication.id = done.id;
+        user.id = done.id;
+
+        //a guest with the input from the user is defined
         const guest: Guest = {
           firstName: values.firstName,
           lastName: values.lastName,
           address: values.address,
           userId: done.id
         };
+
+        //By the guestService and through the entire backend, the guest is created. The subscribtion routes the guest to /front
         this.guestService.create(guest)
           .subscribe(guest => {
-            this.router.navigateByUrl('/guests/page');
+            this.router.navigateByUrl('/front');
           });
       });
-
-
   }
 }

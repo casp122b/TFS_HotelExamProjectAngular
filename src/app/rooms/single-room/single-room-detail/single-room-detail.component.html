@@ -1,3 +1,32 @@
-<p>
-  single-room-detail works!
-</p>
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        Edit Suite
+      </h1>
+    </div>
+    <form (ngSubmit)="editSingleRoom()" [formGroup]="newSingleRoomGroup" novalidate>
+      <div class="form-group">
+        <label class="center-block">Name of the room:
+          <input class="form-control" formControlName="name">
+        </label>
+        <br>
+        <label class="center-block">Available:
+          <input class="form-control" formControlName="available">
+        </label>
+        <br>
+        <label class="center-block">Price:
+          <input class="form-control" formControlName="price">
+        </label>
+        <br>
+        <button type="submit" class="btnCancel btn-outline-warning" routerLink="/front">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>Cancel
+        </button>
+        <button type="submit" class="btnEdit btn-outline-danger">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>Edit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
