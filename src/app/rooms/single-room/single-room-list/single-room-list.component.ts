@@ -17,15 +17,15 @@ export class SingleRoomListComponent implements OnInit {
   singleRoomToDelete: SingleRoom;
   role: string = localStorage.getItem('role');
   constructor(private singleRoomService: SingleRoomService,
-              private router: Router) {
+    private router: Router) {
   }
-// used to get a list of the singleRooms
+  // used to get a list of the singleRooms
   ngOnInit() {
     this.singleRoomService.get()
       .subscribe(
-        singleRooms => {
-          this.singleRooms = singleRooms;
-        }
+      singleRooms => {
+        this.singleRooms = singleRooms;
+      }
       );
   }
   //send you to the clicked singleRooms detail page
@@ -33,24 +33,24 @@ export class SingleRoomListComponent implements OnInit {
     this.router
       .navigateByUrl('/singleRoom/' + singleRoom.id);
   }
-//sets singleRoomToDelete = singleRoom and run an event
+  //sets singleRoomToDelete = singleRoom and run an event
   delete(singleRoom: SingleRoom, $event) {
     this.singleRoomToDelete = singleRoom;
     $event.stopPropagation();
   }
-//Aborts deleting by setting the singleRoomToDelete = null
+  //Aborts deleting by setting the singleRoomToDelete = null
   deleteAborted($event) {
     this.singleRoomToDelete = null;
     $event.stopPropagation();
   }
-//deletes the singleRoom
+  //deletes the singleRoom
   deleteConfirmed($event) {
     this.singleRoomService.delete(this.singleRoomToDelete.id)
       .switchMap(singleRoom => this.singleRoomService.get())
       .subscribe(
-        singleRooms => {
-          this.singleRooms = singleRooms;
-        }
+      singleRooms => {
+        this.singleRooms = singleRooms;
+      }
       );
     $event.stopPropagation();
   }

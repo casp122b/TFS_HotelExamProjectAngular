@@ -16,9 +16,9 @@ export class AdminCreateComponent implements OnInit {
 
   adminGroup: FormGroup;
   constructor(private adminService: AdminService,
-              private userService: UserService,
-              private fb: FormBuilder,
-              private router: Router) {
+    private userService: UserService,
+    private fb: FormBuilder,
+    private router: Router) {
     this.adminGroup = this.fb.group({
       firstName: '',
       lastName: '',
@@ -30,7 +30,7 @@ export class AdminCreateComponent implements OnInit {
 
   ngOnInit() {
   }
-  //username and password is defined by the user input from the formgroup.
+  //username and password is defined by the user input from the formgroup. Also, we define role to be Administrator
   createAdmin() {
     const values = this.adminGroup.value;
 
@@ -42,15 +42,15 @@ export class AdminCreateComponent implements OnInit {
     this.userService.createUser(user)
       .subscribe(done => {
         user.id = done.id;
-        //a guest with the input from the user is defined
+        //an admin with the input from the user is defined
         const admin: Admin = {
           firstName: values.firstName,
           lastName: values.lastName,
           address: values.address,
           userId: done.id
         };
-        //By the adminService and through the entire backend, the guest is created. The subscribtion routes the guest to /front
 
+        //By the adminService and through the entire backend, the admin is created. The subscribtion routes the admin to /front
         this.adminService.create(admin)
           .subscribe(admin => {
             this.router.navigateByUrl('/front');

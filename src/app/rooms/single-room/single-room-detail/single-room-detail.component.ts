@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {SingleRoomService} from '../shared/single-room.service';
-import {SingleRoom} from '../shared/single-room.model';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
+import { SingleRoomService } from '../shared/single-room.service';
+import { SingleRoom } from '../shared/single-room.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-single-room-detail',
@@ -14,9 +14,9 @@ export class SingleRoomDetailComponent implements OnInit {
   singleRoomId: number;
   newSingleRoomGroup: FormGroup;
   constructor(private singleRoomService: SingleRoomService,
-              private fb: FormBuilder,
-              private router: Router,
-              private route: ActivatedRoute) {
+    private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute) {
     this.newSingleRoomGroup = this.fb.group({
       price: '',
       available: '',
@@ -31,7 +31,7 @@ export class SingleRoomDetailComponent implements OnInit {
       ).subscribe(singleRoom => this.singleRoomId = singleRoom.id);
   }
   //Edits the choosen singleRoom's properties values with FormGroup and then runs the singleRoomService.update to update the currentSingleRoom with the updatedSingleRoom and then route it back to our front
-  editSingleRoom(  ){
+  editSingleRoom() {
     const currentSingleRoom = this.singleRoomId;
     const newValues = this.newSingleRoomGroup.value;
     const updatedSingleRoom: SingleRoom = {

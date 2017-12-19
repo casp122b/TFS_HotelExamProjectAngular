@@ -25,7 +25,7 @@ export class DoubleRoomCreateComponent implements OnInit {
   }
   ngOnInit() {
   }
-//Method that create a doubleroom by userinput from the formgropup
+  //Method that create a doubleroom by userinput from the formgropup
   createDoubleRoom() {
     const values = this.doubleRoomGroup.value;
     const doubleRoom: DoubleRoom = {

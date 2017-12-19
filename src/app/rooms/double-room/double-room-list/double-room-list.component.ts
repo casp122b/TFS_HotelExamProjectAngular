@@ -27,22 +27,22 @@ export class DoubleRoomListComponent implements OnInit {
         this.doubleRooms = doubleRooms;
       });
   }
-//send you to the clicked doubleRooms details page
+  //send you to the clicked doubleRooms details page
   details(doubleRoom: DoubleRoom) {
     this.router
       .navigateByUrl('/doubleRoom/' + doubleRoom.id);
   }
-//sets doubleRoomToDelete = doubleRoom and run an event
+  //sets doubleRoomToDelete = doubleRoom and run an event
   delete(doubleRoom: DoubleRoom, $event) {
     this.doubleRoomToDelete = doubleRoom;
     $event.stopPropagation();
   }
-//Aborts deleting by setting the doubleRoom = null
+  //Aborts deleting by setting the doubleRoom = null
   deleteAborted($event) {
     this.doubleRoomToDelete = null;
     $event.stopPropagation();
   }
-//deletes the doubleRoom
+  //deletes the doubleRoom
   deleteConfirmed($event) {
     this.doubleRoomService.delete(this.doubleRoomToDelete.id)
       .switchMap(doubleRoom => this.doubleRoomService.get())

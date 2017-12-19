@@ -25,7 +25,7 @@ export class SingleRoomCreateComponent implements OnInit {
 
   ngOnInit() {
   }
-//Creates a singleRoom by using FormGroup and then runs the singleRoomService.create to create a new singleRoom with the infomation that are in our singleRoomGroup and then route it back to our front
+  //Creates a singleRoom by using FormGroup and then runs the singleRoomService.create to create a new singleRoom with the infomation that are in our singleRoomGroup and then route it back to our front
   createSingleRoom() {
     const values = this.singleRoomGroup.value;
     const singleRoom: SingleRoom = {

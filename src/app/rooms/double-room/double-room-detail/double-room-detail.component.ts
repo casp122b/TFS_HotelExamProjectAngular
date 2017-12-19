@@ -31,7 +31,7 @@ export class DoubleRoomDetailComponent implements OnInit {
         this.doubleRoomService.getById(+params.get('id'))
       ).subscribe(doubleRoom => this.doubleRoomId = doubleRoom.id);
   }
-//Edits the choosen doubleRooms properties values with FormGroup and then runs the doubleRoomService.update to update the currentDoubleRoom with the updatedDoubleRoom and then route it back to our front
+  //Edits the choosen doubleRooms properties values with FormGroup and then runs the doubleRoomService.update to update the currentDoubleRoom with the updatedDoubleRoom and then route it back to our front
   editDoubleRoom() {
     const currentDoubleRoom = this.doubleRoomId;
     const newValues = this.newDoubleRoomGroup.value;

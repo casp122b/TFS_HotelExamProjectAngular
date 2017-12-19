@@ -27,7 +27,7 @@ export class AdminService {
     return this.http
       .delete<Admin>(url + '/' + id);
   }
-  // Updates a admin
+  // Updates an admin
   update(id: number, admin: Admin): Observable<Admin> {
     return this.http
       .put<Admin>(url + '/' + id, admin);

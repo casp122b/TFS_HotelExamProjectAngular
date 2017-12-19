@@ -13,7 +13,7 @@ const url = environment.apiEndpoint + '/login';
 export class AuthenticationService {
 
     constructor(private http: HttpClient) {
-        // set token if saved in local storage
+        // sets token if saved in local storage
         localStorage.getItem('currentUser');
     }
 
