@@ -13,15 +13,11 @@ import { AdminService } from './adminstrators/shared/admin.service';
 import { AppComponent } from './app.component';
 import { FrontPageDetailComponent } from './front-page/front-page-detail/front-page-detail.component';
 import { AuthGuard } from './guard/auth.guard';
-<<<<<<< HEAD
-import { GuestModule } from './guests/shared/guest.module';
-=======
 import { GuestCreateComponent } from './guests/guest-create/guest-create.component';
 import { GuestDetailComponent } from './guests/guest-detail/guest-detail.component';
 import { GuestListComponent } from './guests/guest-list/guest-list.component';
 import { GuestPageComponent } from './guests/guest-page/guest-page/guest-page.component';
 import { GuestService } from './guests/shared/guest.service';
->>>>>>> refs/remotes/origin/master
 import { AuthenticationService } from './login/authentication.service';
 import { JwtInterceptor } from './login/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
@@ -35,14 +31,10 @@ import { SingleRoomService } from './rooms/single-room/shared/single-room.servic
 import { SingleRoomCreateComponent } from './rooms/single-room/single-room-create/single-room-create.component';
 import { SingleRoomDetailComponent } from './rooms/single-room/single-room-detail/single-room-detail.component';
 import { SingleRoomListComponent } from './rooms/single-room/single-room-list/single-room-list.component';
-<<<<<<< HEAD
-import { SuiteModule } from './rooms/suites/shared/suite.module';
-=======
 import { SuiteService } from './rooms/suites/shared/suite.service';
 import { SuiteCreateComponent } from './rooms/suites/suite-create/suite-create.component';
 import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.component';
 import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
->>>>>>> refs/remotes/origin/master
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 import { UserService } from './users/shared/user.service';
 
@@ -177,20 +169,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     HttpModule,
-<<<<<<< HEAD
-    RouterModule,
-    NavBarModule,
-    GuestModule,
-    AdminModule,
-    SuiteModule,
-    ReactiveFormsModule,
-    FormsModule,
-    appRoutes,
-=======
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
->>>>>>> refs/remotes/origin/master
     NgbModule.forRoot()
   ],
   //List of services from all the components in the frontend.
@@ -198,12 +179,9 @@ const appRoutes: Routes = [
     AuthGuard,
     DoubleRoomService,
     SingleRoomService,
-<<<<<<< HEAD
-=======
     SuiteService,
     GuestService,
     AdminService,
->>>>>>> refs/remotes/origin/master
     AuthenticationService,
     UserService,
     {
