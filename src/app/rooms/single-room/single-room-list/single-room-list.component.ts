@@ -19,7 +19,7 @@ export class SingleRoomListComponent implements OnInit {
   constructor(private singleRoomService: SingleRoomService,
               private router: Router) {
   }
-
+// used to get a list of the singleRooms
   ngOnInit() {
     this.singleRoomService.get()
       .subscribe(
@@ -28,22 +28,22 @@ export class SingleRoomListComponent implements OnInit {
         }
       );
   }
-
+  //send you to the clicked singleRooms detail page
   details(singleRoom: SingleRoom) {
     this.router
       .navigateByUrl('/singleRoom/' + singleRoom.id);
   }
-
+//sets singleRoomToDelete = singleRoom and run an event
   delete(singleRoom: SingleRoom, $event) {
     this.singleRoomToDelete = singleRoom;
     $event.stopPropagation();
   }
-
+//Aborts deleting by setting the singleRoomToDelete = null
   deleteAborted($event) {
     this.singleRoomToDelete = null;
     $event.stopPropagation();
   }
-
+//deletes the singleRoom
   deleteConfirmed($event) {
     this.singleRoomService.delete(this.singleRoomToDelete.id)
       .switchMap(singleRoom => this.singleRoomService.get())

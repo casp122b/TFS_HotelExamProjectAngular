@@ -16,7 +16,7 @@ export class AdminListComponent implements OnInit {
     private userService: UserService,
     private router: Router) {
   }
-
+// used to read a list of the admins
   ngOnInit() {
     this.adminService.get()
       .subscribe(
@@ -25,22 +25,22 @@ export class AdminListComponent implements OnInit {
       }
       );
   }
-
+  //send you to the clicked admins detail page
   details(admin: Admin) {
     this.router
       .navigateByUrl('/admin/' + admin.id);
   }
-
+//sets adminToDelete = admin and run an event
   delete(admin: Admin, $event) {
     this.adminToDelete = admin;
     $event.stopPropagation();
   }
-
+//Aborts deleting by setting the adminToDelete = null
   deleteAborted($event) {
     this.adminToDelete = null;
     $event.stopPropagation();
   }
-
+//deletes the admins data and his admin user login
   deleteConfirmed($event) {
     this.userService.delete(this.adminToDelete.userId)
       .subscribe(user => this.adminToDelete.userId = user.id);

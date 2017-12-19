@@ -11,7 +11,7 @@ import {Suite} from '../shared/suite.model';
   styleUrls: ['./suite-create.component.css']
 })
 export class SuiteCreateComponent implements OnInit {
-
+//Creates a Formgroup we call suiteGroup which we give the 3 properties below
   suiteGroup: FormGroup;
   constructor(private suiteService: SuiteService,
               private fb: FormBuilder,
@@ -25,7 +25,7 @@ export class SuiteCreateComponent implements OnInit {
 
   ngOnInit() {
   }
-  //Method that create a suite with the properties below which it takes from the FormGroup called suiteGroup, which is given data inside the html and route you to front
+//Creates a suite by using FormGroup and then runs the suiteService.create to create a new suite with the infomation that are in our suiteGroup and then route it back to our front
   createSuite() {
     const values = this.suiteGroup.value;
     const suite: Suite = {

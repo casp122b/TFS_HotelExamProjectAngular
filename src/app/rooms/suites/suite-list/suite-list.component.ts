@@ -19,7 +19,7 @@ export class SuiteListComponent implements OnInit {
   constructor(private suiteService: SuiteService,
     private router: Router) {
   }
-
+// used to get a list of the suites
   ngOnInit() {
     this.suiteService.get()
       .subscribe(
@@ -28,22 +28,24 @@ export class SuiteListComponent implements OnInit {
       }
       );
   }
-
+  // Send you to the clicked suite detail page
   details(suite: Suite) {
     this.router
       .navigateByUrl('/suite/' + suite.id);
   }
+// Sets suiteToDelete = suite and run an event
 
   delete(suite: Suite, $event) {
     this.suiteToDelete = suite;
     $event.stopPropagation();
   }
+// Aborts deleting by setting the singleRoomToDelete = null
 
   deleteAborted($event) {
     this.suiteToDelete = null;
     $event.stopPropagation();
   }
-
+// Deletes the suite
   deleteConfirmed($event) {
     this.suiteService.delete(this.suiteToDelete.id)
       .switchMap(suite => this.suiteService.get())

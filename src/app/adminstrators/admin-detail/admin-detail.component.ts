@@ -30,7 +30,8 @@ export class AdminDetailComponent implements OnInit {
       password: ''
     });
   }
-
+  //The params of the route is taken and used to find the corresponding admin. admin.id and admin.userId is grabbed,
+  // and put into local variables for later use.
   ngOnInit() {
     this.route.paramMap
       .switchMap(params =>
@@ -40,6 +41,8 @@ export class AdminDetailComponent implements OnInit {
         this.userId = admin.userId;
       });
   }
+  //Edits the choosen Admin properties values with FormGroup and then runs the adminservice.update to update the currentAdmin with the updatedAdmin
+  //Also edits the username and passoword doing the same just with currentUserId and updatedUser instead of admin and then route it back to our fron
 
   editAdmin() {
     const currentAdmin = this.adminId;

@@ -17,22 +17,22 @@ export class AdminService {
     return this.http
       .get<Admin[]>(url);
   }
-
+// Gets a specific admin by id
   getById(id: number): Observable<Admin> {
     return this.http
       .get<Admin>(url + '/' + id);
   }
-
+// Deletes a specific admin by using the id
   delete(id: number): Observable<Admin> {
     return this.http
       .delete<Admin>(url + '/' + id);
   }
-
+  // Updates a admin
   update(id: number, admin: Admin): Observable<Admin> {
     return this.http
       .put<Admin>(url + '/' + id, admin);
   }
-
+// Creates a new admin
   create(admin: Admin): Observable<Admin> {
     return this.http
       .post<Admin>(url, admin);

@@ -23,13 +23,14 @@ export class SingleRoomDetailComponent implements OnInit {
       name: ''
     });
   }
-
+  //The params of the route is taken and used to find the corresponding singleRoom. singleRoom.id is grabbed,and put into local variables for later use.
   ngOnInit() {
     this.route.paramMap
       .switchMap(params =>
         this.singleRoomService.getById(+params.get('id'))
       ).subscribe(singleRoom => this.singleRoomId = singleRoom.id);
   }
+  //Edits the choosen singleRoom's properties values with FormGroup and then runs the singleRoomService.update to update the currentSingleRoom with the updatedSingleRoom and then route it back to our front
   editSingleRoom(  ){
     const currentSingleRoom = this.singleRoomId;
     const newValues = this.newSingleRoomGroup.value;

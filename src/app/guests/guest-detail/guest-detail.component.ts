@@ -45,7 +45,7 @@ export class GuestDetailComponent implements OnInit {
 
   //constants for guestId, userId, guestGroup, userGroup are made. A guest fitting the user inputted values is made.
   //Then a user fitting the username and password inputted is created. Subscribtions to the update on both the guest
-  //and the user are created. Finally the FormGroup is resetted, and the admin is routed to /front
+  //and the user are created. Finally the FormGroup is resetted, and the guest is routed to /front
   editGuest() {
     const currentGuest = this.guestId;
     const currentUserId = this.userId;

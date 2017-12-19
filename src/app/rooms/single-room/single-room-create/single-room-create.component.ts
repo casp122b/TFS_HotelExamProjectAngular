@@ -10,6 +10,7 @@ import { SingleRoomService } from '../shared/single-room.service';
   templateUrl: './single-room-create.component.html',
   styleUrls: ['./single-room-create.component.css']
 })
+//Creates a Formgroup we call suiteGroup
 export class SingleRoomCreateComponent implements OnInit {
   singleRoomGroup: FormGroup;
   constructor(private singleRoomService: SingleRoomService,
@@ -24,7 +25,7 @@ export class SingleRoomCreateComponent implements OnInit {
 
   ngOnInit() {
   }
-  //Method that create a singleRoom with the properties below which it takes from the FormGroup called singleRoomGroup, which is given data inside the html and route you to front
+//Creates a singleRoom by using FormGroup and then runs the singleRoomService.create to create a new singleRoom with the infomation that are in our singleRoomGroup and then route it back to our front
   createSingleRoom() {
     const values = this.singleRoomGroup.value;
     const singleRoom: SingleRoom = {

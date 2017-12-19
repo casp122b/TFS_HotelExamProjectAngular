@@ -19,7 +19,7 @@ export class DoubleRoomListComponent implements OnInit {
   constructor(private doubleRoomService: DoubleRoomService,
     private router: Router) {
   }
-
+  // used to get a list of the doubleRooms
   ngOnInit() {
     this.doubleRoomService.get()
       .subscribe(
@@ -27,22 +27,22 @@ export class DoubleRoomListComponent implements OnInit {
         this.doubleRooms = doubleRooms;
       });
   }
-
+//send you to the clicked doubleRooms details page
   details(doubleRoom: DoubleRoom) {
     this.router
       .navigateByUrl('/doubleRoom/' + doubleRoom.id);
   }
-
+//sets doubleRoomToDelete = doubleRoom and run an event
   delete(doubleRoom: DoubleRoom, $event) {
     this.doubleRoomToDelete = doubleRoom;
     $event.stopPropagation();
   }
-
+//Aborts deleting by setting the doubleRoom = null
   deleteAborted($event) {
     this.doubleRoomToDelete = null;
     $event.stopPropagation();
   }
-
+//deletes the doubleRoom
   deleteConfirmed($event) {
     this.doubleRoomService.delete(this.doubleRoomToDelete.id)
       .switchMap(doubleRoom => this.doubleRoomService.get())

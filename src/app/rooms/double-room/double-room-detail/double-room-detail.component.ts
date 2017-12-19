@@ -24,14 +24,14 @@ export class DoubleRoomDetailComponent implements OnInit {
       name: ''
     });
   }
-
+  //The params of the route is taken and used to find the corresponding doubleRoom. doubleRoom.id is grabbed,and put into local variables for later use.
   ngOnInit() {
     this.route.paramMap
       .switchMap(params =>
         this.doubleRoomService.getById(+params.get('id'))
       ).subscribe(doubleRoom => this.doubleRoomId = doubleRoom.id);
   }
-
+//Edits the choosen doubleRooms properties values with FormGroup and then runs the doubleRoomService.update to update the currentDoubleRoom with the updatedDoubleRoom and then route it back to our front
   editDoubleRoom() {
     const currentDoubleRoom = this.doubleRoomId;
     const newValues = this.newDoubleRoomGroup.value;
