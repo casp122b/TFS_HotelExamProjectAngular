@@ -37,6 +37,7 @@ import { SuiteDetailComponent } from './rooms/suites/suite-detail/suite-detail.c
 import { SuiteListComponent } from './rooms/suites/suite-list/suite-list.component';
 import { UnAuthorizedComponent } from './unauthorized/unauthorized/unauthorized.component';
 import { UserService } from './users/shared/user.service';
+import { BookingService } from './bookings/booking.service';
 
 //defines the routes for all components used in the frontend.
 const appRoutes: Routes = [
@@ -91,8 +92,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'singleRoom/:id',
-    component: SingleRoomDetailComponent,
-    canActivate: [AuthGuard]
+    component: SingleRoomDetailComponent
   },
   {
     path: 'singleRooms/create',
@@ -184,6 +184,7 @@ const appRoutes: Routes = [
     AdminService,
     AuthenticationService,
     UserService,
+    BookingService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

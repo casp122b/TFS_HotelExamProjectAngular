@@ -54,6 +54,7 @@ export class GuestCreateComponent implements OnInit {
         //By the guestService and through the entire backend, the guest is created. The subscribtion routes the guest to /front
         this.guestService.create(guest)
           .subscribe(guest => {
+            localStorage.setItem('guestId', JSON.stringify(guest.id));
             this.router.navigateByUrl('/front');
           });
       });
