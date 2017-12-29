@@ -23,9 +23,9 @@ export class JwtInterceptor implements HttpInterceptor {
         if (err.status === 404) {
           console.log('Page not found');
         }
-        /* if (err.status === 403) {
+        if (err.status === 403) {
           this.router.navigateByUrl('/unauthorized');
-        } */
+        }
       }
     });
   }

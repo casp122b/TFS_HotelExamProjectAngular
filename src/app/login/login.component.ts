@@ -40,12 +40,10 @@ export class LoginComponent implements OnInit {
         auth.token = success.token;
         auth.username = success.username;
         auth.role = success.role;
-        auth.id = success.id;
 
         localStorage.setItem('currentUser', success.token);
         localStorage.setItem('username', success.username);
         localStorage.setItem('role', success.role);
-        localStorage.setItem('userId', JSON.stringify(success.id));
         this.router.navigateByUrl('/front');
       },
       error => {
