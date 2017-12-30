@@ -76,11 +76,11 @@ export class SingleRoomDetailComponent implements OnInit {
     const bookingValues = this.createBookingGroup.value;
 
     const setYear = this.model.year;
-    const setMonth = this.model.month;
+    const setMonth = this.model.month-1;
     const setDay = this.model.day;
     const mod1 = new Date(setYear,setMonth,setDay);
     const setYear2 = this.model2.year;
-    const setMonth2 = this.model2.month;
+    const setMonth2 = this.model2.month-1;
     const setDay2 = this.model2.day;
     const mod2 = new Date(setYear2,setMonth2,setDay2);
     //const testMod = JSON.parse(this.model.year + '-' + this.model.month + '-' + this.model.day);
